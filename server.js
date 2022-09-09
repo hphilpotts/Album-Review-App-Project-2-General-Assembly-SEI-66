@@ -1,17 +1,41 @@
-// `npm init`
+// SERVER CONFIGURATION
 
 // Require Express:
-    // -> terminal `npm install express`
 const express = require('express');
 
-// Require Mongoose:
-    // -> terminal `npm i mongose`
-const mongoose = require('mongoose');
+// Require and init dotenv
+    // -> terminal `npm i dotenv`
+require('dotenv').config()
 
-const app = express();
+// Require Mongoose:
+const mongoose = require('mongoose');
 
 // port config - to be hidden later using .env
 const PORT = 4000;
+
+// Init express:
+const app = express();
+
+// Look for static files in public folder:
+app.use(express.static("public"));
+
+// Require express-ejs-layouts
+    // -> terminal `npm i express-ejs-layouts`
+const expressLayouts = require('express-ejs-layouts');
+
+// ROUTE HANDLING BELOW:
+
+// Import routes:
+// --
+
+// Look into views:
+app.use(expressLayouts);
+
+// Session and passport for auth to go below:
+// --
+
+// Mount routes:
+// --
 
 // Database connection
 mongoose.connect("mongodb://localhost:27017/blogapp",  // hide later with .env
