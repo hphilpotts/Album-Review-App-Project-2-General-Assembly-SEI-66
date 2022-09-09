@@ -26,7 +26,7 @@ const expressLayouts = require('express-ejs-layouts');
 // ROUTE HANDLING BELOW:
 
 // Import routes:
-// --
+const instructionR = require('./routes/instructions');
 
 // Look into views:
 app.use(expressLayouts);
@@ -35,10 +35,12 @@ app.use(expressLayouts);
 // --
 
 // Mount routes:
-// --
+app.use('/', instructionR);
+
+app.set('view engine', 'ejs')
 
 // Database connection
-mongoose.connect("mongodb://localhost:27017/blogapp",  // hide later with .env
+mongoose.connect("mongodb://localhost:27017/diyapp",  // hide later with .env
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => {
         console.log('MongoDB connected!');
