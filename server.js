@@ -27,7 +27,8 @@ const expressLayouts = require('express-ejs-layouts');
 
 // Import routes:
 const instructionR = require('./routes/instructions');
-const landingRouter = require('./routes/auth')
+const authRouter = require('./routes/auth');
+
 
 // Look into views:
 app.use(expressLayouts);
@@ -37,7 +38,7 @@ app.use(expressLayouts);
 
 // Mount routes:
 app.use('/', instructionR);
-app.use('/', landingRouter);
+app.use('/', authRouter);
 
 // render pages
 app.set('view engine', 'ejs');
