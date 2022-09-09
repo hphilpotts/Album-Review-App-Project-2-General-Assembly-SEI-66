@@ -4,7 +4,8 @@
   "description": "Project 2 - shared project - DIY Blog App using Express and MongoDB",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon server",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   "author": "Milos Jocic, Harry Philpotts",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mongoose": "^6.6.0"
   }
