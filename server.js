@@ -27,6 +27,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 // Import routes:
 const instructionR = require('./routes/instructions');
+const landingRouter = require('./routes/auth')
 
 // Look into views:
 app.use(expressLayouts);
@@ -36,9 +37,11 @@ app.use(expressLayouts);
 
 // Mount routes:
 app.use('/', instructionR);
-
+app.use('/', landingRouter);
 app.set('view engine', 'ejs')
 
+// render pages
+app.set('view engine', 'ejs');
 // Database connection
 mongoose.connect("mongodb://localhost:27017/diyapp",  // hide later with .env
     { useNewUrlParser: true, useUnifiedTopology: true },
