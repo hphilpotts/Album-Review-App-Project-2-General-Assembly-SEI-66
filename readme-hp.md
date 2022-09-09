@@ -5,4 +5,7 @@ GitHub Repo established and successfully forked & cloned.
     - mongoose      
     - ejs   
     - dotenv        
+    - express-ejs-layouts
+
+- adding MVC structure and other directories        
 
