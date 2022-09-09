@@ -12,4 +12,5 @@ GitHub Repo established and successfully forked & cloned.
 - User model added - possibility of changing firstName/lastName to screenName if wanted.        
 - Post model added.      
     - May need to check if image datatype should be `String`.       
-    - Also, have decided to do away with difficulty proper
+    - Also, have decided to do away with difficulty property and instead access this from the relationed instructions database      
+- I

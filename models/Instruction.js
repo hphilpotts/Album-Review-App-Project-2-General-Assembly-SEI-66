@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Schema from Mongoose:
-const postSchema = mongoose.Schema({
+const instructionSchema = mongoose.Schema({
     title: String,
     post: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -15,8 +15,8 @@ const postSchema = mongoose.Schema({
 },
 {timestamps: true});
 
-// Post Model:
-const Post = mongoose.model("Post", postSchema);
+// Instruction Model:
+const Instruction = mongoose.model("Instruction", instructionSchema);
 
 // Exports:
-module.exports = { Post };
+module.exports = { Instruction };
