@@ -38,3 +38,15 @@ I am now moving to setting up 'Create Instructions':
 - `add.ejs` completed, GET API and controller set up. Had been missing `app.set('view engine', 'ejs');` from `server.js`. Now tested working ok.        
 - now POST API added, tested working ok.        
 
+_First significant merge conflicts, on_ `server.js`_as expected, due to parallel edits. Eventually resovled through VSCode merge editor._       
+
+Landing page integrated into auth views/ctrl/route.     
+
+Milos working on signup functionality.      
+
+I am now on Read, Update and Delete functionality for Instructions:         
+- Instructions index and detail read routes all working ok!     
+- Edit functionality is working ok, also populates with previous values.        
+- Delete functionality working ok.      
+
+Committing changes.

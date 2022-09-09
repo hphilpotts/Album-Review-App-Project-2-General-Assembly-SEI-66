@@ -6,9 +6,7 @@ const { Instruction } = require('../models/Instruction')
 // const { Post } = require('../models/Post');
 
 // Require moment for timestamp formatting:
-    // --> uncomment when added
-    // --> let Milos know to install from terminal: `npm i moment'
-// const moment = require('moment');
+const moment = require('moment');
 
 // -- APIs:
 
@@ -23,9 +21,7 @@ exports.instruction_create_post = (req, res) => {
 
     instruction.save()
     .then(() => {
-        res.send('redirect to a page instead of just sending this text')
-        // --> when path completed chuck in something like:
-        // res.redirect('/post/index');
+        res.redirect('/instruction/index');
     })
     .catch((err) => {
         console.log(err);
@@ -33,3 +29,63 @@ exports.instruction_create_post = (req, res) => {
     })
 }
 
+// READ
+// HTTP GET - Instructions Index
+exports.instruction_index_get = (req, res) => {
+    Instruction.find()
+    .then(instructions => {
+        res.render('instruction/index', { instructions, moment });
+    })
+    .catch(err => {
+        console.log(err);
+        res.send('ERROR?');
+    })
+}
+
+// HTTP GET - Instructions Detail
+exports.instruction_detail_get = (req, res) => {
+    Instruction.findById(req.query.id)// later, populate linked posts .populate('post')
+    .then(instruction => {
+        res.render('instruction/detail', { instruction, moment });
+    })
+    .catch(err => {
+        console.log(err);
+        res.send('...ERROR?');
+    })
+}
+
+// UPDATE
+// HTTP GET - Get Edit Instructions Page by ID:
+exports.instruction_edit_get = (req, res) => {
+    Instruction.findById(req.query.id)
+    .then((instruction) => {
+        res.render('instruction/edit', { instruction })
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+// HTTP POST - Edit Instruction and Update
+exports.instruction_edit_post = (req, res) => {
+    Instruction.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect('/instruction/index');
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+// DELETE
+// HTTP DELETE - Delete Cylcist by ID
+exports.instruction_delete = (req, res) => {
+    Instruction.findByIdAndDelete(req.query.id)// .populate('post')
+    .then(() => {
+        res.redirect('/instruction/index');
+    })
+    .catch(err => {
+        console.log(err);
+        res.send('Uh oh');
+    })
+}

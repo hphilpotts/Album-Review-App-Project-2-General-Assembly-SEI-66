@@ -1,0 +1,30 @@
+<h2>Instructions</h2>
+
+<!-- Using a table for now to check data works ok
+-- will certainly be changing format further down the line! -->
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Created at</th>
+        <!-- This needs to be auto-populated, I think using the share user details across server.js? -->
+        <!-- <th>Created by</th> -->
+        <th>Difficulty</th>
+        <th>Instructions</th>
+        <th>Materials</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+<% instructions.forEach(function(instruction) { %> 
+    <tr>
+        <td> <a href="/instruction/detail?id=<%=instruction._id%>" > <h3><%= instruction.title %></h3></a></td>
+        <td> <%= moment(instruction.createdAt).fromNow() %></td>
+        <!-- created by data renders here -->
+        <td> <%= instruction.difficulty %></td>
+        <td> <%= instruction.content %></td>
+        <td> <%= instruction.materials %></td>
+        <td> <a href="/instruction/edit?id=<%= instruction._id%>">Edit</a></td>
+        <td> <a href="/instruction/delete?id=<%= instruction._id%>">Delete</a></td>
+    </tr>
+<% }) %>
+
+</table>
