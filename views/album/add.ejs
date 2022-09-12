@@ -1,0 +1,43 @@
+<h1> Add Album </h1>
+
+<form method="POST" action="/album/add">
+
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label>Artist</label>
+        <input type="text" name="artist" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label>Year</label>
+        <input type="number" name="year" class="form-control" min="1900" max="2023"/>
+    </div>
+
+    <div class="form-group">
+        <label>Track List</label>
+    <!-- plus sign to add additional input box -->
+        <textarea name="trackList" class="form-control">Write your DIY albums here!</textarea>
+    </div class="form-group">
+
+    <div class="form-group">
+        <!-- this needs to change to user image upload -->
+        <label>Album Cover img URL</label>
+        <input type="text" name="albumCover" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label>Genre</label>
+        <!-- up to four genres below: -->
+        <input type="text" name="genre" class="form-control"/>
+        <input type="text" name="genre" class="form-control"/>
+        <input type="text" name="genre" class="form-control"/>
+        <input type="text" name="genre" class="form-control"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Album</button>
+
+</form>

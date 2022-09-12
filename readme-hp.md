@@ -49,4 +49,21 @@ I am now on Read, Update and Delete functionality for Instructions:
 - Edit functionality is working ok, also populates with previous values.        
 - Delete functionality working ok.      
 
-Committing changes.
+Committing changes.     
+
+## Day 03 - Production 2        
+12/09/22        
+
+Milos has added the majority of auth functionality over the weekend. Pair coded in order to debug, tested working ok.       
+
+'Welcome User' message and login/logout button hide when not relevant functionality added.      
+
+_Significant change made to project: we have decided to change direction in order to make an Album review app instead._     
+
+Completing rewrites: workload split between editing all directly 'instructions'-related files/folders and editing all other references to Post/Instruction outside of this.     
+
+Cue judicious use of `find + replace`..._taking great care to match case / singluar or plural_.     
+
+Edits completed on both sides, attempting merge:        
+
+

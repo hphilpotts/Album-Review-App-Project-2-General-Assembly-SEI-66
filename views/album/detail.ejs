@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <h3><%= album.title %></h3> 
+    </div>
+    
+    <!-- is this needed? uncomment if so! -->
+    <!-- <div>Created: <%= moment(album.createdAt).fromNow() %></div> -->
+    
+    <div>Artist: <%= album.artist %></div>
+    <div>Year: <%= album.year %></div>
+    <div>Track List: <%= album.trackList %></div>
+    
+    <!-- Linked review functionality -->
+    <!-- <div><h4>Linked reviews:</h4> -->
+<!-- <% album.review.forEach(function(review) { %>
+    Make the below a link for each!
+    <div> <%= review.user %> </div> Maybe change this??
+<% }) %> -->
+    
+<div>Album Cover: <%= render album.albumCover with this property %></div>
+    <div>Genre: 
+<% album.genre.forEach(function(genre) { %>
+    <!-- check if this is correct...? -->
+    <span> <%= genre %></span>
+<% }) %>
+    </div>
+</div>
