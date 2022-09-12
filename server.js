@@ -11,7 +11,7 @@ require('dotenv').config()
 const mongoose = require('mongoose');
 
 // port config - to be hidden later using .env
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 // Init express:
 const app = express();
@@ -35,6 +35,20 @@ app.use(expressLayouts);
 
 // Session and passport for auth to go below:
 // --
+let session = require('express-session');
+let passport = require('./helper/ppConfig');
+
+// Init session
+app.use(session({
+    secret: process.env.SECRET,
+    saveUninitialized: true,
+    resave: false,
+    cookie: {maxAge: 3600000}
+}))
+
+// Init passport and passport session
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Mount routes:
 app.use('/', instructionR);
@@ -44,7 +58,7 @@ app.use('/', authRouter);
 app.set('view engine', 'ejs');
 
 // Database connection
-mongoose.connect("mongodb://localhost:27017/diyapp",  // hide later with .env
+mongoose.connect(process.env.MongoDBURL,  // hide later with .env
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => {
         console.log('MongoDB connected!');
