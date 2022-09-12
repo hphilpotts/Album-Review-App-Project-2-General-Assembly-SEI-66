@@ -1,22 +1,30 @@
-<h1>All Reviews</h1>
+<h1> Reviews </h1>
 
-<table>
+<table class="table table-striped">
     <tr>
-        <th>Album Name</th> <!-- will be updated to use related DBs later-->
-        <!-- <th>Artist</th> -->
-        <th>Rating/10</th>
-        <th>Review</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th> Album Title </th> <!--Eventually make album title / name / title consistent-->
+        <th> Rating </th>
+        <th> Content </th> <!--Content might not be the best heading-->
+        <th> Review Author </th>
+        <th> Created At </th>
+        <th> Updated At </th>
+        <th> Edit </th>
+        <th> Delete </th>
     </tr>
-<% reviews.forEach(function(review) { %> 
+
+<% reviews.forEach(function(review){ %>  
     <tr>
-        <td> <a href="/review/detail?id=<%=review._id%>" > <h3><%= review.title %></h3></a></td>
+        <td> <a href="/review/detail?id=<%= review._id %>"> <h3><%= review.title %></h3> </a> </td>
         <td> <%= review.rating %></td>
         <td> <%= review.content %></td>
-        <td> <a href="/review/edit?id=<%= review._id%>">Edit</a></td>
-        <td> <a href="/review/delete?id=<%= review._id%>">Delete</a></td>
+        <td> <%= review.createdBy %></td>
+        <td> <%= moment(review.createdAt).fromNow() %></td>
+        <td> <%= moment(review.updatedAt).fromNow() %></td>
+
+        <td> <a href="/review/edit?id=<%= review._id %>">Edit</a></td>
+        <td> <a href="/review/delete?id=<%= review._id %>">Delete</a></td>
     </tr>
 <% }) %>
+
 
 </table>

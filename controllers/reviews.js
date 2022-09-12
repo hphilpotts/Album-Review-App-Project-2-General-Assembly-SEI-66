@@ -47,7 +47,7 @@ exports.review_show_get = (req, res) => {
     console.log(req.query.id);
     // find review by id
     Review.findById(req.query.id) // can call .populate() with other info here
-    .then(article => {
+    .then(review => {
         res.render("review/detail", {review, moment})
     })
     .catch(err => {
@@ -59,7 +59,7 @@ exports.review_show_get = (req, res) => {
 exports.review_delete_get = (req, res) => {
     console.log(req.query.id);
     Review.findByIdAndDelete(req.query.id)
-    then(() => {
+    .then(() => {
         res.redirect("/review/index")
     })
     .catch(err => {
