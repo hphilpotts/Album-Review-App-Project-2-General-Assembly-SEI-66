@@ -26,7 +26,7 @@ const expressLayouts = require('express-ejs-layouts');
 // ROUTE HANDLING BELOW:
 
 // Import routes:
-const instructionR = require('./routes/instructions');
+const albumsRouter = require('./routes/albums');
 const authRouter = require('./routes/auth');
 
 
@@ -57,7 +57,7 @@ app.use(function(req, res, next){
     next();
 })
 // Mount routes:
-app.use('/', instructionR);
+app.use('/', albumsRouter);
 app.use('/', authRouter);
 
 // render pages

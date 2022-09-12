@@ -4,18 +4,18 @@ const router = express.Router();
 
 router.use(express.urlencoded({ extended: true }));
 
-const instructionsCtrl = require('../controllers/instructions');
+const albumsCtrl = require('../controllers/albums');
 
 // -- Routes:
-router.get('/instruction/add', instructionsCtrl.instruction_create_get);
-router.post('/instruction/add', instructionsCtrl.instruction_create_post);
+router.get('/album/add', albumsCtrl.album_create_get);
+router.post('/album/add', albumsCtrl.album_create_post);
 
-router.get('/instruction/index', instructionsCtrl.instruction_index_get);
-router.get('/instruction/detail', instructionsCtrl.instruction_detail_get);
+router.get('/album/index', albumsCtrl.album_index_get);
+router.get('/album/detail', albumsCtrl.album_detail_get);
 
-router.get('/instruction/edit', instructionsCtrl.instruction_edit_get);
-router.post('/instruction/update', instructionsCtrl.instruction_edit_post);
+router.get('/album/edit', albumsCtrl.album_edit_get);
+router.post('/album/update', albumsCtrl.album_edit_post);
 
-router.get('/instruction/delete', instructionsCtrl.instruction_delete);
+router.get('/album/delete', albumsCtrl.album_delete);
 
 module.exports = router;
