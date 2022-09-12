@@ -43,7 +43,7 @@ exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not 
 
 //HTTP POST SIGN IN ROUTE
 exports.auth_landing_post = passport.authenticate('local', {
-    successRedirect: "/instruction/index", 
+    successRedirect: "/album/index", 
     failureRedirect: "/auth/landing",
 })
 
