@@ -1,0 +1,22 @@
+<h1>All Reviews</h1>
+
+<table>
+    <tr>
+        <th>Album Name</th> <!-- will be updated to use related DBs later-->
+        <!-- <th>Artist</th> -->
+        <th>Rating/10</th>
+        <th>Review</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+<% reviews.forEach(function(review) { %> 
+    <tr>
+        <td> <a href="/review/detail?id=<%=review._id%>" > <h3><%= review.title %></h3></a></td>
+        <td> <%= review.rating %></td>
+        <td> <%= review.content %></td>
+        <td> <a href="/review/edit?id=<%= review._id%>">Edit</a></td>
+        <td> <a href="/review/delete?id=<%= review._id%>">Delete</a></td>
+    </tr>
+<% }) %>
+
+</table>
