@@ -29,9 +29,14 @@
         <a href="/instruction/add">Add Instructions</a>
       </div>
       <div class="nav-right">
+        <% if(currentUser){ %> Hi <%= currentUser.firstName %> <%=
+          currentUser.lastName %>
         <a href="/auth/logout">Log Out</a>
+        <% } else{ %>
         <a href="/auth/landing">Sign In</a>
         <a href="/auth/signup">Sign Up</a>
+        <% } %>
+
       </div>
     </nav>
 

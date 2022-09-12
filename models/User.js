@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Require bcrypt --> uncomment later when adding authentication
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const userSchema= mongoose.Schema({
     // --> can change firstName and lastName properties below to one 'screen name'?
@@ -34,13 +34,13 @@ const userSchema= mongoose.Schema({
 { timestamps: true });
 
 // -- Verify Password functionality, ignore now but add later during auth development -- //
-// userSchema.methods.verifyPassword = function(password) { // password is passed to us as a parameter
-//     console.log("password from user: " + password);
-//     console.log("password from database: " + this.password);
-//     return bcrypt.compareSync(password /* plaintext */, this.password) /*encrypted*/
-//     // if both match, return true, else false
-//         // this return is passed in ppConfig.js
-// }
+userSchema.methods.verifyPassword = function(password) { // password is passed to us as a parameter
+    console.log("password from user: " + password);
+    console.log("password from database: " + this.password);
+    return bcrypt.compareSync(password /* plaintext */, this.password) /*encrypted*/
+    // if both match, return true, else false
+        // this return is passed in ppConfig.js
+}
 
 
 const User = mongoose.model("User", userSchema);
