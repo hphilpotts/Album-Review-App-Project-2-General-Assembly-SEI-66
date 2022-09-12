@@ -1,0 +1,21 @@
+<h2> <%= review.title %> </h2>
+
+<div>
+    Rating: <%= review.rating %>
+</div>
+
+<div>
+    Content: <%= review.content %>
+</div>
+
+<div>
+    Review Author: <%= review.createdBy %>
+</div>
+
+<div>
+    CreatedAt: <%= moment(review.createdAt).fromNow() %>
+</div>
+
+<div>
+   UpdatedAt: <%= moment(review.updatedAt).fromNow() %>
+</div>
