@@ -18,8 +18,13 @@
     </div>
 
     <div class="form-group">
-        <label>Track List</label>
-        <textarea name="content" class="form-control"><%= album.trackList%></textarea>
+        <div id="track-parent">
+            <label>Track List</label>
+            <% album.trackList.forEach(function(track) { %>
+            <input type="text" name="trackList" class="form-control" value="<%=track%>"/>
+            <% }) %>
+        </div>
+        <button type="button" id="add-field">+</button>
     </div class="form-group">
 
 
@@ -29,12 +34,13 @@
     </div>
 
     <div class="form-group">
+        <div id="genre-parent">
         <label>Genre</label>
-        <!-- up to four genres below, not pre-populated with values yet: -->
-        <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
+    <% album.genre.forEach(function(genre) { %>
+        <input type="text" name="genre" class="form-control" value="<%=genre%>"/>
+    <% }) %>
+        </div>
+        <button type="button" id="add-genre">+</button>
     </div>
 
 

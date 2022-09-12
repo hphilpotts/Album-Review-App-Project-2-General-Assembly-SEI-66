@@ -18,10 +18,13 @@
     </div>
 
     <div class="form-group">
+        <div id="track-parent">
         <label>Track List</label>
-    <!-- plus sign to add additional input box -->
-        <textarea name="trackList" class="form-control">Add track listing here:</textarea>
+        <input type="text" name="trackList" class="form-control" id="track1"/>
+        </div>
+        <button type="button" id="add-field">+</button>
     </div class="form-group">
+    <br>
 
     <div class="form-group">
         <!-- this needs to change to user image upload -->
@@ -30,14 +33,19 @@
     </div>
 
     <div class="form-group">
+        <div id="genre-parent">
         <label>Genre</label>
-        <!-- up to four genres below: -->
         <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
-        <input type="text" name="genre" class="form-control"/>
+        </div>
+        <button type="button" id="add-genre">+</button>
     </div>
-
+    <br>
     <button type="submit" class="btn btn-primary">Submit Album</button>
 
 </form>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+<script src="/js/main"></script>

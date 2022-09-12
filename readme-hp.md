@@ -65,5 +65,37 @@ Completing rewrites: workload split between editing all directly 'instructions'-
 Cue judicious use of `find + replace`..._taking great care to match case / singluar or plural_.     
 
 Edits completed on both sides, attempting merge:        
+- _Eventually resolved one expected conflict in routes - we found the GitHub GUI to be preferable to CLI or VSC Merge Editor_       
+- changes debugged using pair programming, latest changes pushed.       
 
+Next two workstreams: Review views & create review functionality, dynamic 'add input box' functionality to add track listing.       
+
+Firstly, I am attempting to achieve 'add input box' functionality through embedded 'vanilla' JS, using DOM manipulation.        
+```
+    <%  const newInput = document.createElement("input");
+        newInput.setAttribute('type', 'text');
+        newInput.setAttribute('name', 'trackList');
+        newInput.setAttribute('class', 'form-control');
+        const parentElement = document.getElementById('track-parent');
+        function newElement(){
+            parentElement.appendChild(newInput);
+        }
+        document.getElementById("add-field").addEventListener(click, newElement);
+    %>
+```
+Did not work, `document is not defined`, googling turned up: "You can't use document inside your ejs tags because that code is executed on the server."     
+
+Using similar code but as frontend in `main.js` I am able to add an input box, but no more than one. On a positive note, both input boxes created accept and pass values correctly!     
+
+I'm now going to try jQuery.        
+Tested working, although the button floats above any added inputs!      
+And fixed with another div.     
+
+Now moving to its own `.js` file, replicating this for genre as well.       
+
+Tested working ok. Replicating functionality for Edit page.     
+
+Done and tested working ok: input fields populate with values, add input fields working and updating in DB.     
+
+**Consider including this code in the presentation!**       
 
