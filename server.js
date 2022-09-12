@@ -28,6 +28,7 @@ const expressLayouts = require('express-ejs-layouts');
 // Import routes:
 const albumsRouter = require('./routes/albums');
 const authRouter = require('./routes/auth');
+const reviewsRouter = require('./routes/reviews');
 
 
 // Look into views:
@@ -59,6 +60,7 @@ app.use(function(req, res, next){
 // Mount routes:
 app.use('/', albumsRouter);
 app.use('/', authRouter);
+app.use('/', reviewsRouter);
 
 // render pages
 app.set('view engine', 'ejs');

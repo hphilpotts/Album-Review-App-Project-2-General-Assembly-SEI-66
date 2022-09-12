@@ -1,0 +1,34 @@
+<h1> Add Review </h1>
+
+<form method="POST" action="/review/add">
+
+<div class="form-group">
+    <label>Album Name:</label>
+    <input name="title" type="text" class="form-control"/>
+</div>
+
+<!-- <div class="form-group">
+    <label>Artist:</label>
+    <input name="artist" type="text" class="form-control"/>
+</div> -->   <!--unsure if manual input? Not given in review schema (maybe add artist to review schema) -->
+
+<div class="form-group">
+    <label>Rating /10:</label>
+    <input name="rating" type="number" class="form-control"></input>
+</div>
+
+<div class="form-group">
+    <label>Content</label> 
+<input name="content" type="text" class="form-control"/>
+</div>
+
+<!-- <div class="form-group">
+    <label>Author of Review:</label>
+    <input type="text" name="createdBy" class="form-control" />
+</div> --> <!--commented out due to it breaking the website-->
+
+<button type="submit" class="btn btn-primary">
+    Create Review
+</button>
+
+</form>

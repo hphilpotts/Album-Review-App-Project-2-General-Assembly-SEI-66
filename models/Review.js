@@ -3,17 +3,19 @@ const mongoose = require('mongoose');
 
 // Schema from Mongoose:
 const reviewSchema = mongoose.Schema({
-    albumName: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Album'
-    }],
+    // title: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Album'
+    // }],
+    title: String,
     rating: Number,
     content: String,
-    createdBy: [{
-        // This will be automatically updated whenever a User creates a review
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }]
+    // createdBy: [{
+    //     // This will be automatically updated whenever a User creates a review
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }]
+    createdBy: String
 },
 {timestamps: true});
 
