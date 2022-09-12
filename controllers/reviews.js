@@ -22,7 +22,7 @@ exports.review_create_post = (req, res) => {
     review.save()
     .then(() => {
         console.log(req.body)
-        res.redirect("/album/index")
+        res.redirect("/review/index")
     })
      .catch((err) => {
          console.log(err);
