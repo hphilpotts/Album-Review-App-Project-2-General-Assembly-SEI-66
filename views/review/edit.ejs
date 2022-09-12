@@ -1,0 +1,29 @@
+<h1> Edit Review </h1>
+
+<form method="POST" action="/review/update?_method=PUT">
+
+    <div>
+        <label>Title:</label>
+        <input name="title" type="text" value="<%= review.title %>" />
+    </div>
+
+    <div>
+        <label>Rating:</label>
+        <input name="rating" type="number" value="<%= review.rating %>"/>
+    </div>
+
+    <div>
+        <label>Content:</label>
+        <input name="isPublished" type="text" value="<%= review.content %>" />
+    </div>
+
+    <div>
+        <label>Review Author</label>
+        <input name="createdBy" type="text" value="<%= review.createdBy %>" />
+    </div> <!--If this div is unnecessary, delete-->
+
+    <input type="hidden" name="id" value="<%= review._id %>" />
+
+    <button type="submit"> Update Review </button>
+
+</form>
