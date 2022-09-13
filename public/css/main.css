@@ -56,4 +56,13 @@ nav :hover, #main-logo{
     border: 2px solid darkgray;
     margin: 2px;
   }
+
+  .album-icon{
+    max-width: 150px;
+    /* max-height: 150px; */
+  }
+
+  .album-large{
+    max-width: 300px;
+  }
  

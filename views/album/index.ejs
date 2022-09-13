@@ -5,11 +5,13 @@
 -- will certainly be changing format further down the line! -->
 <table class="table table-striped">
     <tr>
+        <th>Album Cover</th>
         <th>Title</th>
         <th>Artist</th>
         <th>Year</th>
-        <th>Track List</th>
-        <th>Album Cover</th>
+        <!-- hidden tracklist as it is probably not needed in index -->
+        <!-- <th>Track List</th> -->
+        <!-- <th>Album Cover</th> -->
         <th>Genres</th>
         <!-- <th>Reviews</th> -->
         <th>Edit</th>
@@ -17,12 +19,19 @@
     </tr>
 <% albums.forEach(function(album) { %> 
     <tr>
+        <td><img class="album-icon"src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
         <td> <a class="peach" href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
         <td> <%= album.artist %></td>
         <td> <%= album.year %></td>
-        <td> <%= album.trackList %></td>
-        <td> <%= album.albumCover %></td>
-        <td> <%= album.genre%></td>
+        <!-- <td> <%= album.trackList %></td> -->
+        <!-- <td> <%= album.albumCover %></td> -->
+        <td>
+            <ul>
+<% album.genre.forEach(function(genre) { %>
+                <li><%= genre %></li>
+<% }) %>
+            </ul>
+        </td>
         <!-- <td> <%= album.review %></td> -->
         <td> <a href="/album/edit?id=<%= album._id%>">Edit</a></td>
         <td> <a href="/album/delete?id=<%= album._id%>">Delete</a></td>
