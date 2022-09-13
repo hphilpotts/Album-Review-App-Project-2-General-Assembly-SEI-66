@@ -62,7 +62,7 @@ exports.review_index_get = (req, res) => {
 exports.review_show_get = (req, res) => {
     console.log(req.query.id);
     // find review by id
-    Review.findById(req.query.id).populate('album') // can call .populate() with other info here
+    Review.findById(req.query.id).populate('album').populate('createdBy') // can call .populate() with other info here
     .then(review => {
         res.render("review/detail", {review, moment})
     })
