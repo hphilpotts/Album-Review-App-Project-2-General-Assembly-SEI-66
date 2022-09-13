@@ -1,7 +1,8 @@
 <h1> Edit Review </h1>
 
-<form method="POST" action="/review/update?_method=PUT">
+<form class="form-group" method="POST" action="/review/update?_method=PUT">
 
+<!--  We need to show the album title here! -->
     <!-- <div>
         <label>Album:</label>
         <input name="title" type="text" value="<%= review.album %>" />
@@ -9,21 +10,22 @@
 
     <div>
         <label>Rating:</label>
-        <input name="rating" type="number" value="<%= review.rating %>"/>
+        <input class="form-control" name="rating" type="number" value="<%= review.rating %>"/>
     </div>
 
     <div>
         <label>Content:</label>
-        <input name="isPublished" type="text" value="<%= review.content %>" />
+        <input class="form-control" name="isPublished" type="text" value="<%= review.content %>" />
     </div>
 
-    <div>
+    <!-- <div>
         <label>Review Author</label>
-        <input name="createdBy" type="text" value="<%= review.createdBy %>" />
-    </div> <!--If this div is unnecessary, delete-->
+        <input class="form-control" name="createdBy" type="text" value="<%= review.createdBy %>" />
+    </div> If this div is unnecessary, delete -->
+    <br>
 
     <input type="hidden" name="id" value="<%= review._id %>" />
 
-    <button type="submit"> Update Review </button>
+    <button type="submit" class="btn btn-dark"> Update Review </button>
 
 </form>

@@ -1,8 +1,9 @@
 <h2>Albums</h2>
+<br>
 
 <!-- Using a table for now to check data works ok
 -- will certainly be changing format further down the line! -->
-<table>
+<table class="table table-striped">
     <tr>
         <th>Title</th>
         <th>Artist</th>
@@ -16,7 +17,7 @@
     </tr>
 <% albums.forEach(function(album) { %> 
     <tr>
-        <td> <a href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
+        <td> <a class="peach" href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
         <td> <%= album.artist %></td>
         <td> <%= album.year %></td>
         <td> <%= album.trackList %></td>
