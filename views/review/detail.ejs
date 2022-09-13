@@ -23,3 +23,9 @@
     <div> Created At: <%= moment(createdBy.createdAt).fromNow() %></div>
     <hr>
 <%  }) %>
+
+
+<% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
+    <td> <a href="/review/edit?id=<%= review._id %>">Edit</a></td>
+    <td> <a href="/review/delete?id=<%= review._id %>">Delete</a></td>
+    <% } %>
