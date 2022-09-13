@@ -18,7 +18,7 @@
 </div>
 
 <% review.createdBy.forEach(function(createdBy){ %>
-    <div> Written By: <%= createdBy.name %></div>
+    <div> Written By: <%= createdBy.username %></div>
     <div> Email Address: <%= createdBy.emailAddress %></div>
     <div> Created At: <%= moment(createdBy.createdAt).fromNow() %></div>
     <hr>
