@@ -10,12 +10,11 @@ const reviewSchema = mongoose.Schema({
     // title: String,
     rating: Number,
     content: String,
-    // createdBy: [{
-    //     // This will be automatically updated whenever a User creates a review
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // }]
-    createdBy: String
+    createdBy: [{
+        // This will be automatically updated whenever a User creates a review
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 },
 {timestamps: true});
 

@@ -49,7 +49,7 @@ exports.review_create_post = (req, res) => {
 // http GET - review index API
 
 exports.review_index_get = (req, res) => {
-    Review.find().populate('album')
+    Review.find().populate('album').populate('createdBy')
     .then(reviews =>{
         res.render("review/index", {reviews: reviews, moment})
     })

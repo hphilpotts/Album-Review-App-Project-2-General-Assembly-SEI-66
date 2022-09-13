@@ -11,11 +11,15 @@
     Content: <%= review.content %>
 </div>
 <div>
-    Review Author: <%= review.createdBy %>
-</div>
-<div>
     CreatedAt: <%= moment(review.createdAt).fromNow() %>
 </div>
 <div>
    UpdatedAt: <%= moment(review.updatedAt).fromNow() %>
 </div>
+
+<% review.createdBy.forEach(function(createdBy){ %>
+    <div> Written By: <%= createdBy.name %></div>
+    <div> Email Address: <%= createdBy.emailAddress %></div>
+    <div> Created At: <%= moment(createdBy.createdAt).fromNow() %></div>
+    <hr>
+<%  }) %>
