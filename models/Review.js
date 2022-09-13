@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 
 // Schema from Mongoose:
 const reviewSchema = mongoose.Schema({
-    // title: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Album'
-    // }],
-    title: String,
+    album: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Album'
+    }],
+    // title: String,
     rating: Number,
     content: String,
     // createdBy: [{

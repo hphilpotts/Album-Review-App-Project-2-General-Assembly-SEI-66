@@ -14,7 +14,11 @@
 
 <% reviews.forEach(function(review){ %>  
     <tr>
-        <td> <a href="/review/detail?id=<%= review._id %>"> <h3><%= review.title %></h3> </a> </td>
+        <td>
+            <% review.album.forEach(function(album) { %> 
+                <div> <a href="/review/detail?id=<%= review._id %>"><%= album.title %></a> </div>
+            <% }) %>
+        </td>
         <td> <%= review.rating %></td>
         <td> <%= review.content %></td>
         <td> <%= review.createdBy %></td>

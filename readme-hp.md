@@ -106,4 +106,4 @@ Views, paths, controllers and routes for Reviews well under way: pushing to fini
 
 Got '/' working - if not signed in, this brings a landing page. If signed in, this goes to reviews home.        
 
-
+Now I am updated Review title so that it populates from the album list.     

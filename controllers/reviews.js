@@ -1,5 +1,11 @@
 const {Review} = require("../models/Review");
 
+// Album model and mongoose for related collections
+const { Album } = require('../models/Album');
+const { default: mongoose } = require('mongoose');
+
+
+
 // Require Moment Lib
 const moment = require('moment');
 
@@ -7,7 +13,16 @@ const moment = require('moment');
 
 // http GET - Load Review form
 exports.review_create_get = (req, res) => {
-    res.render("review/add");
+    // find list of albums from album collection
+    Album.find()
+    // once this is done, then render add page along with albums data:
+    .then((albums) => {
+        res.render("review/add", {albums})
+    })
+    // else show me the error
+    .catch(err => {
+        console.log(err);
+    })
 };
 
 // http post - Review
@@ -33,7 +48,7 @@ exports.review_create_post = (req, res) => {
 // http GET - review index API
 
 exports.review_index_get = (req, res) => {
-    Review.find()
+    Review.find().populate('album')
     .then(reviews =>{
         res.render("review/index", {reviews: reviews, moment})
     })
@@ -46,7 +61,7 @@ exports.review_index_get = (req, res) => {
 exports.review_show_get = (req, res) => {
     console.log(req.query.id);
     // find review by id
-    Review.findById(req.query.id) // can call .populate() with other info here
+    Review.findById(req.query.id).populate('album') // can call .populate() with other info here
     .then(review => {
         res.render("review/detail", {review, moment})
     })

@@ -1,4 +1,9 @@
-<h2> <%= review.title %> </h2>
+<div>
+    <% review.album.forEach(function(album) { %> 
+        <h2> <%= album.title %> </h2>
+    <% }) %>
+</div>
+
 <div>
     Rating: <%= review.rating %>
 </div>
