@@ -2,8 +2,8 @@
 
 // Require Models:
 const { Album } = require('../models/Album')
-// const { User } = require('../models/User');
-// const { Review } = require('../models/Review');
+const { User } = require('../models/User');
+const { Review } = require('../models/Review');
 
 // Require moment for timestamp formatting:
 const moment = require('moment');
@@ -44,8 +44,10 @@ exports.album_index_get = (req, res) => {
 
 // HTTP GET - Albums Detail
 exports.album_detail_get = (req, res) => {
-    Album.findById(req.query.id)// later, populate linked reviews .populate('review')
-    .then(album => {
+    // This is the bit that is causing us problems!
+    Album.findById(req.query.id).populate('review')
+    .then
+    (album => {
         res.render('album/detail', { album, moment });
     })
     .catch(err => {

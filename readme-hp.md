@@ -106,4 +106,21 @@ Views, paths, controllers and routes for Reviews well under way: pushing to fini
 
 Got '/' working - if not signed in, this brings a landing page. If signed in, this goes to reviews home.        
 
-Now I am updated Review title so that it populates from the album list.     
+Now I am updating Review title so that it populates from the album list. Completed after some difficulty. Needed to use `.populate`...!     
+
+Two workstreams: the reverse of the above, where albums are updated with attached reviews; and reviews have a user attached based upon currentUser.     
+
+Album update implemented as below:      
+```
+    review.save()
+    .then(() => {
+        req.body.album.forEach(album => {
+            Album.findById(album, (error, album) => {
+                album.review.push(review);
+                album.save();
+            })
+        })
+        res.redirect("/review/index")
+    })
+```
+
