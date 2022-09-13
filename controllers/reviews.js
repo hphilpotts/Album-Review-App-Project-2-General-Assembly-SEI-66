@@ -27,16 +27,17 @@ exports.review_create_get = (req, res) => {
 
 // http post - Review
 exports.review_create_post = (req, res) => {
-    //check to see if post operation works
-    console.log(req.body);
-    // res.send("Post is working");
 
-    // Saving data to mongodb
     let review = new Review(req.body);
 
     review.save()
     .then(() => {
-        console.log(req.body)
+        req.body.album.forEach(album => {
+            Album.findById(album, (error, album) => {
+                album.review.push(review);
+                album.save();
+            })
+        })
         res.redirect("/review/index")
     })
      .catch((err) => {
