@@ -6,17 +6,22 @@ const bcrypt = require('bcrypt');
 
 const userSchema= mongoose.Schema({
     // --> can change firstName and lastName properties below to one 'screen name'?
-    firstName: {
+    // firstName: {
+    //     type: String,
+    //     required: true,
+    //     minlength: [3, "First name should be 3 characters or longer."],
+    //     maxlength: [20, "First name is too many characters long."]
+    // },
+    // lastName: {
+    //     type: String,
+    //     required: true,
+    //     minlength: [3, "Last name should be 3 characters or longer."],
+    //     maxlength: [20, "Last name is too many characters long."]
+    username: {
         type: String,
         required: true,
-        minlength: [3, "First name should be 3 characters or longer."],
-        maxlength: [20, "First name is too many characters long."]
-    },
-    lastName: {
-        type: String,
-        required: true,
-        minlength: [3, "Last name should be 3 characters or longer."],
-        maxlength: [20, "Last name is too many characters long."]
+        minlength: [5, "Username should be 5 characters or longer."],
+        maxlength: [20, "Username should be less than 20 characters."]
     },
     emailAddress: {
         type: String,
@@ -29,7 +34,6 @@ const userSchema= mongoose.Schema({
         required: true,
         minlength: [6, "Password is too short"]
     }
-    // --> Possibly add instructionsCreated if required?
 },
 { timestamps: true });
 

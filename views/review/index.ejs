@@ -21,7 +21,11 @@
         </td>
         <td> <%= review.rating %></td>
         <td> <%= review.content %></td>
-        <td> <%= review.createdBy %></td>
+        <td>
+            <% review.createdBy.forEach(function(createdBy) { %> 
+                <div><%= createdBy.username %> </div>
+            <% }) %>
+        </td>
         <td> <%= moment(review.createdAt).fromNow() %></td>
         <td> <%= moment(review.updatedAt).fromNow() %></td>
 
