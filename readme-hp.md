@@ -124,3 +124,30 @@ Album update implemented as below:
     })
 ```
 
+User attached to reviews by Milos, using currentUser in hidden input field as follows:     
+`<input type="hidden" name="createdBy" value="<%= currentUser._id %>" />`       
+
+User firstName and lastName combined into username.     
+
+Linked reviews within albums eventually linking to usernames.       
+_This part required a solution from Saad, specifically:_        
+```
+    Album.findById(req.query.id).populate({ 
+        path: 'review',
+        populate: {
+          path: 'createdBy',
+          model: 'User'
+        } 
+```
+**One to highlight in presentation!**       
+
+Due to the fact that `createdBy` was set as an array, we required the following in `album/detail.ejs`:      
+`<div> Reviewed by: <a href="/review/detail?id=<%= review._id %>"><%= review.createdBy[0].username %></a>, rating: <%= review.rating %></div>`      
+This also includes a hyperlink to the review document!      
+
+Splitting workstream into protecting routes with IsLoggedIn and IsCorrectUser, and basic CSS formatting.        
+
+
+
+
+

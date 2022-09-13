@@ -1,0 +1,33 @@
+body{
+    font-family: 'Bebas Neue', cursive;
+    margin: 20px
+}
+nav{
+    font-weight: bolder;
+    color: white;
+    margin: -20px;
+}
+
+nav :visited{
+    color: white;
+}
+
+nav :hover, #main-logo{
+    color: goldenrod;
+}
+
+.navbar-collapse a {
+    margin: 0px 20px 0px 20px;
+}
+
+.white-text{
+    color: white
+}
+
+#nav-user :hover{
+    color: white;
+}
+
+#nav-user{
+    color: white;
+}
