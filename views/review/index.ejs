@@ -8,8 +8,6 @@
         <th> Review Author </th>
         <th> Created At </th>
         <th> Updated At </th>
-        <th> Edit </th>
-        <th> Delete </th>
     </tr>
 
 <% reviews.forEach(function(review){ %>  
@@ -29,8 +27,6 @@
         <td> <%= moment(review.createdAt).fromNow() %></td>
         <td> <%= moment(review.updatedAt).fromNow() %></td>
 
-        <td> <a href="/review/edit?id=<%= review._id %>">Edit</a></td>
-        <td> <a href="/review/delete?id=<%= review._id %>">Delete</a></td>
     </tr>
 <% }) %>
 
