@@ -1,7 +1,9 @@
 body{
-    font-family: 'Bebas Neue', cursive;
-    margin: 20px
+    font-family: 'Calistoga', cursive;
+    margin: 20px;
+    background-color: rgb(255, 240, 202);
 }
+
 nav{
     font-weight: bolder;
     color: white;
@@ -13,7 +15,7 @@ nav :visited{
 }
 
 nav :hover, #main-logo{
-    color: goldenrod;
+    color: rgb(252, 168, 85);
 }
 
 .navbar-collapse a {
@@ -31,3 +33,13 @@ nav :hover, #main-logo{
 #nav-user{
     color: white;
 }
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
