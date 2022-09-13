@@ -45,7 +45,13 @@ exports.album_index_get = (req, res) => {
 // HTTP GET - Albums Detail
 exports.album_detail_get = (req, res) => {
     // This is the bit that is causing us problems!
-    Album.findById(req.query.id).populate('review')
+    Album.findById(req.query.id).populate({ 
+        path: 'review',
+        populate: {
+          path: 'createdBy',
+          model: 'User'
+        } 
+      })
     .then
     (album => {
         res.render('album/detail', { album, moment });

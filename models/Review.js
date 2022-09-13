@@ -10,6 +10,7 @@ const reviewSchema = mongoose.Schema({
     // title: String,
     rating: Number,
     content: String,
+    // Let's change this from an array later
     createdBy: [{
         // This will be automatically updated whenever a User creates a review
         type: mongoose.Schema.Types.ObjectId,
