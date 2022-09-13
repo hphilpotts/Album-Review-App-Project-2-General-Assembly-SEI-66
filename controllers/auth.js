@@ -8,6 +8,15 @@ let passport = require('../helper/ppConfig');
 // require bcrypt for hashing password
 const bcrypt = require('bcrypt');
 const salt = 10;
+
+
+// Route for '/'
+
+exports.home_get = (req, res) => {
+    res.redirect("/review/index");
+};
+
+
 // API FOR ROOT ROUTE
 
 exports.landing_get = (req, res) => { //potentially exports.auth_landing_get

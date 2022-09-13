@@ -1,12 +1,12 @@
 # Project 2 Readme - Harry      
 
-## Day 01 - Planning:       
+## Day 00 - Planning:       
 08/09/22        
 Planning stage.     
 - Finalised idea of DIY Blog App.       
 - ERD and Wireframes completed.     
 
-## Day 02 - Production:     
+## Day 01 - Production:     
 09/09/22        
 App production started. Main focus today on basic structure of app.    
 
@@ -51,7 +51,7 @@ I am now on Read, Update and Delete functionality for Instructions:
 
 Committing changes.     
 
-## Day 03 - Production 2        
+## Day 02 - Production 2, Rewrites:              
 12/09/22        
 
 Milos has added the majority of auth functionality over the weekend. Pair coded in order to debug, tested working ok.       
@@ -100,4 +100,10 @@ Done and tested working ok: input fields populate with values, add input fields 
 **Consider including this code in the presentation!**       
 
 Views, paths, controllers and routes for Reviews well under way: pushing to finish before close of day.     
+
+## Day 03 - Production 3:       
+13/09/22        
+
+Got '/' working - if not signed in, this brings a landing page. If signed in, this goes to reviews home.        
+
 
