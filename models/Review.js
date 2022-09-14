@@ -5,11 +5,18 @@ const mongoose = require('mongoose');
 const reviewSchema = mongoose.Schema({
     album: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Album'
+        ref: 'Album',
+        required: true
     }],
     // title: String,
-    rating: Number,
-    content: String,
+    rating: {
+        type: Number,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
     // Let's change this from an array later
     createdBy: [{
         // This will be automatically updated whenever a User creates a review
