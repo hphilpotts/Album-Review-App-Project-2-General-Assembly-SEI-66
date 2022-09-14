@@ -1,4 +1,4 @@
-<h1> Reviews </h1>
+<h1 class="large-heading"> Reviews </h1>
 
 <table class="table table-striped align-middle">
     <tr>
@@ -6,6 +6,7 @@
         <th></th>
         <th> Rating: </th>
         <th> Review Author: </th>
+        <th></th>
         <th> Review added: </th>
     </tr>
 
@@ -27,9 +28,12 @@
         <td> <h3 class="review-rating"><%= review.rating %></h3></td>
         <td>
             <% review.createdBy.forEach(function(createdBy) { %> 
-                <div><h2><%= createdBy.username %></h2> </div>
+                <div><h4><%= createdBy.username %></h4> </div>
             <% }) %>
         </td>
+        <div class="review-box">
+            <td class="review-preview"><%= review.content %></td>
+        </div>
         <td> <%= moment(review.createdAt).fromNow() %></td>
 
     </tr>

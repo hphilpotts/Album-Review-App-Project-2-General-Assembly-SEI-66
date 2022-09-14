@@ -69,7 +69,17 @@ nav :hover, #main-logo{
     max-width: 300px;
   }
 
-  .review-rating{
-    font-size: 80px;
+  .review-preview{
+    white-space: nowrap;
+    overflow: clip;
+    text-overflow: ellipsis
+  }
+  .review-box, .review-preview{
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .large-heading, .review-rating{
+    font-size: 60px
   }
  
