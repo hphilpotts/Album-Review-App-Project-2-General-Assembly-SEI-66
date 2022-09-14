@@ -129,3 +129,11 @@ nav :hover, #main-logo{
   #copyright{
     font-size: 10px;
   }
+
+  .auth-form{
+    margin: 100px;
+    padding: 50px;
+    outline: 3px solid rgb(38, 38, 38);
+    border: 2px solid rgb(255, 130, 88);
+    border-radius: 20px;
+  }
