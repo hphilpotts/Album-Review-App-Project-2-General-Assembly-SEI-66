@@ -1,6 +1,6 @@
 <h1> Add Album </h1>
 
-<form method="POST" action="/album/add">
+<form method="POST" action="/album/add" enctype="multipart/form-data">
 
     <div class="form-group">
         <label>Title</label>
@@ -27,10 +27,12 @@
     <br>
 
     <div class="form-group">
-        <!-- this needs to change to user image upload -->
-        <label>Album Cover img URL</label>
-        <input type="text" name="albumCover" class="form-control"/>
-    </div>
+
+    <!-- multer  -->
+    <div class="form-group">
+        <label>Album Cover: </label>
+        <input type="file" name="image" class="form-control">
+        </div>
 
     <div class="form-group">
         <div id="genre-parent">
@@ -40,12 +42,16 @@
         <button type="button" id="add-genre" class="btn btn-light add-btn">+</button>
     </div>
     <br>
-    <button type="submit" class="btn btn-dark">Submit Album</button>
+    <input type="submit" class="btn btn-dark" name="Submit Album"></input>
 
 </form>
 
 <script
   src="https://code.jquery.com/jquery-3.6.1.min.js"
+
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
-<script src="/js/main"></script>
+<script src="/js/main.js"></script>
+
+
+
