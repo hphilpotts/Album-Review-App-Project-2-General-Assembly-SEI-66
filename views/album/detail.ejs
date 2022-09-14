@@ -1,33 +1,34 @@
 <div>
+    <div class="text-center">
     <div>
-        <h3><%= album.title %></h3> 
+        <h3 class="large-heading"><%= album.title %></h3> 
     </div>
     <img class="album-large"src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."><br><br>
     <!-- is this needed? uncomment if so! -->
     <!-- <div>Created: <%= moment(album.createdAt).fromNow() %></div> -->
-    <div>Artist: <%= album.artist %></div>
-    <div>Year: <%= album.year %></div>
+    <div class="larger-text small-shadow">Artist: <%= album.artist %></div>
+    <div class="larger-text small-shadow">Year: <%= album.year %></div><hr>
+    <div><span class="med-text highlighted-text">Genres:</span>
+        <% album.genre.forEach(function(genre) { %>
+            <!-- check if this is correct...? -->
+            <span> [<%= genre %>]</span>
+        <% }) %>
+            </div>
+    </div>
     <br>
-    <div>Track List:
+    <div><span class="med-text highlighted-text">Track List:</span>
         <ol> 
 <% album.trackList.forEach(function(track) {%>
         <li><%= track %></li>
 <% }) %>
         </ol>
-    </div>
-    <div>Genre:
-        <ul> 
-<% album.genre.forEach(function(genre) { %>
-    <!-- check if this is correct...? -->
-    <li> <%= genre %></li>
-<% }) %>
-        </ul>   
-    </div>
+    </div><hr>
+
     <!-- Linked review functionality -->
-    <div><h4>Linked reviews:</h4>
+    <div><h4 class="larger-text small-shadow">Linked reviews:</h4>
 <% album.review.forEach(function(review) { %>
     <!-- Make the below a link for each! -->
-    <div> <a href="/review/detail?id=<%= review._id %>">Review by <%= review.createdBy[0].username %>, rating: <%= review.rating %></a></div>
+    <div style="margin-left: 20px;"> <a href="/review/detail?id=<%= review._id %>">Review by <%= review.createdBy[0].username %>, rating: <%= review.rating %></a></div>
     <!-- <div> Review rating: <%= review.rating %> </div>
     <div> Review content: <%= review.content %> </div> -->
 <% }) %>

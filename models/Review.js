@@ -22,7 +22,7 @@ const reviewSchema = mongoose.Schema({
         // This will be automatically updated whenever a User creates a review
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }]
+    }],
 },
 {timestamps: true});
 

@@ -51,7 +51,7 @@ I am now on Read, Update and Delete functionality for Instructions:
 
 Committing changes.     
 
-## Day 02 - Production 2, Rewrites:              
+## Day 02 - Production, Rewrites:              
 12/09/22        
 
 Milos has added the majority of auth functionality over the weekend. Pair coded in order to debug, tested working ok.       
@@ -101,7 +101,7 @@ Done and tested working ok: input fields populate with values, add input fields 
 
 Views, paths, controllers and routes for Reviews well under way: pushing to finish before close of day.     
 
-## Day 03 - Production 3:       
+## Day 03 - Production:       
 13/09/22        
 
 Got '/' working - if not signed in, this brings a landing page. If signed in, this goes to reviews home.        
@@ -146,6 +146,19 @@ Due to the fact that `createdBy` was set as an array, we required the following 
 This also includes a hyperlink to the review document!      
 
 Splitting workstream into protecting routes with IsLoggedIn and IsCorrectUser, and basic CSS formatting.        
+
+Basic formatting completed using bootstrap and CSS on `layout.ejs`.     
+
+Milos: IsCorrectUser removed, instead 'edit'/'delete' buttons are hidden to non-creators using EJS.        
+
+Further fomatting done across album index, detail.      
+
+## Day 04 - Production:     
+14/09/22        
+
+Further formatting work done on reviews pages. Further links added, paths adjusted to make app more user-friendly.      
+
+Milos working on Cloudinary Image uploads.      
 
 
 

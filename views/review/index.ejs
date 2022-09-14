@@ -14,7 +14,7 @@
     <tr>
         <td>
             <% review.album.forEach(function(album) { %> 
-                <div> <a href="/review/detail?id=<%= review._id %>"><h2><%= album.title %></h2></a> </div>
+                <div> <a href="/review/detail?id=<%= review._id %>"><h2 class="highlighted-text"><%= album.title %></h2></a> </div>
             <% }) %>
         </td>
 

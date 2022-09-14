@@ -1,31 +1,50 @@
 <div>
     <% review.album.forEach(function(album) { %> 
-        <h2> <%= album.title %> </h2>
+        <h2 class="large-heading text-center"> <span><%=album.artist%>:</span><%= album.title %></h2>
     <% }) %>
+</div><br><hr><br>
+
+<!-- Improvement for later: get album art to sit side-by-side with review by, rating etc -->
+
+<div class="text-center">
+<% review.album.forEach(function(element) { %>
+    <td>
+        <a href="/review/detail?id=<%= review._id %>">
+            <img class="album-large album-icon"src="<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
+        </a>
+    </td>
+<% }) %>
 </div>
 
-<div>
-    Rating: <%= review.rating %>
+<div class="text-center">
+    <br>
+    <p class="highlighted-text small-shadow larger-text">A review by <%= review.createdBy[0].username %></p>
+    <p class="highlighted-text small-shadow larger-text">User rating:</p> <span class="review-rating"><%= review.rating %></span>
+</div>
+<% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
+    <hr>
+    <div class="text-center">
+    <a class="user-edit" href="/review/edit?id=<%= review._id %>">Edit Review</a>
+    <a class="user-edit" href="/review/delete?id=<%= review._id %>">Delete Review</a>
+    </div>
+<% } %>
+<hr>
+<div class="review-content">
+    <%= review.content %>
 </div>
 <div>
-    Content: <%= review.content %>
-</div>
-<div>
-    CreatedAt: <%= moment(review.createdAt).fromNow() %>
-</div>
-<div>
-   UpdatedAt: <%= moment(review.updatedAt).fromNow() %>
-</div>
+    <!-- Review added: <%= moment(review.createdAt).fromNow() %> -->
+</div><hr>
 
 <% review.createdBy.forEach(function(createdBy){ %>
     <div> Written By: <%= createdBy.username %></div>
     <div> Email Address: <%= createdBy.emailAddress %></div>
-    <div> Created At: <%= moment(createdBy.createdAt).fromNow() %></div>
-    <hr>
+    <div> Review added: <%= moment(createdBy.createdAt).fromNow() %></div>
 <%  }) %>
 
+<div>
+    Last edited: <%= moment(review.updatedAt).fromNow() %>
+ </div>
 
-<% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
-    <td> <a href="/review/edit?id=<%= review._id %>">Edit</a></td>
-    <td> <a href="/review/delete?id=<%= review._id %>">Delete</a></td>
-    <% } %>
+<div class="highlighted-text">
+</div>
