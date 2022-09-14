@@ -1,10 +1,10 @@
-<h2>Albums</h2>
+<h2 class="large-heading text-center">Albums</h2>
 <br>
 
 <!-- Using a table for now to check data works ok
 -- will certainly be changing format further down the line! -->
 <table class="table table-striped align-middle">
-    <tr>
+    <tr class="larger-text small-shadow">
         <th>Album Cover</th>
         <th>Title</th>
         <th>Artist</th>
@@ -15,13 +15,13 @@
         <th>Genres</th>
         <!-- <th>Reviews</th> -->
         <th>Edit</th>
-        <th>Delete</th>
+        <!-- <th>Delete</th> -->
     </tr>
-<% albums.forEach(function(album) { %> 
+<% albums.reverse().forEach(function(album) { %> 
     <tr>
         <td><img class="album-icon" src="..<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
-        <td> <a class="peach" href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
-        <td> <%= album.artist %></td>
+        <td> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
+        <td class="med-text"> <%= album.artist %></td>
         <td> <%= album.year %></td>
         <!-- <td> <%= album.trackList %></td> -->
         <!-- <td> <%= album.albumCover %></td> -->
@@ -34,7 +34,7 @@
         </td>
         <!-- <td> <%= album.review %></td> -->
         <td> <a href="/album/edit?id=<%= album._id%>">Edit</a></td>
-        <td> <a href="/album/delete?id=<%= album._id%>">Delete</a></td>
+        <!-- <td> <a href="/album/delete?id=<%= album._id%>">Delete</a></td> -->
     </tr>
 <% }) %>
 

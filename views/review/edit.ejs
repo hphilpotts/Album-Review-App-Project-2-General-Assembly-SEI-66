@@ -1,6 +1,6 @@
-<h1> Edit Review </h1>
+<h1 class="large-heading text-center"> Edit Review </h1>
 
-<form class="form-group" method="POST" action="/review/update?_method=PUT">
+<form class="auth-form med-text small-shadow" style="margin-top: 30px;" method="POST" action="/review/update?_method=PUT" >
 
 <!--  We need to show the album title here! -->
     <!-- <div>
@@ -14,8 +14,8 @@
     </div>
 
     <div>
-        <label>Content:</label>
-        <input class="form-control" name="isPublished" type="text" value="<%= review.content %>" />
+        <label>Review:</label>
+        <textarea class="form-control" name="isPublished" type="text" style="height: 70vh;"><%= review.content %></textarea>
     </div>
 
     <!-- <div>

@@ -158,7 +158,33 @@ Further fomatting done across album index, detail.
 
 Further formatting work done on reviews pages. Further links added, paths adjusted to make app more user-friendly.      
 
-Milos working on Cloudinary Image uploads.      
+Milos working on Cloudinary Image uploads.     
+
+Ultimately decided to go with `Multer` - now up and running.        
+
+Formatting continues site-wide.     
+
+Milos working on Bootstrap Cards for Review index.      
+
+_Very pleased with this code snippet:_      
+```
+    <div><span class="med-text highlighted-text">Genres:&nbsp;&nbsp;</span>
+        <% let counter = 0;
+        album.genre.forEach(function(genre) { 
+        counter++ %>
+        <a href="">
+            <span class="med-text highlighted-text">
+            <%= genre %>
+        <% if (counter < album.genre.length) { %>
+            <%= ', ' %>&nbsp;
+        <% } else {%>
+            <%= '.' %>
+        <% } %>
+            </span>
+        </a>
+        <% }) %>
+    </div>
+```
 
 
 

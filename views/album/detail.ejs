@@ -8,17 +8,28 @@
     <!-- <div>Created: <%= moment(album.createdAt).fromNow() %></div> -->
     <div class="larger-text small-shadow">Artist: <%= album.artist %></div>
     <div class="larger-text small-shadow">Year: <%= album.year %></div><hr>
-    <div><span class="med-text highlighted-text">Genres:</span>
-        <% album.genre.forEach(function(genre) { %>
-            <!-- check if this is correct...? -->
-            <span> [<%= genre %>]</span>
+    <div><span class="med-text highlighted-text">Genres:&nbsp;&nbsp;</span>
+        <% let counter = 0;
+        album.genre.forEach(function(genre) { 
+        counter++ %>
+        <a href="">
+            <span class="med-text highlighted-text">
+            <%= genre %>
+        <% if (counter < album.genre.length) { %>
+            <%= ', ' %>&nbsp;
+        <% } else {%>
+            <%= '.' %>
+        <% } %>
+            </span>
+        </a>
         <% }) %>
-            </div>
+    </div>
     </div>
     <br>
     <div><span class="med-text highlighted-text">Track List:</span>
         <ol> 
-<% album.trackList.forEach(function(track) {%>
+<% album.trackList.forEach(function(track) {
+    %>
         <li><%= track %></li>
 <% }) %>
         </ol>
