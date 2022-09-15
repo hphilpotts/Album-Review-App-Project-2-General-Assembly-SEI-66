@@ -98,11 +98,11 @@ a:hover{
   }
 
   .review-preview{
-    overflow: hidden;
+    /* overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
    -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
+   -webkit-box-orient: vertical; */
   }
   /* .review-box, .review-preview{
     
@@ -192,6 +192,9 @@ a:hover{
     font-size: 16px;
     text-align: center;
   }
+  .mobile-large-text{
+    font-size: 30px;
+  }
   .mobile-hide{
     display: none;
   }
@@ -201,48 +204,13 @@ a:hover{
   .card-width{
 
     min-width: 300px;
-  } */
-
-
-  .heading-review{
-    text-align: center;
   }
 
-  .row{
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-
-  .container{
-    width: 500px;
-    /* border: 1px solid black; edit colour */
-    /*background: pick a colour */
-    display: flex;
-  }
-
-  .img-div{
-    padding: 10px;
-    /* background: same as .container */
+  .title-table{
+    max-width: 400px;
   }
   
-  .review-img{
-    max-width: 220px;
+  .two-line{
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
-  .update-time{
-    display: flex;
-    align-self: end;
-  }
-  .body-div{
-    padding: 10px 10px 0px 0px;
-
-  }
-
-
-
-
-
-
-
-
