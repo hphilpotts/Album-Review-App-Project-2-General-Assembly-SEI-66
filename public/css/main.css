@@ -4,6 +4,15 @@ body{
     background-color: rgb(255, 240, 202);
 }
 
+a{
+  color: rgb(38, 38, 38);
+  text-decoration: none;
+}
+a:hover{
+  color: rgb(255, 130, 88);
+  text-shadow: 1px 1px white;
+}
+
 nav{
     font-weight: bolder;
     color: white;
@@ -48,8 +57,12 @@ nav :hover, #main-logo{
     float: none;
     vertical-align: top;
   }
+
+.nav-link{
+    color: white;
+  }
   
-  .navbar .navbar-collapse {
+.navbar .navbar-collapse {
     text-align: center;
   }
 
@@ -59,11 +72,11 @@ nav :hover, #main-logo{
     font-size: 20px;
   } */
 
-  a{
+a{
     color: rgb(38, 38, 38);
     text-decoration: none;
   }
-  a:hover{
+a:hover{
     color: rgb(255, 130, 88);
     text-shadow: 1px 1px white;
   }
@@ -75,8 +88,7 @@ nav :hover, #main-logo{
 
   .album-icon{
     max-width: 150px;
-    outline: 1px solid rgb(38, 38, 38);
-    border: 1px solid rgb(38, 38, 38);
+    border: 2px solid rgb(38, 38, 38);
     border-radius: 5px;
     /* max-height: 150px; */
   }
@@ -131,9 +143,51 @@ nav :hover, #main-logo{
   }
 
   .auth-form{
-    margin: 100px;
-    padding: 50px;
+    margin: 5%;
+    padding: 10%;
     outline: 3px solid rgb(38, 38, 38);
     border: 2px solid rgb(255, 130, 88);
     border-radius: 20px;
+    
   }
+
+  /* table {
+    table-layout:fixed;
+  } */
+
+  td { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+}
+.browser-hide{
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  /* horizontal scrollbar for tables if mobile screen */
+  .tablemobile {
+      overflow-x: auto;
+      display: block;
+  }
+  .form-control{
+    min-width: 200px;
+  }
+  .auth-form{
+    margin: 5%;
+    padding: 10%;
+    outline: none;
+    border: 3px solid rgb(38, 38, 38);
+    border-radius: 20px;
+  }
+  .mobile-small-text{
+    font-size: 12px;
+  }
+  .mobile-med-text{
+    font-size: 16px;
+    text-align: center;
+  }
+  .mobile-hide{
+    display: none;
+  }
+}
