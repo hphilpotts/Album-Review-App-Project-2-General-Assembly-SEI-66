@@ -185,6 +185,9 @@ _Very pleased with this code snippet:_
         <% }) %>
     </div>
 ```
+I attempted to set a transparent background...without success.      
+
+
 
 
 

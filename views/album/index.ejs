@@ -19,7 +19,7 @@
     </tr>
 <% albums.reverse().forEach(function(album) { %> 
     <tr>
-        <td><img class="album-icon" src="..<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
+        <td><img class="album-icon" src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
         <td> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" > <h3><%= album.title %></h3></a></td>
         <td class="med-text"> <%= album.artist %></td>
         <td> <%= album.year %></td>
