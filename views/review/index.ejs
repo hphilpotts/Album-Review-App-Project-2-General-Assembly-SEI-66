@@ -1,24 +1,23 @@
-<% reviews.forEach(function(review){ %>
-<div class="card mb-3" style="width: 18rem;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <% review.album.forEach(function(element) { %>
-        <img src="<%= element.albumCover%>" class="img-fluid rounded-start" alt="...">
-        <% }) %>
-
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-            <% review.album.forEach(function(album) { %> 
-                <a href="/review/detail?id=<%= review._id %>">
-                    <h5 class="card-title"><%= album.title %>: &nbsp; &nbsp;
-          <% }) %>
-          <span class=""><%= review.rating %>/10</span></h5></a>
-          
-          <p class="card-text review-preview"><%= review.content %></p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
+<h2 class="heading-review">Reviews</h2>
+<div class="row">
+  <% reviews.forEach(function(review){ %>
+  <div class="container">
+    <div class="img-div">
+      <% review.album.forEach(function(element) { %>
+      <img src="<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
+      <% }) %>
+    </div>
+    <div class="body-div">
+      <% review.album.forEach(function(album) { %>
+      <a href="/review/detail?id=<%= review._id %>">
+        <h5 class="card-title">
+          <%= album.title %>: &nbsp; &nbsp; <% }) %>
+          <span class=""><%= review.rating %>/10</span>
+        </h5></a
+      >
+      <p class="review-preview"><%= review.content %></p>
+      <p><small class="text-muted update-time"><%= moment(review.createdAt).fromNow() %></small></p>
     </div>
   </div>
   <% }) %>
+</div>

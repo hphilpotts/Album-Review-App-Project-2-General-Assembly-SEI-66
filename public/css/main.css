@@ -73,13 +73,13 @@ nav :hover, #main-logo{
     margin: 2px;
   }
 
-  .album-icon{
+  /* .album-icon{
     max-width: 150px;
     outline: 1px solid rgb(38, 38, 38);
     border: 1px solid rgb(38, 38, 38);
     border-radius: 5px;
     /* max-height: 150px; */
-  }
+  /* } */
 
   .album-large{
     max-width: 300px;
@@ -140,8 +140,50 @@ nav :hover, #main-logo{
     border-radius: 20px;
   }
 
-  .card-width{
+  /* .card-width{
     min-width: 300px;
+  } */
+
+
+  .heading-review{
+    text-align: center;
   }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .container{
+    width: 500px;
+    /* border: 1px solid black; edit colour */
+    /*background: pick a colour */
+    display: flex;
+  }
+
+  .img-div{
+    padding: 10px;
+    /* background: same as .container */
+  }
+  
+  .review-img{
+    max-width: 220px;
+  }
+
+  .update-time{
+    display: flex;
+    align-self: end;
+  }
+  .body-div{
+    padding: 10px 10px 0px 0px;
+
+  }
+
+
+
+
+
+
 
 
