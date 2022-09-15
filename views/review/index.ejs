@@ -1,24 +1,41 @@
-<% reviews.forEach(function(review){ %>
-<div class="card mb-3" style="width: 18rem;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <% review.album.forEach(function(element) { %>
-        <img src="<%= element.albumCover%>" class="img-fluid rounded-start" alt="...">
-        <% }) %>
+<h1 class="large-heading text-center"> Reviews </h1>
 
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
+<table class="table table-striped align-middle">
+    <tr class="mobile-hide">
+        <th> Album Title: </th> <!--Eventually make album title / name / title consistent-->
+        <th></th>
+        <th> Rating: </th>
+        <th> Review Author: </th>
+        <th></th>
+        <th> Review added: </th>
+    </tr>
+
+<% reviews.forEach(function(review){ %>  
+    <tr>
+        <td>
             <% review.album.forEach(function(album) { %> 
-                <a href="/review/detail?id=<%= review._id %>">
-                    <h5 class="card-title"><%= album.title %>: &nbsp; &nbsp;
-          <% }) %>
-          <span class=""><%= review.rating %>/10</span></h5></a>
-          
-          <p class="card-text review-preview"><%= review.content %></p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div> <a href="/review/detail?id=<%= review._id %>"><h2 class="highlighted-text mobile-med-text"><%= album.title %></h2></a> </div>
+            <% }) %>
+        </td>
+    <% review.album.forEach(function(element) { %>
+        <td>
+            <a href="/review/detail?id=<%= review._id %>">
+                <img class="album-icon"src="<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
+            </a>
+        </td>
+    <% }) %>
+        <td> <h3 class="review-rating mobile-large-text"><%= review.rating %></h3></td>
+        <td>
+            <% review.createdBy.forEach(function(createdBy) { %> 
+                <div><h4 class="mobile-small-text"><%= createdBy.username %></h4> </div>
+            <% }) %>
+        </td>
+        <div class="review-box mobile-hide">
+            <td class="review-preview mobile-hide"><%= review.content %></td>
         </div>
-      </div>
-    </div>
-  </div>
-  <% }) %>
+        <td class="mobile-hide"> <%= moment(review.createdAt).fromNow() %></td>
+    </tr>
+<% }) %>
+
+
+</table>

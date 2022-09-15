@@ -189,6 +189,9 @@ a:hover{
     font-size: 16px;
     text-align: center;
   }
+  .mobile-large-text{
+    font-size: 30px;
+  }
   .mobile-hide{
     display: none;
   }
