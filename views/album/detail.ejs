@@ -20,12 +20,9 @@
         })
         console.log(ratingsArray) 
         const average = ratingsArray.reduce((a, b) => a + b, 0) / ratingsArray.length;
-        console.log(average);
-        if (!average) { %>
-      <br><span>not yet rated!</span>
-        <% } else{ %>
+        console.log(average) %>
        <span class="avg-rating"> <%=average%> </span>
-        <% } %>
+        <% %>
       </div>
     <hr />
     <div>
