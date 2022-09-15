@@ -98,14 +98,16 @@ a:hover{
 }
 
 .review-preview{
-  white-space: nowrap;
-  overflow: clip;
-  text-overflow: ellipsis
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
 }
-.review-box, .review-preview{
-  max-width: 200px;
-  max-height: 200px;
-}
+/* .review-box, .review-preview{
+  
+  /* max-height: 200px; */
+/* } */ 
 
 .large-heading, .review-rating{
   font-size: 60px;
@@ -151,6 +153,9 @@ a:hover{
   
 }
 
+
+/* .card-width{
+=======
 /* table {
   table-layout:fixed;
 } */
@@ -187,7 +192,43 @@ display: none;
   font-size: 16px;
   text-align: center;
 }
+.mobile-large-text{
+  font-size: 30px;
+}
 .mobile-hide{
   display: none;
 }
+}
+
+
+.card-width{
+
+  min-width: 300px;
+} */
+
+
+.heading-review{
+  text-align: center;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.container{
+  width: 500px;
+  /* border: 1px solid black; edit colour */
+  /*background: pick a colour */
+  display: flex;
+}
+
+.title-table{
+  max-width: 400px;
+}
+
+.two-line{
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
