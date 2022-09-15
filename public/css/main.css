@@ -86,14 +86,16 @@ nav :hover, #main-logo{
   }
 
   .review-preview{
-    white-space: nowrap;
-    overflow: clip;
-    text-overflow: ellipsis
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
   }
-  .review-box, .review-preview{
-    max-width: 200px;
-    max-height: 200px;
-  }
+  /* .review-box, .review-preview{
+    
+    /* max-height: 200px; */
+  /* } */ 
 
   .large-heading, .review-rating{
     font-size: 60px;
@@ -137,3 +139,9 @@ nav :hover, #main-logo{
     border: 2px solid rgb(255, 130, 88);
     border-radius: 20px;
   }
+
+  .card-width{
+    min-width: 300px;
+  }
+
+
