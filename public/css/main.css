@@ -98,11 +98,11 @@ a:hover{
   }
 
   .review-preview{
-    overflow: hidden;
+    /* overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
    -webkit-line-clamp: 3;
-   -webkit-box-orient: vertical;
+   -webkit-box-orient: vertical; */
   }
   /* .review-box, .review-preview{
     
@@ -202,4 +202,11 @@ a:hover{
     min-width: 300px;
   }
 
-
+  .title-table{
+    max-width: 400px;
+  }
+  
+  .two-line{
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

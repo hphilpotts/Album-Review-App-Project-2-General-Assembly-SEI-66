@@ -6,7 +6,7 @@
 <table class="table align-middle table-responsive-sm tablemobile">
     <tr class="larger-text small-shadow mobile-hide">
         <th>Album Cover</th>
-        <th>Title</th>
+        <th class="title-table">Title</th>
         <th>Artist</th>
         <th>Year</th>
         <!-- hidden tracklist as it is probably not needed in index -->
@@ -20,7 +20,7 @@
 <% albums.reverse().forEach(function(album) { %> 
     <tr>
         <td><img class="album-icon" src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
-        <td> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" > <h3 class="mobile-med-text"><%= album.title %></h3></a></td>
+        <td class="two-line title-table"> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" > <h3 class="mobile-med-text"><%= album.title %></h3></a></td>
         <td class="med-text mobile-med-text"> <%= album.artist %></td>
         <td class="mobile-hide"> <%= album.year %></td>
         <!-- <td> <%= album.trackList %></td> -->

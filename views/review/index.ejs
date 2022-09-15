@@ -1,6 +1,6 @@
 <h1 class="large-heading text-center"> Reviews </h1>
 
-<table class="table table-striped align-middle">
+<table class="table align-middle">
     <tr class="mobile-hide">
         <th> Album Title: </th> <!--Eventually make album title / name / title consistent-->
         <th></th>
@@ -10,7 +10,7 @@
         <th> Review added: </th>
     </tr>
 
-<% reviews.forEach(function(review){ %>  
+<% reviews.reverse().forEach(function(review){ %>  
     <tr>
         <td>
             <% review.album.forEach(function(album) { %> 
@@ -31,7 +31,12 @@
             <% }) %>
         </td>
         <div class="review-box mobile-hide">
-            <td class="review-preview mobile-hide"><%= review.content %></td>
+            <% let previewString = review.content;
+            if (previewString.length < 150) { %>
+                <td class="review-preview mobile-hide"><%= previewString %></td>
+            <% } else { previewString = previewString.substring(0,150) } %>
+                <td class="review-preview mobile-hide"><%= previewString + '...'%></td>
+            <% %>
         </div>
         <td class="mobile-hide"> <%= moment(review.createdAt).fromNow() %></td>
     </tr>
