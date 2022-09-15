@@ -97,13 +97,13 @@ a:hover{
     max-width: 300px;
   }
 
-  .review-preview{
+  /* .review-preview{ */
     /* overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
    -webkit-line-clamp: 3;
    -webkit-box-orient: vertical; */
-  }
+  /* } */
   /* .review-box, .review-preview{
     
     /* max-height: 200px; */
