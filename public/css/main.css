@@ -86,12 +86,12 @@ a:hover{
     margin: 2px;
   }
 
-  .album-icon{
+  /* .album-icon{
     max-width: 150px;
     border: 2px solid rgb(38, 38, 38);
     border-radius: 5px;
     /* max-height: 150px; */
-  }
+  /* } */
 
   .album-large{
     max-width: 300px;
@@ -153,6 +153,9 @@ a:hover{
     
   }
 
+
+  /* .card-width{
+=======
   /* table {
     table-layout:fixed;
   } */
@@ -199,7 +202,26 @@ a:hover{
 
 
   .card-width{
+
     min-width: 300px;
+  } */
+
+
+  .heading-review{
+    text-align: center;
+  }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .container{
+    width: 500px;
+    /* border: 1px solid black; edit colour */
+    /*background: pick a colour */
+    display: flex;
   }
 
   .title-table{
