@@ -1,4 +1,4 @@
-<h2 class="heading-review">Reviews</h2>
+<h2 class="heading-review large-heading text-center">Reviews</h2>
 <div class="row">
   <% reviews.forEach(function(review){ %>
   <div class="container">
@@ -10,12 +10,15 @@
     <div class="body-div">
       <% review.album.forEach(function(album) { %>
       <a href="/review/detail?id=<%= review._id %>">
-        <h5 class="card-title">
+        <h5 class="card-title small-shadow">
           <%= album.title %>: &nbsp; &nbsp; <% }) %>
           <span class=""><%= review.rating %>/10</span>
         </h5></a
       >
       <p class="review-preview"><%= review.content %></p>
+    <% review.createdBy.forEach(function(createdBy) { %> 
+      <p><small class="mobile-small-text"><%= createdBy.username %></small></p>
+    <% }) %>
       <p><small class="text-muted update-time"><%= moment(review.createdAt).fromNow() %></small></p>
     </div>
   </div>

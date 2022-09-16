@@ -187,6 +187,13 @@ _Very pleased with this code snippet:_
 ```
 I attempted to set a transparent background...without success.      
 
+Efforts now switched to ensure mobile responsiveness.       
+
+## Day 05 - Production:     
+15/09/22        
+
+A challengi
+
 
 
 
