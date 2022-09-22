@@ -30,7 +30,8 @@
     <hr />
     <div>
       <span class="med-text highlighted-text">Genres:&nbsp;&nbsp;</span>
-      <% let counter = 0; album.genre.forEach(function(genre) { counter++ %>
+      <% let counter = 0; 
+      album.genre.forEach(function(genre) { counter++ %>
       <a href="">
         <span class="med-text highlighted-text">
           <%= genre %> <% if (counter < album.genre.length) { %> <%= ', '

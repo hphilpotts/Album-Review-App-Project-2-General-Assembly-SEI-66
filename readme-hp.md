@@ -38,7 +38,7 @@ I am now moving to setting up 'Create Instructions':
 - `add.ejs` completed, GET API and controller set up. Had been missing `app.set('view engine', 'ejs');` from `server.js`. Now tested working ok.        
 - now POST API added, tested working ok.        
 
-_First significant merge conflicts, on_ `server.js`_as expected, due to parallel edits. Eventually resovled through VSCode merge editor._       
+_First significant merge conflicts, on_ `server.js` _as expected, due to parallel edits. Eventually resovled through VSCode merge editor._       
 
 Landing page integrated into auth views/ctrl/route.     
 
@@ -192,7 +192,48 @@ Efforts now switched to ensure mobile responsiveness.
 ## Day 05 - Production:     
 15/09/22        
 
-A challengi
+A challenging day today for both of us:     
+
+Getting cards working through Bootstrap caused us such issues that on Ana's advice we made the call to switch the cards to vanilla CSS. I think the issue lies with a) conflict between main.css styles and Bootstrap styles, and b) what we wanted was outside the scope of Bootstrap customisation.       
+
+The good news is that Milos has now got the cards working, looking good and responding to screen size changes.      
+
+On my side, I had a good start to the day, with great progress made on mobile responsiveness. This was largely achieved through removing CSS positioning and leaning on Bootstrap in order to resize.       
+
+In some cases, this was not enough, esp. on tables. In order to get around this, I used `display: hide` classes within a media query in order to hide unneeded information when viewed on a smaller screen.     
+
+Progress ground to a halt when we found that uploaded album art started disappearing. The cause was not clear which triggered a revert to earlier commits. This did not solve the problem - _not surprisingly as the code edited should not have affected images or Multer_ - but meant losing a lot of work and time.      
+
+Progress further ground to a halt when attempting to merge branches / repos. As we had been editing in parallel - Milos working on the new review index view, I had been working on the old one - and I had made the mistake of editing in `master`, when we came to merge at the end of the day we saw conflict after conflict.        
+
+Finally at about 5:45pm (now the evening before presentation day) we managed to merge and host our code, albeit with minimal content.       
+
+## Day 06 - Presentation        
+16/09/22        
+
+I'm making minor (and I mean **minor**) edits prior to presentation: added a couple of CSS classes and a `review.createdBy` EJS snippet to `/review/index.ejs`.     
+
+Aaaand of course we see problems: it turns out that when a new push is sent to heroku, album art uploaded since the last push is lost. Fortunately, we only lost a small amount of work. _And, crucially, we now know what the problem is_!
+
+I have promised **no more** `master` **edits or pushes** until after we present so that we don't lose any more content!     
+
+Initially, I had planned to clean up code in the `dev` branch, removing `console.log()` statements, taking out comments no longer needed, refactoring etc. _Ultimately, changed my mind in the end and decided to leave things as they were!_       
+
+**Presentation completed successfully!**
+
+A few hours after the presentation, the disappearing image issue happened again. Some research came up with the following from _stackoverflow.com_:     
+```
+I'm not sure why your uploads aren't being saved; you should be able to save them temporarily.
+
+But this won't work long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).
+
+Heroku recommends storing uploads on something like Amazon S3. Here's a guide for doing it specifically with Node.js.
+
+Once you've stored your files on S3 you should be able to retrieve them using an appropriate library or possibly over HTTP, depending on how you've configured your bucket.
+```     
+
+
+
 
 
 

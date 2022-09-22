@@ -25,10 +25,10 @@ const userSchema= mongoose.Schema({
 },
 { timestamps: true });
 
-// -- Verify Password functionality, ignore now but add later during auth development -- //
+// -- Verify Password functionality -- //
 userSchema.methods.verifyPassword = function(password) { // password is passed to us as a parameter
-    console.log("password from user: " + password);
-    console.log("password from database: " + this.password);
+    // console.log("password from user: " + password);
+    // console.log("password from database: " + this.password);
     return bcrypt.compareSync(password /* plaintext */, this.password) /*encrypted*/
     // if both match, return true, else false
         // this return is passed in ppConfig.js
