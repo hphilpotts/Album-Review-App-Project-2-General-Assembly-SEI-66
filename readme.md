@@ -1,5 +1,7 @@
 # Project 2 Readme - Harry      
 
+(see readme.pdf for full readme)
+
 ## Day 00 - Planning:       
 08/09/22        
 Planning stage.     
