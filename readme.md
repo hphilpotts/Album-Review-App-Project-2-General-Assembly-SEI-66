@@ -63,7 +63,9 @@ Some key learnings from this project were as follows:
 - Debugging as a pair is a great way of resolving issues quickly when you have run out of ideas working solo. Fresh eyes and a new perspective are often the key to unlocking a problem straight away!      
 - It's fine to change your project idea (if you do it early enough).     
 - EJS is still just JavaScript (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app.      
-- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication was required.     
+- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication was required. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
+
+![Trello Board screenshot](public/readme/Trello.png)      
 
 ## Successes and Challenges:      
 
@@ -73,6 +75,7 @@ Main 'wins' and successs from this project included:
 - Gaining confidence working with the Express framework, implementing CRUD operations, writing in EJS. Also, building a clearer understanding around the concepts of frontend/client-side and backend/server-side.          
 - Getting experience working as a team rather than solo, as well as buidling confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, provding support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
 - Building confidence working with CSS: at times I struggled with CSS in Unit/Project 1, however during this project I found the concepts that previously seemed challenging - for example, positioning and flexbox - started to make more and more sense the longer I worked on them and the more issues I resolved.       
+- Seeing an API work correctly after a lot of work was a great feeling and very quickly got me interested in working on backend code.              
 
 Challenges faced during the project included:       
 - Managing Git/GitHub repositories, forks, branches and merges between two contributors for the first time. At points this was challenging, however this also made for a great learning experience (despite some dark moments where time and/or work was lost).      
@@ -89,4 +92,64 @@ Challenges faced during the project included:
 
 ## Future improvements:     
 
+- All image upload functionality fixed and stabilised.      
+- Full mobile-responsive formatting.        
+- Delete album functionality hidden, edit functionality protected.      
+- Spotify API for album info, artwork.      
+- Change ‘add review’ functionality where user can click ‘add review’ button on album.      
+- Search and filter by users, artists, genres.      
+- Refactor code and remove unneeded comments, console.logs() etc.       
+- Come up with a better name...!        
+
 ## Production Process:      
+
+### 08/09/22 | Day 0 | Brief issued, planning:      
+
+Intial project idea was a 'DIY' app where users could upload and share instructions and projects. We set up our Trello board, and wireframed our project and wrote out our ERD [here on Figma](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
+
+![ERD on Figma](public/readme//ERD.png)     
+
+![Wireframe 1 from Figma](public/readme/wireframe1.png)     
+
+![Wireframe 1 from Figma](public/readme/wireframe2.png)     
+
+This idea was changed to an Album Review App on day 2: this was an idea that we were both more excited about and therefore both bought into more.       
+    
+### 09/09/22 | Day 1 | Production:      
+
+My primary focus today was on getting the app structure setup: server config, MVC architecture, key dependencies; and getting our respective repsitories set up correctly.      
+
+After setting up the app, adding config to `server.js`, and creating our Models based on our ERD, I then moved on to my first CRUD APIs and views.      
+
+We decided early on that clearly and cleanly splitting workstreams was helpful, as it minimised the time we spent editing the same files at the same time (thus reducing conflicts) and reduced the liklihood of duplication of work.       
+
+Despite this, we still ran into merge issues early on. In hindsight, the issues seen could have been minimised by running `git fetch` in the forked repo and resolving merge issues there, rather than pushing two strongly differing versions at the same time and resolving in the main reop. Eventually through screensharing we were able to fix merge issues and get going again.      
+
+### 12/09/22 | Day 2 | Production:      
+
+After the weekend we made the decision to switch project direction and go for and Album Review App rather than a DIY one - I'm really glad we did this, and it was early enough in the project that judicious use of 'find + replace' was enough to quickly complete the needed changes.        
+
+I quickly found when trying to implement 'add another input field to form' functionality that 'vanilla' JS DOM manipulation wasn't working as expected when I wrote:        
+
+```
+<%  const newInput = document.createElement("input");
+    newInput.setAttribute('type', 'text');
+    newInput.setAttribute('name', 'trackList');
+    newInput.setAttribute('class', 'form-control');
+    const parentElement = document.getElementById('track-parent');
+    function newElement(){
+        parentElement.appendChild(newInput);
+    }
+    document.getElementById("add-field").addEventListener(click, newElement);
+%>
+```
+
+I was getting `document is not defined` - a quick bit of googling revealed that "You can't use document inside your ejs tags because that code is executed on the server.". A change of approach was required!      
+
+First, using similar code in a `main.js` file allowed for just one input box to be added. I then tried using jQuery instead like so and it worked:      
+
+![jQuery to the rescue](public/readme/jquery.png)       
+
+Outside of the above puzzle, this was a productive day, and I had learned important lessons about using EJS as above!       
+
+### 13/09/22 | Day 3 | 
