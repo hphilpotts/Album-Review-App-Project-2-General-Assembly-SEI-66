@@ -69,8 +69,6 @@ Some key learnings from this project were as follows:
 
 ## Successes and Challenges:      
 
-![Broken image links](public/readme/borkenimages.png)       
-
 Main 'wins' and successs from this project included:       
 - Gaining confidence working with the Express framework, implementing CRUD operations, writing in EJS. Also, building a clearer understanding around the concepts of frontend/client-side and backend/server-side.          
 - Getting experience working as a team rather than solo, as well as buidling confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, provding support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
@@ -83,6 +81,8 @@ Challenges faced during the project included:
 - Backend error terminal messages were daunting at first, being longer and less transparent than typical frontend messages, however in time we learned that the key bits are normally at the start or end of the message.       
 - Finding a balance between using Bootstrap to quickly add premade styling and elements, and using CSS to build and style our app in a more precise way that better suited our needs. Bootstrap is great for specific, quick, polished additions to the app, however I found that if Bootstrap did not provide exactly what we needed, it was quicker to 'custom make' elements of our site rather than lose significant amounts of time to trying to amend and wrangle Bootstrap into doing what we wanted! Further to this, confilcts can arise between Boostrap CSS and vanilla CSS if care is not taken.        
 - Lastly, integrating image uploads (and getting this to work correctly) proved a challenge - doubly so when the app is hosted on Heroku rather than locally.       
+
+![Broken image links](public/readme/borkenimages.png)       
 
 ## Bugs & Issues:       
 
