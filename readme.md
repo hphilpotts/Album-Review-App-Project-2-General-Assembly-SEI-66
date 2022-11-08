@@ -36,7 +36,7 @@ To contribute, please fork from [GitHub](https://github.com/hphilpotts/Album-Rev
 
 ## Brief & Project aims:        
 
-The brief for this project was to build a web app as a pair 'from scratch', using an Express framework.Technical requirements included:        
+The brief for this project was to build a web app as a pair 'from scratch', using an Express framework. Technical requirements included:        
 - Use Express, Mongoose, Node.js and MongoDB to build the app, host the completed app on Heroku.              
 - Employ MVC architecture in building the app.      
 - Include a User resource, with signup/in and authentication/authorisation.            
@@ -47,7 +47,7 @@ Stretch goals included:
 - Make use of a CSS library such as Bootstrap.      
 - Add image upload functionality.       
 
-The aim of the project was to consolidate our learning from weeks 4 & 5 of the course: in particular the concepts of 'Frontend' and 'Backend', OOJS, and database relationship and associations, as well as the use of Express, EJS, Mongoose, and MongoDB. In addition to consolidating knowledge, this project provided a first experience of working with another developer, with all the additional considerations and neccessities, for example management of Git/GitHub process, communication and planning, and collaborative problem-solving.        
+The aim of the project was to consolidate our learning from weeks 4 & 5 of the course: in particular the concepts of 'Frontend' and 'Backend', OOJS, and database relationship and associations, as well as the use of Express, EJS, Mongoose, and MongoDB. In addition to consolidating knowledge, this project provided a first experience of working with another developer, with all the additional considerations and necessities, for example management of Git/GitHub process, communication and planning, and collaborative problem-solving.        
 
 ## Key takeaways and learnings:     
 
@@ -59,20 +59,21 @@ Ultimately, this project was really enjoyable, and the feeling of collaborativel
 
 Some key learnings from this project were as follows:       
 
-- Git discipline is key: as soon as this slips, things start to go wrong quickly. A methodical, structured approach combined with clear and consistent communication was cruicial for smooth merges and seamless pull requests. Further to this, merge issues are not a disaster: they are part and parcel of collarborative coding; don't panic and don't rush resolving conflicts!        
+- Git discipline is key: as soon as this slips, things start to go wrong quickly. A methodical, structured approach combined with clear and consistent communication was crucial for smooth merges and seamless pull requests. Further to this, merge issues are not a disaster: they are part and parcel of collaborative coding; don't panic and don't rush resolving conflicts!        
 - Debugging as a pair is a great way of resolving issues quickly when you have run out of ideas working solo. Fresh eyes and a new perspective are often the key to unlocking a problem straight away!      
 - It's fine to change your project idea (if you do it early enough).     
-- Even if it is initally unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
-- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication was required. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:        
-- Bugs are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.        
+- Even if it is initially unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
+- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
 
 ![Trello Board screenshot](public/readme/Trello.png)      
 
+- Lastly, bugs and errors are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.       
+
 ## Successes and Challenges:      
 
-Main 'wins' and successs from this project included:       
+Main 'wins' and successes from this project included:       
 - Gaining confidence working with the Express framework, implementing CRUD operations, writing in EJS. Also, building a clearer understanding around the concepts of frontend/client-side and backend/server-side.          
-- Getting experience working as a team rather than solo, as well as buidling confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, provding support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
+- Getting experience working as a team rather than solo, as well as building confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, providing support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
 - Building confidence working with CSS: at times I struggled with CSS in Unit/Project 1, however during this project I found the concepts that previously seemed challenging - for example, positioning and flexbox - started to make more and more sense the longer I worked on them and the more issues I resolved.       
 - Seeing an API work correctly after a lot of work was a great feeling and very quickly got me interested in working on backend code.              
 
@@ -80,16 +81,17 @@ Challenges faced during the project included:
 - Managing Git/GitHub repositories, forks, branches and merges between two contributors for the first time. At points this was challenging, however this also made for a great learning experience (despite some dark moments where time and/or work was lost).      
 - Facing merge conflicts: at first we assumed this was because we were doing something wrong - and indeed that merge conflicts were something to be worried about rather than expected - and this led to moments of panic (which is _not_ the right way to approach coding).        
 - Backend error terminal messages were daunting at first, being longer and less transparent than typical frontend messages, however in time we learned that the key bits are normally at the start or end of the message.       
-- Finding a balance between using Bootstrap to quickly add premade styling and elements, and using CSS to build and style our app in a more precise way that better suited our needs. Bootstrap is great for specific, quick, polished additions to the app, however I found that if Bootstrap did not provide exactly what we needed, it was quicker to 'custom make' elements of our site rather than lose significant amounts of time to trying to amend and wrangle Bootstrap into doing what we wanted! Further to this, confilcts can arise between Boostrap CSS and vanilla CSS if care is not taken.        
+- Finding a balance between using Bootstrap to quickly add pre-made styling and elements, and using CSS to build and style our app in a more precise way that better suited our needs. Bootstrap is great for specific, quick, polished additions to the app, however I found that if Bootstrap did not provide exactly what we needed, it was quicker to 'custom make' elements of our site rather than lose significant amounts of time to trying to amend and wrangle Bootstrap into doing what we wanted! Further to this, conflicts can arise between Bootstrap CSS and vanilla CSS if care is not taken.        
 - Lastly, integrating image uploads (and getting this to work correctly) proved a challenge - doubly so when the app is hosted on Heroku rather than locally.       
-
-![Broken image links](public/readme/borkenimages.png)       
 
 ## Bugs & Issues:       
 
-- Uploaded images are lost (and therfore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.        
+![Broken image links](public/readme/brokenimages.png)       
+
+- Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.        
 - Upload functionality on 'Edit Albums' view is not working.        
-- User sessions do not save consistently, as such login is occasionally required again during a single session.     
+- User sessions do not save consistently, as such login is occasionally required again during a single session.         
+- User views not implemented, header link instead directs to the main page.     
 
 ## Future improvements:     
 
@@ -97,7 +99,7 @@ Challenges faced during the project included:
 - Full mobile-responsive formatting.        
 - Delete album functionality hidden, edit functionality protected.      
 - Spotify API for album info, artwork.      
-- Change ‘add review’ functionality where user can click ‘add review’ button on album.      
+- Change ‘add review’ functionality where the user can click an ‘add review’ button on any album.             
 - Search and filter by users, artists, genres.      
 - Refactor code and remove unneeded comments, console.logs() etc.       
 - Come up with a better name...!        
@@ -106,29 +108,29 @@ Challenges faced during the project included:
 
 ### 08/09/22 | Day 0 | Brief issued, planning:      
 
-Intial project idea was a 'DIY' app where users could upload and share instructions and projects. We set up our Trello board, and wireframed our project and wrote out our ERD [here on Figma](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
+Our initial project idea was a 'DIY' app where users could upload and share instructions and projects. We set up our Trello board, and wireframed our project and wrote out our ERD [here on Figma](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
 
 ![ERD on Figma](public/readme//ERD.png)     
 
 ![Wireframe 1 from Figma](public/readme/wireframe1.png)     
 
-![Wireframe 1 from Figma](public/readme/wireframe2.png)     
+![Wireframe 2 from Figma](public/readme/wireframe2.png)     
 
 This idea was changed to an Album Review App on day 2: this was an idea that we were both more excited about and therefore both bought into more.       
     
 ### 09/09/22 | Day 1 | Production:      
 
-My primary focus today was on getting the app structure setup: server config, MVC architecture, key dependencies; and getting our respective repsitories set up correctly.      
+My primary focus today was on getting the app structure setup: server config, MVC architecture, key dependencies; and getting our respective repositories set up correctly.      
 
 After setting up the app, adding config to `server.js`, and creating our Models based on our ERD, I then moved on to my first CRUD APIs and views.      
 
-We decided early on that clearly and cleanly splitting workstreams was helpful, as it minimised the time we spent editing the same files at the same time (thus reducing conflicts) and reduced the liklihood of duplication of work.       
+We decided early on that clearly and cleanly splitting workstreams was helpful, as it minimised the time we spent editing the same files at the same time (thus reducing conflicts) and reduced the likelihood of duplication of work.       
 
-Despite this, we still ran into merge issues early on. In hindsight, the issues seen could have been minimised by running `git fetch` in the forked repo and resolving merge issues there, rather than pushing two strongly differing versions at the same time and resolving in the main reop. Eventually through screensharing we were able to fix merge issues and get going again.      
+Despite this, we still ran into merge issues early on. In hindsight, the issues seen could have been minimised by running `git fetch` in the forked repo and resolving merge issues there, rather than pushing two strongly differing versions at the same time and resolving in the main repo. Eventually through screen sharing we were able to fix merge issues and get going again.      
 
 ### 12/09/22 | Day 2 | Production:      
 
-After the weekend we made the decision to switch project direction and go for and Album Review App rather than a DIY one - I'm really glad we did this, and it was early enough in the project that judicious use of 'find + replace' was enough to quickly complete the needed changes.        
+After the weekend we made the decision to switch project direction and go for an Album Review App rather than a DIY one - I'm really glad we did this, and it was early enough in the project that judicious use of 'find + replace' was enough to quickly complete the needed changes.        
 
 I quickly found when trying to implement 'add another input field to form' functionality that 'vanilla' JS DOM manipulation wasn't working as expected when I wrote:        
 
@@ -164,7 +166,7 @@ Ensuring Album documents and User documents are updated relationally when review
 ![relationing review-album](public/readme/albumRelation.png)        
 _- Update Albums with reviews in reviews controller._       
 
-A further challenge faced was displaying linked reviews within Album Detail GET views, as well as then also displaying the Users who created the dislayed reivews. Eventually - after a lot of documentation and _stackoverflow.com_ - I sought advice from instructors who guided me to the below solution:       
+A further challenge faced was displaying linked reviews within Album Detail GET views, as well as then also displaying the Users who created the displayed reviews. Eventually - after a lot of documentation and _stackoverflow.com_ - I sought advice from instructors who guided me to the below solution:       
 
 ```
     Album.findById(req.query.id).populate({ 
@@ -177,7 +179,7 @@ A further challenge faced was displaying linked reviews within Album Detail GET 
 
 _Not something I think I could have worked out solo - an important reminder that sometimes, asking for help is the best thing to do!_       
 
-Last key challenge of the day was where in the Review model, `createdBy` was an array:        
+The last key challenge of the day was where in the Review model, `createdBy` was an array:        
 
 ![createdBy field in Review model](public/readme/reviewModel.png)       
 
@@ -209,13 +211,13 @@ On the other hand, Bootstrap proved particularly useful for things like mobile-r
 
 ![mobile responsive header](public/readme/mobresponsiveheader.png)      
 
-I did, however have to remove a lot of CSS positioning to allow Bootstrap to 'do its thing'. In some cases, this was not enough to give proper responsiveness. As such, I used `display: hide` as part of a media query to remove less important information in order to view on a smaller screen:      
+I did, however, have to remove a lot of CSS positioning to allow Bootstrap to 'do its thing'. In some cases, this was not enough to give proper responsiveness. As such, I used `display: hide` as part of a media query to remove less important information in order to view on a smaller screen:      
 
 ![media query in CSS](public/readme/mobileresponsive.png)       
 
 At this point, things started to go drastically wrong for us when uploaded images started to disappear. As we did not at the time know that Heroku's file storage was behind this, we started reverting back to previous commits in order to purge the error that (unsurprisingly) we could never quite pinpoint.       
 
-I then made the critical mistake of editing in the `master` branch in error, meaning that merging with Milos' parallel edits in `dev` caused a vast amount of conflicts. With the deadline close approaching (and a 'broken' project), we rushed the merge, meaning that my earler work on mobile responsivness was lost. This was a major lesson learned and a key point in my coding journey so far - _never again_!      
+I then made the critical mistake of editing in the `master` branch in error, meaning that merging with Milos' parallel edits in `dev` caused a vast amount of conflicts. With the deadline close approaching (and a 'broken' project), we rushed the merge, meaning that my eariler work on mobile responsiveness was lost. This was a major lesson learned and a key point in my coding journey so far - _never again_!      
 
 ### 16/09/22 | Day 6 | Presentation:        
 
