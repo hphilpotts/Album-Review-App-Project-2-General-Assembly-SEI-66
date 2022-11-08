@@ -47,7 +47,7 @@ Stretch goals included:
 - Make use of a CSS library such as Bootstrap.      
 - Add image upload functionality.       
 
-The aim of the project was to consolidate our learning from weeks 4 & 5 of the course: in particular the concepts of 'Frontend' and 'Backend', OOJS, and database relationship and associations, as well as the use of Express, EJS, Mongoose, and MongoDB. In addition to consolidating knowledge, this project provided a first experience of working with another developer, with all the additional considerations and necessities, for example management of Git/GitHub process, communication and planning, and collaborative problem-solving.        
+The aim of the project was to consolidate our learning from weeks 4 & 5 of the course: in particular the concepts of 'Frontend' and 'Backend', OOJS, and non-relational database associations, as well as the use of Express, EJS, Mongoose, and MongoDB. In addition to consolidating knowledge, this project provided a first experience of working with another developer, with all the additional considerations and necessities, for example management of Git/GitHub process, communication and planning, and collaborative problem-solving.        
 
 ## Key takeaways and learnings:     
 
@@ -161,9 +161,9 @@ After some difficulty getting data from the database to populate, it turned out 
 
 ![use of populate()](public/readme/populate.png)        
 
-Ensuring Album documents and User documents are updated relationally when reviews are added was a challenge but also a key step. Milos implemented User relationing through using hidden input field for `currentUser._id` within 'Create Review' form, I implemented relationing to Album as follows:        
+Ensuring Album documents and User documents are updated correctly when reviews are added was a challenge but also a key step. Milos implemented User association through using a hidden input field for `currentUser._id` within 'Create Review' form, I implemented associating by reference with Album as follows:        
 
-![relationing review-album](public/readme/albumRelation.png)        
+![associating review-album](public/readme/albumRelation.png)        
 _- Update Albums with reviews in reviews controller._       
 
 A further challenge faced was displaying linked reviews within Album Detail GET views, as well as then also displaying the Users who created the displayed reviews. Eventually - after a lot of documentation and _stackoverflow.com_ - I sought advice from instructors who guided me to the below solution:       
