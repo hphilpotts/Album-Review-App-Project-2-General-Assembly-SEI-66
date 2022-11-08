@@ -55,15 +55,16 @@ This was a really exciting project for me, as it was the first time I had proper
 
 Much of the project was completed using very close collaboration, particularly using screen sharing. The benefits of working together became apparent very quickly: two pairs of eyes catch bugs more quickly, and one person may remember a small but crucial tidbit of information from a past lecture where the other does not. Equally, the challenges of working as a pair rather than solo also became apparent very quickly: Git & GitHub become significantly more complicated to use compared to lone working, code conflicts are many and frequently encountered, and time management becomes more important.       
 
-Ultimately, this project was really enjoyable, and the feeling of collaboratively producing something you are a proud of made me feel excited for my future working in software development. I learned a lot both technically and in terms of how best to work as a team, and came away from the project more confident in my skills and knowledge.
+Ultimately, this project was really enjoyable, and the feeling of collaboratively producing something you are proud of made me feel excited for my future working in software development. I learned a lot both technically and in terms of how best to work as a team, and came away from the project more confident in my skills and knowledge.
 
 Some key learnings from this project were as follows:       
 
 - Git discipline is key: as soon as this slips, things start to go wrong quickly. A methodical, structured approach combined with clear and consistent communication was cruicial for smooth merges and seamless pull requests. Further to this, merge issues are not a disaster: they are part and parcel of collarborative coding; don't panic and don't rush resolving conflicts!        
 - Debugging as a pair is a great way of resolving issues quickly when you have run out of ideas working solo. Fresh eyes and a new perspective are often the key to unlocking a problem straight away!      
 - It's fine to change your project idea (if you do it early enough).     
-- EJS is still just JavaScript (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app.      
-- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication was required. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
+- Even if it is initally unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
+- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication was required. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:        
+- Bugs are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.        
 
 ![Trello Board screenshot](public/readme/Trello.png)      
 
@@ -144,12 +145,91 @@ I quickly found when trying to implement 'add another input field to form' funct
 %>
 ```
 
-I was getting `document is not defined` - a quick bit of googling revealed that "You can't use document inside your ejs tags because that code is executed on the server.". A change of approach was required!      
+I was getting `document is not defined` - a quick bit of googling revealed that "_You can't use document inside your ejs tags because that code is executed on the server_.". A change of approach was required!      
 
 First, using similar code in a `main.js` file allowed for just one input box to be added. I then tried using jQuery instead like so and it worked:      
 
 ![jQuery to the rescue](public/readme/jquery.png)       
 
-Outside of the above puzzle, this was a productive day, and I had learned important lessons about using EJS as above!       
+Outside of the above 'puzzle', this was a productive day. Importantly I had learned important lessons about (and gained confidence in) using EJS vs. JS as above!       
 
-### 13/09/22 | Day 3 | 
+### 13/09/22 | Day 3 | Production:      
+
+After some difficulty getting data from the database to populate, it turned out (surprise, surprise) that I needed...`.populate()` within my APIs:          
+
+![use of populate()](public/readme/populate.png)        
+
+Ensuring Album documents and User documents are updated relationally when reviews are added was a challenge but also a key step. Milos implemented User relationing through using hidden input field for `currentUser._id` within 'Create Review' form, I implemented relationing to Album as follows:        
+
+![relationing review-album](public/readme/albumRelation.png)        
+_- Update Albums with reviews in reviews controller._       
+
+A further challenge faced was displaying linked reviews within Album Detail GET views, as well as then also displaying the Users who created the dislayed reivews. Eventually - after a lot of documentation and _stackoverflow.com_ - I sought advice from instructors who guided me to the below solution:       
+
+```
+    Album.findById(req.query.id).populate({ 
+        path: 'review',
+        populate: {
+          path: 'createdBy',
+          model: 'User'
+        } 
+```
+
+_Not something I think I could have worked out solo - an important reminder that sometimes, asking for help is the best thing to do!_       
+
+Last key challenge of the day was where in the Review model, `createdBy` was an array:        
+
+![createdBy field in Review model](public/readme/reviewModel.png)       
+
+Which - after some trial and error - required the following code (including use of `index 0`) to correctly display in `album/detail.ejs`:   
+
+`<div> Reviewed by: <a href="/review/detail?id=<%= review._id %>"><%= review.createdBy[0].username %></a>, rating: <%= review.rating %></div>`      
+
+### 14/09/22 | Day 4 | Production:      
+
+I predominantly spent this day on UX and styling as the presentation deadline approached. I chose a 'retro', _Rolling Stone_ magazine-inspired style for the app.           
+
+One snippet I was pleased with was a bit of EJS that dynamically punctuated the 'genre' array in album detail:      
+
+<!-- TODO : insert screenshot of this in action! -->        
+
+![Dynamically punctuate genre array in album detail view](public/readme/genrepunctuation.png)       
+
+Also, displaying avg. review rating:        
+
+<!-- TODO : insert screenshot here! -->     
+
+![Display average rating in friendly format](public/readme/avgrating.png)       
+
+### 15/09/22 | Day 5 | Final day of production:     
+
+This was a challenging day: getting Bootstrap to display album cards how we wanted (as per Wireframe) proved difficult to the point that we eventually reverted to vanilla CSS. A lesson learned in that Bootstrap is great for many things but not all things!     
+
+On the other hand, Bootstrap proved particularly useful for things like mobile-responsive headers:     
+
+![mobile responsive header](public/readme/mobresponsiveheader.png)      
+
+I did, however have to remove a lot of CSS positioning to allow Bootstrap to 'do its thing'. In some cases, this was not enough to give proper responsiveness. As such, I used `display: hide` as part of a media query to remove less important information in order to view on a smaller screen:      
+
+![media query in CSS](public/readme/mobileresponsive.png)       
+
+At this point, things started to go drastically wrong for us when uploaded images started to disappear. As we did not at the time know that Heroku's file storage was behind this, we started reverting back to previous commits in order to purge the error that (unsurprisingly) we could never quite pinpoint.       
+
+I then made the critical mistake of editing in the `master` branch in error, meaning that merging with Milos' parallel edits in `dev` caused a vast amount of conflicts. With the deadline close approaching (and a 'broken' project), we rushed the merge, meaning that my earler work on mobile responsivness was lost. This was a major lesson learned and a key point in my coding journey so far - _never again_!      
+
+### 16/09/22 | Day 6 | Presentation:        
+
+We agreed to no further edits on presentation day, and were able to present a working app (with all images present).        
+
+The image loss issue appeared again, some research turned up the following from _stackoverflow.com_:        
+
+```
+I'm not sure why your uploads aren't being saved; you should be able to save them temporarily.
+But this won't work long-term. Heroku's filesystem is ephemeral: any changes you make will be lost the next time your dyno restarts, which happens frequently (at least once per day).
+Heroku recommends storing uploads on something like Amazon S3. Here's a guide for doing it specifically with Node.js.
+Once you've stored your files on S3 you should be able to retrieve them using an appropriate library or possibly over HTTP, depending on how you've configured your bucket.
+```     
+
+...mystery solved! Which was a satisfying end to a project that - whilst challenging at times - proved to be an important milestone in my learning journey, as well as a really enjoyable week of collaborative coding for the first time!      
+
+---
