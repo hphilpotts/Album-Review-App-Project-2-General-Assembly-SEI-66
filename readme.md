@@ -8,11 +8,11 @@
 
 <!-- TODO : link to Milos' GitHub profile -->
 
-This is a full-stack web app - _Album Review App_: a site where users can add and then review music albums - built as part of a paired project with Milos Jocic over the course of a week, for the second project in GA London's Software Engineering Immersive course. The app uses an Express framework, Node.js platform and an Atlas-hosted MongoDB NoSQL database. The deployed project was presented to my GA Instructional Team and fellow SEI cohort on 26/08/22.        
+This is a full-stack web app - _Album Review App_: a site where users can add and then review music albums - built as part of a paired project with [Milos Jocic](https://github.com/milosjocic1) over the course of a week, for the second project in GA London's Software Engineering Immersive course. The app uses an Express framework, Node.js platform and an Atlas-hosted MongoDB NoSQL database. The deployed project was presented to my GA Instructional Team and fellow SEI cohort on 26/08/22.        
 
 I was 'Team Leader' for this project, taking responsibility for Git version control and deployment of the completed app. I worked on broader functionality across the site both in Frontend and Backend: setting up `server.js` config, creating Models, writing routes and APIs, implementing Views, forms and user input. I also took ownership of UI styling and mobile responsive formatting.        
 
-<!-- TODO : insert main app image here -->
+![Main app image](./public/readme/project2_main.png)        
 
 ## Links:        
 
