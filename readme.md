@@ -108,7 +108,9 @@ Challenges faced during the project included:
 
 ### 08/09/22 | Day 0 | Brief issued, planning:      
 
-Our initial project idea was a 'DIY' app where users could upload and share instructions and projects. I set up our Trello board, and using Figma's 'multiplayer' collaboration we jointly wireframed our project and wrote out our ERD [here](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
+Our initial project idea was a 'DIY' app where users could upload and share instructions and projects. I set up our Trello board, and using Figma's 'multiplayer' collaboration we jointly wireframed our project and wrote out our ERD [here](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).        
+
+We decided to share ownership for basic app setup, before each taking ownership for a non-user model and its associated controllers, views and routes. Milos would later implement authentication/authorisation and image uploads, and I would move on to UI/UX and mobile responsiveness.          
 
 ![ERD on Figma](public/readme//ERD.png)     
 
