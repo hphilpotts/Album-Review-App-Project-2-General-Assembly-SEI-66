@@ -108,7 +108,7 @@ Challenges faced during the project included:
 
 ### 08/09/22 | Day 0 | Brief issued, planning:      
 
-Our initial project idea was a 'DIY' app where users could upload and share instructions and projects. We set up our Trello board, and wireframed our project and wrote out our ERD [here on Figma](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
+Our initial project idea was a 'DIY' app where users could upload and share instructions and projects. I set up our Trello board, and using Figma's 'multiplayer' collaboration we jointly wireframed our project and wrote out our ERD [here](https://www.figma.com/file/G63VmlG1NHGvTbEyLctO6H/DIY-Blog-Wireframes?node-id=0%3A1).               
 
 ![ERD on Figma](public/readme//ERD.png)     
 
