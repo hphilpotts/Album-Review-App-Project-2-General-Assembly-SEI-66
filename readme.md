@@ -235,3 +235,27 @@ Challenges faced during the project included:
 - Refactor code and remove unneeded comments, console.logs() etc.       
 
 ---
+
+## 23/11/22 | Post-production:     
+
+With Heroku moving to paid-only on 28/11/22, this seems as good a time as any to re-host the app elsewhere and fix the image upload issue at the same time.         
+
+I have hosted the app on _Cyclic_ which was super easy through GitHub integration - much more user friendly at this stage as compared with Heroku.      
+
+After a failed attempt at implementing AWS S3 Bucket storage on 20/11/22 (which resulted in my accidentally exposing a key/secret key...lesson learned but thankfully no harm done!), I am going to try again. My experience of AWS thus far is that there is a very steep learning curve!      
+
+Branched into `fix-image-upload`. Following [this guide](https://plainenglish.io/blog/file-upload-to-amazon-s3-using-node-js-42757c6a39e9).     
+
+Bucket created, `.env` updated with Bucket name, location and ARN. Policy set in IAM:       
+
+![chosen bucket actions](./public/readme/bucket.png)        
+
+Policy created - after some issue adding ARN (don't past directly into ARN value, just paste into bucket name/click any for object name).       
+
+Creating user, see key tip below:       
+
+![choose programmatic access](./public/readme/bucket2.png)      
+
+Above policy attached. Key and Secret Key added to `.env` file.     
+
+Installed `aws-sdk dotenv`.
