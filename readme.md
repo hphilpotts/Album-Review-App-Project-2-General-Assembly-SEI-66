@@ -49,61 +49,6 @@ Stretch goals included:
 
 The aim of the project was to consolidate our learning from weeks 4 & 5 of the course: in particular the concepts of 'Frontend' and 'Backend', OOJS, and non-relational database associations, as well as the use of Express, EJS, Mongoose, and MongoDB. In addition to consolidating knowledge, this project provided a first experience of working with another developer, with all the additional considerations and necessities, for example management of Git/GitHub process, communication and planning, and collaborative problem-solving.        
 
-## Key takeaways and learnings:     
-
-This was a really exciting project for me, as it was the first time I had properly collaborated with another developer on a piece of work. We had been given relatively little in the way of guidance or instructions when it came to working as a pair; as a result, we had to very much learn how best to code together 'on the fly' which was both challenging and rewarding. I am really grateful for the fact that Milos and I had a great working dynamic: our skills and approaches complemented each other and we had fun working on this project together - for me this was a great start to collaborative coding!       
-
-Much of the project was completed using very close collaboration, particularly using screen sharing. The benefits of working together became apparent very quickly: two pairs of eyes catch bugs more quickly, and one person may remember a small but crucial tidbit of information from a past lecture where the other does not. Equally, the challenges of working as a pair rather than solo also became apparent very quickly: Git & GitHub become significantly more complicated to use compared to lone working, code conflicts are many and frequently encountered, and time management becomes more important.       
-
-Ultimately, this project was really enjoyable, and the feeling of collaboratively producing something you are proud of made me feel excited for my future working in software development. I learned a lot both technically and in terms of how best to work as a team, and came away from the project more confident in my skills and knowledge.
-
-Some key learnings from this project were as follows:       
-
-- Git discipline is key: as soon as this slips, things start to go wrong quickly. A methodical, structured approach combined with clear and consistent communication was crucial for smooth merges and seamless pull requests. Further to this, merge issues are not a disaster: they are part and parcel of collaborative coding; don't panic and don't rush resolving conflicts!        
-- Debugging as a pair is a great way of resolving issues quickly when you have run out of ideas working solo. Fresh eyes and a new perspective are often the key to unlocking a problem straight away!      
-- It's fine to change your project idea (if you do it early enough).     
-- Even if it is initially unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
-- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
-
-![Trello Board screenshot](public/readme/Trello.png)      
-
-- Lastly, bugs and errors are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.       
-
-## Successes and Challenges:      
-
-Main 'wins' and successes from this project included:       
-- Gaining confidence working with the Express framework, implementing CRUD operations, writing in EJS. Also, building a clearer understanding around the concepts of frontend/client-side and backend/server-side.          
-- Getting experience working as a team rather than solo, as well as building confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, providing support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
-- Building confidence working with CSS: at times I struggled with CSS in Unit/Project 1, however during this project I found the concepts that previously seemed challenging - for example, positioning and flexbox - started to make more and more sense the longer I worked on them and the more issues I resolved.       
-- Seeing an API work correctly after a lot of work was a great feeling and very quickly got me interested in working on backend code.              
-
-Challenges faced during the project included:       
-- Managing Git/GitHub repositories, forks, branches and merges between two contributors for the first time. At points this was challenging, however this also made for a great learning experience (despite some dark moments where time and/or work was lost).      
-- Facing merge conflicts: at first we assumed this was because we were doing something wrong - and indeed that merge conflicts were something to be worried about rather than expected - and this led to moments of panic (which is _not_ the right way to approach coding).        
-- Backend error terminal messages were daunting at first, being longer and less transparent than typical frontend messages, however in time we learned that the key bits are normally at the start or end of the message.       
-- Finding a balance between using Bootstrap to quickly add pre-made styling and elements, and using CSS to build and style our app in a more precise way that better suited our needs. Bootstrap is great for specific, quick, polished additions to the app, however I found that if Bootstrap did not provide exactly what we needed, it was quicker to 'custom make' elements of our site rather than lose significant amounts of time to trying to amend and wrangle Bootstrap into doing what we wanted! Further to this, conflicts can arise between Bootstrap CSS and vanilla CSS if care is not taken.        
-- Lastly, integrating image uploads (and getting this to work correctly) proved a challenge - doubly so when the app is hosted on Heroku rather than locally.       
-
-## Bugs & Issues:       
-
-![Broken image links](public/readme/brokenimages.png)       
-
-- Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.        
-- Upload functionality on 'Edit Albums' view is not working.        
-- User sessions do not save consistently, as such login is occasionally required again during a single session.         
-- User views not implemented, header link instead directs to the main page.     
-
-## Future improvements:     
-
-- All image upload functionality fixed and stabilised.      
-- Full mobile-responsive formatting.        
-- Delete album functionality hidden, edit functionality protected.      
-- Spotify API for album info, artwork.      
-- Change ‘add review’ functionality where the user can click an ‘add review’ button on any album.             
-- Search and filter by users, artists, genres.      
-- Refactor code and remove unneeded comments, console.logs() etc.       
-- Come up with a better name...!        
-
 ## Production Process:      
 
 ### 08/09/22 | Day 0 | Brief issued, planning:      
@@ -235,5 +180,59 @@ Once you've stored your files on S3 you should be able to retrieve them using an
 ```     
 
 ...mystery solved! Which was a satisfying end to a project that - whilst challenging at times - proved to be an important milestone in my learning journey, as well as a really enjoyable week of collaborative coding for the first time!      
+
+## Key takeaways and learnings:     
+
+This was a really exciting project for me, as it was the first time I had properly collaborated with another developer on a piece of work. We had been given relatively little in the way of guidance or instructions when it came to working as a pair; as a result, we had to very much learn how best to code together 'on the fly' which was both challenging and rewarding. I am really grateful for the fact that Milos and I had a great working dynamic: our skills and approaches complemented each other and we had fun working on this project together - for me this was a great start to collaborative coding!       
+
+Much of the project was completed using very close collaboration, particularly using screen sharing. The benefits of working together became apparent very quickly: two pairs of eyes catch bugs more quickly, and one person may remember a small but crucial tidbit of information from a past lecture where the other does not. Equally, the challenges of working as a pair rather than solo also became apparent very quickly: Git & GitHub become significantly more complicated to use compared to lone working, code conflicts are many and frequently encountered, and time management becomes more important.       
+
+Ultimately, this project was really enjoyable, and the feeling of collaboratively producing something you are proud of made me feel excited for my future working in software development. I learned a lot both technically and in terms of how best to work as a team, and came away from the project more confident in my skills and knowledge.
+
+Some key learnings from this project were as follows:       
+
+- Git discipline is key: as soon as this slips, things start to go wrong quickly. A methodical, structured approach combined with clear and consistent communication was crucial for smooth merges and seamless pull requests. Further to this, merge issues are not a disaster: they are part and parcel of collaborative coding; don't panic and don't rush resolving conflicts!        
+- Debugging as a pair is a great way of resolving issues quickly when you have run out of ideas working solo. Fresh eyes and a new perspective are often the key to unlocking a problem straight away!      
+- It's fine to change your project idea (if you do it early enough).     
+- Even if it is initially unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
+- Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
+
+![Trello Board screenshot](public/readme/Trello.png)      
+
+- Lastly, bugs and errors are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.       
+
+## Successes and Challenges:      
+
+Main 'wins' and successes from this project included:       
+- Gaining confidence working with the Express framework, implementing CRUD operations, writing in EJS. Also, building a clearer understanding around the concepts of frontend/client-side and backend/server-side.          
+- Getting experience working as a team rather than solo, as well as building confidence using Git/GitHub version control as a pair, and resolving merge conflicts. Further to this, I really enjoyed the experience of being a Team Lead for this project: particularly setting direction, providing support, having responsibility for the main GitHub repository, and hosting the finished app on Heroku.      
+- Building confidence working with CSS: at times I struggled with CSS in Unit/Project 1, however during this project I found the concepts that previously seemed challenging - for example, positioning and flexbox - started to make more and more sense the longer I worked on them and the more issues I resolved.       
+- Seeing an API work correctly after a lot of work was a great feeling and very quickly got me interested in working on backend code.              
+
+Challenges faced during the project included:       
+- Managing Git/GitHub repositories, forks, branches and merges between two contributors for the first time. At points this was challenging, however this also made for a great learning experience (despite some dark moments where time and/or work was lost).      
+- Facing merge conflicts: at first we assumed this was because we were doing something wrong - and indeed that merge conflicts were something to be worried about rather than expected - and this led to moments of panic (which is _not_ the right way to approach coding).        
+- Backend error terminal messages were daunting at first, being longer and less transparent than typical frontend messages, however in time we learned that the key bits are normally at the start or end of the message.       
+- Finding a balance between using Bootstrap to quickly add pre-made styling and elements, and using CSS to build and style our app in a more precise way that better suited our needs. Bootstrap is great for specific, quick, polished additions to the app, however I found that if Bootstrap did not provide exactly what we needed, it was quicker to 'custom make' elements of our site rather than lose significant amounts of time to trying to amend and wrangle Bootstrap into doing what we wanted! Further to this, conflicts can arise between Bootstrap CSS and vanilla CSS if care is not taken.        
+- Lastly, integrating image uploads (and getting this to work correctly) proved a challenge - doubly so when the app is hosted on Heroku rather than locally.       
+
+## Bugs & Issues:       
+
+![Broken image links](public/readme/brokenimages.png)       
+
+- Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.        
+- Upload functionality on 'Edit Albums' view is not working.        
+- User sessions do not save consistently, as such login is occasionally required again during a single session.         
+- User views not implemented, header link instead directs to the main page.     
+
+## Future improvements:     
+
+- All image upload functionality fixed and stabilised.      
+- Full mobile-responsive formatting.        
+- Delete album functionality hidden, edit functionality protected.      
+- Spotify API for album info, artwork.      
+- Change ‘add review’ functionality where the user can click an ‘add review’ button on any album.             
+- Search and filter by users, artists, genres.      
+- Refactor code and remove unneeded comments, console.logs() etc.       
 
 ---
