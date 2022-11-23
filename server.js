@@ -20,7 +20,7 @@ const app = express();
 const AWS = require("aws-sdk");
 const s3 = new AWS.S3();
 
-const bodyParser = require('bodyParser');
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
