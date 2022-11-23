@@ -17,7 +17,6 @@ I was 'Team Leader' for this project, taking responsibility for Git version cont
 ## Links:        
 
 [Deployment link](http://albumsei66.herokuapp.com/auth/landing)      
-[Google Doc README](https://docs.google.com/document/d/1NRj3XemKBEfr_EkvYh_mGM_67lGeFrmeTPrK0aQonyQ/edit#heading=h.164sp507m3e)    
 
 ## Getting started & Install:       
 
