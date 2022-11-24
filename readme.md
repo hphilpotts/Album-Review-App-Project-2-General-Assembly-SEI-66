@@ -258,4 +258,5 @@ Creating user, see key tip below:
 
 Above policy attached. Key and Secret Key added to `.env` file.     
 
-Installed `aws-sdk dotenv`.
+Installed `aws-sdk dotenv`. At this stage, my app structure deviates singificantly from that in the article. I therefore tried adding Cyclics S3 storage starter code - this caused an internal server error within the Cyclic hosted app. At this stage I am confident my IAM/S3 setup is good, so it is simply a case of finding how to write the JS code required. Removing additions and trying again...            
+
