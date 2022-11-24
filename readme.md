@@ -16,7 +16,7 @@ I was 'Team Leader' for this project, taking responsibility for Git version cont
 
 ## Links:        
 
-[Deployment link](http://albumsei66.herokuapp.com/auth/landing)      
+[Deployment link](https://albumreviewapp.cyclic.app/review/index)      
 
 ## Getting started & Install:       
 
