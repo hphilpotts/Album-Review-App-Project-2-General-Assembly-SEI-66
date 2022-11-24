@@ -14,7 +14,7 @@ const multerS3 = require('multer-s3');
 
 const app = express();
 
-const s3 = new S3Client({region: process.env.AWS_BUCKET_REGION});
+const s3 = new S3Client({region: "eu-west-2"});
 
 const aws = require('aws-sdk');
 
