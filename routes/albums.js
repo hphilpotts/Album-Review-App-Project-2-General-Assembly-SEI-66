@@ -33,12 +33,6 @@ app.post('/upload', upload.array('photos', 3), function(req, res, next) {
   res.send('Successfully uploaded ' + req.files.length + ' files!')
 })
 
-aws.config.update({
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  region: process.env.AWS_BUCKET_REGION
-});
-
 // const app = express();
 // const s3 = new aws.S3;
 
