@@ -19,8 +19,11 @@ exports.album_create_get = (req, res) => {
 exports.album_create_post = (req, res) => {
     let album = new Album(req.body);
 
+    console.log(album)
+
     album.save()
     .then(() => {
+        console.log('saved!')
         res.redirect('/album/index');
     })
     .catch((err) => {
