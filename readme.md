@@ -219,10 +219,12 @@ Challenges faced during the project included:
 
 ![Broken image links](public/readme/brokenimages.png)       
 
-- Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.        
+- Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.       
+    _Workaround completed 24/11/22, see post-production below._        
 - Upload functionality on 'Edit Albums' view is not working.        
 - User sessions do not save consistently, as such login is occasionally required again during a single session.         
 - User views not implemented, header link instead directs to the main page.     
+- Passport/session issue found when app was rehosted on Cyclic - the user is logged out in error when navigating the app             
 
 ## Future improvements:     
 
@@ -268,5 +270,5 @@ Installed `multer-s3`, making edits in `albums.js` routes as this is where the `
 
 After various attempts using differing approaches and documentation, I have decided instead to do away with image upload, and instead use direct image URLs. I encountered some issues when changing this: key fixes included removing `enctype` from `album/add.ejs` and changing the `name=image` input to `name=albumCover`.     
 
-
+The app has now been successfully rehosted on Cyclic, and Album Cover images will now persist as they are direct image URL links.
 
