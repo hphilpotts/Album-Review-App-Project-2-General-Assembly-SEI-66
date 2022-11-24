@@ -266,5 +266,5 @@ Installed `multer-s3`, making edits in `albums.js` routes as this is where the `
 
 ![code added to albums.js routes](./public/readme/multer-S3.png);       
 
-
+After various attempts using differing approaches and documentation, I have decided instead to do away with image upload
 

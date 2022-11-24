@@ -14,18 +14,12 @@ const multerS3 = require('multer-s3');
 
 const app = express();
 
-const s3 = new S3Client({region: "eu-west-2",
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-  accessKeyId: process.env.AWS_ACCESS_KEY
-});
-
-const aws = require('aws-sdk');
-
+const s3 = new S3Client();
 
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: "sei66-project2-imageupload",
+    bucket: process.env.BUCKET,
     metadata: function (req, file, cb) {
       cb(null, {fieldName: file.fieldname});
     },
