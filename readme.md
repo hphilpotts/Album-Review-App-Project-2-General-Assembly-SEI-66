@@ -260,3 +260,11 @@ Above policy attached. Key and Secret Key added to `.env` file.
 
 Installed `aws-sdk dotenv`. At this stage, my app structure deviates singificantly from that in the article. I therefore tried adding Cyclics S3 storage starter code - this caused an internal server error within the Cyclic hosted app. At this stage I am confident my IAM/S3 setup is good, so it is simply a case of finding how to write the JS code required. Removing additions and trying again...            
 
+## 24/11/22 | Post-production:      
+
+Installed `multer-s3`, making edits in `albums.js` routes as this is where the `multer` code is written:        
+
+![code added to albums.js routes](./public/readme/multer-S3.png);       
+
+
+
