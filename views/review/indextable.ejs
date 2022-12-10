@@ -1,0 +1,46 @@
+<h1 class="large-heading text-center"> Reviews </h1>
+
+<table class="table align-middle">
+    <tr class="mobile-hide">
+        <th> Album Title: </th> <!--Eventually make album title / name / title consistent-->
+        <th></th>
+        <th> Rating: </th>
+        <th> Review Author: </th>
+        <th></th>
+        <th> Review added: </th>
+    </tr>
+
+<% reviews.reverse().forEach(function(review){ %>  
+    <tr>
+        <td>
+            <% review.album.forEach(function(album) { %> 
+                <div> <a href="/review/detail?id=<%= review._id %>"><h2 class="highlighted-text mobile-med-text"><%= album.title %></h2></a> </div>
+            <% }) %>
+        </td>
+    <% review.album.forEach(function(element) { %>
+        <td>
+            <a href="/review/detail?id=<%= review._id %>">
+                <img class="album-icon"src="<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
+            </a>
+        </td>
+    <% }) %>
+        <td> <h3 class="review-rating mobile-large-text"><%= review.rating %></h3></td>
+        <td>
+            <% review.createdBy.forEach(function(createdBy) { %> 
+                <div><h4 class="mobile-small-text"><%= createdBy.username %></h4> </div>
+            <% }) %>
+        </td>
+        <div class="review-box mobile-hide">
+            <% let previewString = review.content;
+            if (previewString.length < 150) { %>
+                <td class="review-preview mobile-hide"><%= previewString %></td>
+            <% } else { previewString = previewString.substring(0,150) } %>
+                <td class="review-preview mobile-hide"><%= previewString + '...'%></td>
+            <% %>
+        </div>
+        <td class="mobile-hide"> <%= moment(review.createdAt).fromNow() %></td>
+    </tr>
+<% }) %>
+
+
+</table>
