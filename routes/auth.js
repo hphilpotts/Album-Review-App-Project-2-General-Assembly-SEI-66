@@ -6,7 +6,7 @@ const authCtrl = require("../controllers/auth");
 
 const IsLoggedIn = require('../helper/isLoggedIn');
 
-router.get('/', authCtrl.home_get)
+router.get('/', IsLoggedIn, authCtrl.home_get)
 router.get("/auth/landing", authCtrl.landing_get); // verify whether to use auth_landing_get instead
 // router.post("/", authCtrl.landing_post);
 router.post("/auth/landing", authCtrl.auth_landing_post); // sign in POST route ///double check if / or /landing
