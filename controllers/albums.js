@@ -18,9 +18,15 @@ exports.album_create_get = (req, res) => {
 // HTTP POST - Add new Album API:
 exports.album_create_post = (req, res) => {
     let album = new Album(req.body);
+<<<<<<< HEAD
+=======
+
+    console.log(album)
+>>>>>>> b044392a1acdab2e189dd319ada46f37b142a056
 
     album.save()
     .then(() => {
+        console.log('saved!')
         res.redirect('/album/index');
     })
     .catch((err) => {
