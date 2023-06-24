@@ -5,15 +5,19 @@ body{
 }
 nav{
   font-weight: bolder;
-  color: white;
+  color: white !important;
   margin: -20px;
 }
 nav :visited{
   color: white;
 }
+nav :link{
+  color: white;
+}
 nav :hover, #main-logo{
   color: rgb(255, 130, 88);
 }
+
 #main-logo{
 font-size: 30px;
 text-shadow: 1px 1px white;
