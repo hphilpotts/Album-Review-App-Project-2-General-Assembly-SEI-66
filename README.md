@@ -273,3 +273,4 @@ After various attempts using differing approaches and documentation, I have deci
 The app has now been successfully rehosted on Cyclic, and Album Cover images will now persist as they are direct image URL links.
 
 ## 24/06/23 | Rewrite and Rehost:       
+
