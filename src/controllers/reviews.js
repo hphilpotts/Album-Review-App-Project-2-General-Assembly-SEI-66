@@ -21,7 +21,7 @@ exports.review_create_get = (req, res) => {
     })
     // else show me the error
     .catch(err => {
-        console.log(err);
+        console.error(err);
     })
 };
 
@@ -41,7 +41,7 @@ exports.review_create_post = (req, res) => {
         res.redirect("/review/index")
     })
      .catch((err) => {
-         console.log(err);
+         console.error(err);
          res.send("Please try again later!!!");
      })   
 };
@@ -54,32 +54,30 @@ exports.review_index_get = (req, res) => {
         res.render("review/index", {reviews: reviews, moment})
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
     })
 };
 
 // http GET - review by ID
 exports.review_show_get = (req, res) => {
-    console.log(req.query.id);
     // find review by id
     Review.findById(req.query.id).populate('album').populate('createdBy') // can call .populate() with other info here
     .then(review => {
         res.render("review/detail", {review, moment})
     })
     .catch(err => {
-        console.log(err)
+        console.error(err)
     })
 };
 
 // http DELETE - Review
 exports.review_delete_get = (req, res) => {
-    console.log(req.query.id);
     Review.findByIdAndDelete(req.query.id)
     .then(() => {
         res.redirect("/review/index")
     })
     .catch(err => {
-        console.log(err)
+        console.error(err)
     })
 }
 
@@ -93,18 +91,17 @@ exports.review_edit_get = (req, res) => {
         res.render("review/edit", {review})
     })
     .catch(err => {
-        console.log(err)
+        console.error(err)
     })
 };
 
 // http PUT - article update
 exports.review_update_put = (req, res) => {
-    console.log(req.body.id);
     Review.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
         res.redirect("/review/index")
     })
     .catch(err => {
-        console.log(err)
+        console.error(err)
     })
 }

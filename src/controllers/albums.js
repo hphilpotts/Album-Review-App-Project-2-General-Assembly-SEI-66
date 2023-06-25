@@ -26,7 +26,7 @@ exports.album_create_post = (req, res) => {
         res.redirect('/album/index');
     })
     .catch((err) => {
-        console.log(err);
+        console.error(err);
         res.send('THIS IS AN ERROR')
     })
 }
@@ -39,7 +39,7 @@ exports.album_index_get = (req, res) => {
         res.render('album/index', { albums, moment });
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
         res.send('ERROR?');
     })
 }
@@ -59,7 +59,7 @@ exports.album_detail_get = (req, res) => {
         res.render('album/detail', { album, moment });
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
         res.send('...ERROR?');
     })
 }
@@ -72,7 +72,7 @@ exports.album_edit_get = (req, res) => {
         res.render('album/edit', { album })
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
     })
 }
 
@@ -83,7 +83,7 @@ exports.album_edit_post = (req, res) => {
         res.redirect('/album/index');
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
     })
 }
 
@@ -95,7 +95,7 @@ exports.album_delete = (req, res) => {
         res.redirect('/album/index');
     })
     .catch(err => {
-        console.log(err);
+        console.error(err);
         res.send('Uh oh');
     })
 }

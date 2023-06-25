@@ -18,9 +18,7 @@
          album.review.forEach(function(review) {
         ratingsArray.push(parseInt(review.rating))
         })
-        console.log(ratingsArray) 
         const average = ratingsArray.reduce((a, b) => a + b, 0) / ratingsArray.length;
-        console.log(average);
         if (!average) { %>
       <br><span>not yet rated!</span>
         <% } else{ %>

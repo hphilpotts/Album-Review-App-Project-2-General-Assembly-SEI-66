@@ -33,9 +33,7 @@ exports.signup_get = (req, res) => { //potentially exports.auth_signup_get
 
 exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not matter as long as it is consisten
     let user = new User(req.body);
-    console.log(req.body.password);
     let hash = bcrypt.hashSync(req.body.password, salt);
-    console.log(hash);
 
     user.password = hash;
 
@@ -44,7 +42,7 @@ exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not 
         res.redirect("/")
     })
     .catch((err)=>{
-        console.log(err)
+        console.error(err)
         res.send("Please try again later")
     })
 };

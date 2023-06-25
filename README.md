@@ -1,18 +1,16 @@
 <p align="center">
-    <img src="public/readme/GA-header.png">
+    <img src="public/readme_img/GA-header.png">
 </p>
 
 # 'Album Review App' : SEI Project 2             
 
 ## Description:       
 
-<!-- TODO : link to Milos' GitHub profile -->
-
 This is a full-stack web app - _Album Review App_: a site where users can add and then review music albums - built as part of a paired project with [Milos Jocic](https://github.com/milosjocic1) over the course of a week, for the second project in GA London's Software Engineering Immersive course. The app uses an Express framework, Node.js platform and an Atlas-hosted MongoDB NoSQL database. The deployed project was presented to my GA Instructional Team and fellow SEI cohort on 26/08/22.        
 
 I was 'Team Leader' for this project, taking responsibility for Git version control and deployment of the completed app. I worked on broader functionality across the site both in Frontend and Backend: setting up `server.js` config, creating Models, writing routes and APIs, implementing Views, forms and user input. I also took ownership of UI styling and mobile responsive formatting.        
 
-![Main app image](./public/readme/project2_main.png)        
+![Main app image](./public/readme_img/project2_main.png)        
 
 ## Links:        
 
@@ -56,11 +54,11 @@ Our initial project idea was a 'DIY' app where users could upload and share inst
 
 We decided to share ownership for basic app setup, before each taking ownership for a non-user model and its associated controllers, views and routes. Milos would later implement authentication/authorisation and image uploads, and I would move on to UI/UX and mobile responsiveness.          
 
-![ERD on Figma](public/readme//ERD.png)     
+![ERD on Figma](public/readme_img//ERD.png)     
 
-![Wireframe 1 from Figma](public/readme/wireframe1.png)     
+![Wireframe 1 from Figma](public/readme_img/wireframe1.png)     
 
-![Wireframe 2 from Figma](public/readme/wireframe2.png)     
+![Wireframe 2 from Figma](public/readme_img/wireframe2.png)     
 
 This idea was changed to an Album Review App on day 2: this was an idea that we were both more excited about and therefore both bought into more.       
     
@@ -97,7 +95,7 @@ I was getting `document is not defined` - a quick bit of googling revealed that 
 
 First, using similar code in a `main.js` file allowed for just one input box to be added. I then tried using jQuery instead like so and it worked:      
 
-![jQuery to the rescue](public/readme/jquery.png)       
+![jQuery to the rescue](public/readme_img/jquery.png)       
 
 Outside of the above 'puzzle', this was a productive day. Importantly I had learned important lessons about (and gained confidence in) using EJS vs. JS as above!       
 
@@ -105,11 +103,11 @@ Outside of the above 'puzzle', this was a productive day. Importantly I had lear
 
 After some difficulty getting data from the database to populate, it turned out (surprise, surprise) that I needed...`.populate()` within my APIs:          
 
-![use of populate()](public/readme/populate.png)        
+![use of populate()](public/readme_img/populate.png)        
 
 Ensuring Album documents and User documents are updated correctly when reviews are added was a challenge but also a key step. Milos implemented User association through using a hidden input field for `currentUser._id` within 'Create Review' form, I implemented associating by reference with Album as follows:        
 
-![associating review-album](public/readme/albumRelation.png)        
+![associating review-album](public/readme_img/albumRelation.png)        
 _- Update Albums with reviews in reviews controller._       
 
 A further challenge faced was displaying linked reviews within Album Detail GET views, as well as then also displaying the Users who created the displayed reviews. Eventually - after a lot of documentation and _stackoverflow.com_ - I sought advice from instructors who guided me to the below solution:       
@@ -127,7 +125,7 @@ _Not something I think I could have worked out solo - an important reminder that
 
 The last key challenge of the day was where in the Review model, `createdBy` was an array:        
 
-![createdBy field in Review model](public/readme/reviewModel.png)       
+![createdBy field in Review model](public/readme_img/reviewModel.png)       
 
 Which - after some trial and error - required the following code (including use of `index 0`) to correctly display in `album/detail.ejs`:   
 
@@ -139,15 +137,11 @@ I predominantly spent this day on UX and styling as the presentation deadline ap
 
 One snippet I was pleased with was a bit of EJS that dynamically punctuated the 'genre' array in album detail:      
 
-<!-- TODO : insert screenshot of this in action! -->        
-
-![Dynamically punctuate genre array in album detail view](public/readme/genrepunctuation.png)       
+![Dynamically punctuate genre array in album detail view](public/readme_img/genrepunctuation.png)       
 
 Also, displaying avg. review rating:        
 
-<!-- TODO : insert screenshot here! -->     
-
-![Display average rating in friendly format](public/readme/avgrating.png)       
+![Display average rating in friendly format](public/readme_img/avgrating.png)       
 
 ### 15/09/22 | Day 5 | Final day of production:     
 
@@ -155,11 +149,11 @@ This was a challenging day: getting Bootstrap to display album cards how we want
 
 On the other hand, Bootstrap proved particularly useful for things like mobile-responsive headers:     
 
-![mobile responsive header](public/readme/mobresponsiveheader.png)      
+![mobile responsive header](public/readme_img/mobresponsiveheader.png)      
 
 I did, however, have to remove a lot of CSS positioning to allow Bootstrap to 'do its thing'. In some cases, this was not enough to give proper responsiveness. As such, I used `display: hide` as part of a media query to remove less important information in order to view on a smaller screen:      
 
-![media query in CSS](public/readme/mobileresponsive.png)       
+![media query in CSS](public/readme_img/mobileresponsive.png)       
 
 At this point, things started to go drastically wrong for us when uploaded images started to disappear. As we did not at the time know that Heroku's file storage was behind this, we started reverting back to previous commits in order to purge the error that (unsurprisingly) we could never quite pinpoint.       
 
@@ -196,7 +190,7 @@ Some key learnings from this project were as follows:
 - Even if it is initially unfamiliar, EJS is 'still just JavaScript' (albeit with some differences and limitations): at first I struggled to translate my understanding of JS into using EJS, but once I got over the few differences it just 'clicked'. This was a great feeling! Also, Express-EJS-layouts template-based views are a quick, powerful and efficient way of building and managing a web app - I really enjoyed using these.           
 - Finding the 'right' communication is key: for us, this was about striking a balance between consistent and frequent communication in order to collaborate effectively, without needlessly breaking each others' concentration when working. Slack messages were great for non-urgent comms, whereas zoom was great for more immediate communication. Our [Trello board](https://trello.com/b/0mU24NKC/project-2-express-album) below was key to keeping track of who was doing what:         
 
-![Trello Board screenshot](public/readme/Trello.png)      
+![Trello Board screenshot](public/readme_img/Trello.png)      
 
 - Lastly, bugs and errors are part and parcel of coding and shouldn't be a source of panic. Crucially, chasing bugs should never lead to the loss of work and code. Calm decisions are good decisions, rushed and impulsive decisions are typically **not** good decisions.       
 
@@ -217,7 +211,7 @@ Challenges faced during the project included:
 
 ## Bugs & Issues:       
 
-![Broken image links](public/readme/brokenimages.png)       
+![Broken image links](public/readme_img/brokenimages.png)       
 
 - Uploaded images are lost (and therefore `<img src=''/>` links break) after <24 hours: this is due to Heroku's ephemeral filesystem.       
     _Workaround completed 24/11/22, see post-production below._        
@@ -250,13 +244,13 @@ Branched into `fix-image-upload`. Following [this guide](https://plainenglish.io
 
 Bucket created, `.env` updated with Bucket name, location and ARN. Policy set in IAM:       
 
-![chosen bucket actions](./public/readme/bucket.png)        
+![chosen bucket actions](./public/readme_img/bucket.png)        
 
 Policy created - after some issue adding ARN (don't past directly into ARN value, just paste into bucket name/click any for object name).       
 
 Creating user, see key tip below:       
 
-![choose programmatic access](./public/readme/bucket2.png)      
+![choose programmatic access](./public/readme_img/bucket2.png)      
 
 Above policy attached. Key and Secret Key added to `.env` file.     
 
@@ -266,7 +260,7 @@ Installed `aws-sdk dotenv`. At this stage, my app structure deviates singificant
 
 Installed `multer-s3`, making edits in `albums.js` routes as this is where the `multer` code is written:        
 
-![code added to albums.js routes](./public/readme/multer-S3.png);       
+![code added to albums.js routes](./public/readme_img/multer-S3.png);       
 
 After various attempts using differing approaches and documentation, I have decided instead to do away with image upload, and instead use direct image URLs. I encountered some issues when changing this: key fixes included removing `enctype` from `album/add.ejs` and changing the `name=image` input to `name=albumCover`.     
 
