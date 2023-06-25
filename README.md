@@ -268,8 +268,10 @@ The app has now been successfully rehosted on Cyclic, and Album Cover images wil
 
 ## 25/06/23 | Rewrite and Rehost:       
 
-The first step I have taken is to restructure the project, with the `server.js` entry point remaining at root level, Express App functionality extracted out from `server.js` into `src/app.js`, and DB connection functionality extracted further again into `src/utils/`.
+The first step I have taken is to restructure the project, with the `server.js` entry point remaining at root level, Express App functionality extracted out from `server.js` into `src/app.js`, and DB connection functionality extracted further again into `src/utils/`.     
 
-`navbar` updated with changed item order, names. Add album not protected by `isLoggedIn` middleware, this changed along with other routes requiring protection.
+`navbar` updated with changed item order, names. Add album not protected by `isLoggedIn` middleware, this changed along with other routes requiring protection.     
 
-Landing / sign in page updated. About page added (not yet completed). Fixed middleware issue.
+Landing / sign in page updated. About page added (not yet completed). Fixed middleware issue.       
+
+Favicon added.      
