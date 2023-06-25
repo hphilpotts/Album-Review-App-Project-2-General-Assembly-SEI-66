@@ -17,17 +17,18 @@ var storage = multer.diskStorage({
   })
   let upload = multer({ storage: storage })
 
+const isLoggedIn = require('../helpers/isLoggedIn');
 
 // -- Routes:
-router.get('/album/add', albumsCtrl.album_create_get);
+router.get('/album/add', isLoggedIn, albumsCtrl.album_create_get);
 router.post('/album/add', upload.single('image'), albumsCtrl.album_create_post);
 
 router.get('/album/index', albumsCtrl.album_index_get);
 router.get('/album/detail', albumsCtrl.album_detail_get);
 
-router.get('/album/edit', albumsCtrl.album_edit_get);
+router.get('/album/edit', isLoggedIn, albumsCtrl.album_edit_get);
 router.post('/album/update', albumsCtrl.album_edit_post);
 
-router.get('/album/delete', albumsCtrl.album_delete);
+router.get('/album/delete', isLoggedIn, albumsCtrl.album_delete);
 
 module.exports = router;
