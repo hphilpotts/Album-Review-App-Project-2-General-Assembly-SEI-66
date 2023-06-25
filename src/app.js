@@ -26,9 +26,11 @@ app.use(function (req, res, next) {
     next();
 })
 
+const aboutRouter = require('./routes/about');
 const albumsRouter = require('./routes/albums');
 const authRouter = require('./routes/auth');
 const reviewsRouter = require('./routes/reviews');
+app.use('/', aboutRouter);
 app.use('/', albumsRouter);
 app.use('/', authRouter);
 app.use('/', reviewsRouter);
