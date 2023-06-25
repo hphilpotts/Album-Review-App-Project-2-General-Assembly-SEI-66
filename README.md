@@ -274,4 +274,4 @@ The first step I have taken is to restructure the project, with the `server.js` 
 
 Landing / sign in page updated. About page added (not yet completed). Fixed middleware issue.       
 
-Favicon added.      
+Favicon added. About page updated.     

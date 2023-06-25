@@ -51,6 +51,11 @@ background-clip: text;
 /* .nav-link {
   font-size: 20px;
 } */
+
+.italic {
+  font-style: oblique;
+}
+
 a{
   color: rgb(38, 38, 38);
   text-decoration: none;
