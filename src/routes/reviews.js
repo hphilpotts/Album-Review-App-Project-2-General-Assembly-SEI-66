@@ -11,7 +11,7 @@ router.use(express.urlencoded({ extended: true }));
 const reviewCtrl = require("../controllers/reviews");
 
 // IsLoggedIn middleware
-const IsLoggedIn = require('../helper/isLoggedIn');
+const IsLoggedIn = require('../helpers/isLoggedIn');
 
 
 

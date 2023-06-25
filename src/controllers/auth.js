@@ -3,7 +3,7 @@ const User = require("../models/User")
 
 //require passport configuration
 // install dependencies passport and passport-local
-let passport = require('../helper/ppConfig');
+let passport = require('../helpers/ppConfig');
 
 // require bcrypt for hashing password
 const bcrypt = require('bcrypt');

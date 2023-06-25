@@ -4,7 +4,7 @@ const router = express.Router();
 
 const authCtrl = require("../controllers/auth");
 
-const IsLoggedIn = require('../helper/isLoggedIn');
+const IsLoggedIn = require('../helpers/isLoggedIn');
 
 router.get('/', IsLoggedIn, authCtrl.home_get)
 router.get("/auth/landing", authCtrl.landing_get); // verify whether to use auth_landing_get instead
