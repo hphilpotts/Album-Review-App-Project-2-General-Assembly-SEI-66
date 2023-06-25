@@ -1,12 +1,29 @@
 body{
   font-family: 'Calistoga', cursive;
-  margin: 20px;
-  background-color: rgb(255, 240, 202);
+  background-color: #212529;
+  overflow-x: hidden;
 }
+
+#inner-body {
+  background-color: rgb(255, 240, 202);
+  margin: none;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body, #inner-body, #body-container {
+  min-height: 80vh
+}
+
+#body-container {
+  padding: 0 3%;
+}
+
 nav{
   font-weight: bolder;
   color: white !important;
   margin: -20px;
+  padding: 0 3%;
 }
 nav :visited{
   color: white;
@@ -156,3 +173,38 @@ a:hover{
 .body-div{
   padding: 10px 10px 0px 0px;
 }
+
+.mobile-header-backing {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    overscroll-behavior-y:contain;
+  }
+  /* horizontal scrollbar for tables if mobile screen */
+  .tablemobile {
+      overflow-x: auto;
+      display: block;
+  }
+  .form-control{
+    min-width: 200px;
+  }
+  .auth-form{
+    margin: 5%;
+    padding: 10%;
+    outline: none;
+    border: 3px solid rgb(38, 38, 38);
+    border-radius: 20px;
+  }
+  .mobile-small-text{
+    font-size: 12px;
+  }
+  .mobile-med-text{
+    font-size: 16px;
+    text-align: center;
+  }
+  .mobile-hide{
+    display: none;
+  }
+  }

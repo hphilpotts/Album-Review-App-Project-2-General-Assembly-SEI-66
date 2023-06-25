@@ -26,9 +26,8 @@
   </head>
 
   <body>
-
+    <div id="inner-body">
     <!-- There used to be a header above a <br> here with 'ALBUM REVIEW APP' - change back if needed -->
-
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid d-flex justify-content-evenly">
         <!-- could chuck a logo below along with 'Home' - see Bs 'navbar/image and text' -->
@@ -65,7 +64,9 @@
     <hr />
     <br>
 
-    <%- body %>
+    <div id="body-container">
+      <%- body %>
+    </div>
 
     <br><br>
     <nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
@@ -94,7 +95,7 @@
     ></script>
     <!-- main.js -->
     <script src="../js/main.js"></script>
-  
+  </div>
   </body>
 
 </html>
