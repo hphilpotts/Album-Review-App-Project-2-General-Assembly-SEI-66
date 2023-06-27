@@ -1,3 +1,52 @@
+/* -- generic */
+
+.italic {
+  font-style: oblique;
+}
+
+.larger-text {
+  font-size: 30px;
+}
+
+.med-text {
+  font-size: 20px;
+}
+
+.small-text {
+  height: 30px;
+  font-size: 14px;
+}
+
+#copyright {
+  font-size: 10px;
+}
+
+.w-text {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: #212529;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: rgb(255, 130, 88);
+  text-shadow: 1px 1px white;
+}
+
+.small-shadow {
+  text-shadow: 1px 1px rgb(255, 130, 88);
+}
+
+.highlighted-text {
+  text-shadow: 2px 1px white(255, 130, 88);
+}
+
+/* -- body and associated containers */
+
 body {
   font-family: 'Calistoga', cursive;
   background-color: #212529;
@@ -21,18 +70,28 @@ body,
   padding: 0 3%;
 }
 
+.container {
+  width: 500px;
+  display: flex;
+}
+
+.body-div {
+  padding: 10px 10px 0px 0px;
+}
+
+/* -- nav */
+
 nav {
   font-weight: bolder;
-  color: white !important;
   margin: -20px;
   padding: 0 3%;
 }
 
-nav :visited {
-  color: white;
-}
-
-nav :link {
+nav :visited,
+nav :link,
+#nav-user,
+#nav-user :hover,
+nav :active {
   color: white;
 }
 
@@ -50,46 +109,17 @@ nav :hover,
   margin: 0px 20px 0px 20px;
 }
 
-.white-text {
-  color: white
-}
-
-#nav-user :hover {
-  color: white;
-}
-
-#nav-user {
-  color: white;
-}
-
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
 }
 
-.navbar .navbar-collapse {
-  text-align: center;
+.mobile-header-backing {
+  display: none;
 }
 
-.italic {
-  font-style: oblique;
-}
-
-a {
-  color: rgb(38, 38, 38);
-  text-decoration: none;
-}
-
-a:hover {
-  color: rgb(255, 130, 88);
-  text-shadow: 1px 1px white;
-}
-
-.add-btn {
-  border: 2px solid darkgray;
-  margin: 2px;
-}
+/* -- album views */
 
 .album-icon {
   max-width: 150px;
@@ -101,6 +131,13 @@ a:hover {
 .album-large {
   max-width: 300px;
 }
+
+.add-btn {
+  border: 2px solid darkgray;
+  margin: 2px;
+}
+
+/* -- review views */
 
 .review-preview {
   overflow: hidden;
@@ -116,20 +153,9 @@ a:hover {
   text-shadow: 2px 2px rgb(255, 130, 88);
 }
 
-.small-shadow {
-  text-shadow: 1px 1px rgb(255, 130, 88);
-}
-
-.larger-text {
-  font-size: 30px;
-}
-
-.med-text {
-  font-size: 20px;
-}
-
-.highlighted-text {
-  text-shadow: 2px 1px white(255, 130, 88);
+.review-content {
+  white-space: pre-wrap;
+  margin: 0px 20px 40px 20px
 }
 
 .user-edit {
@@ -137,19 +163,12 @@ a:hover {
   font-style: italic;
 }
 
-.review-content {
-  white-space: pre-wrap;
-  margin: 0px 20px 40px 20px
+.update-time {
+  display: flex;
+  align-self: end;
 }
 
-.small-text {
-  height: 30px;
-  font-size: 14px;
-}
-
-#copyright {
-  font-size: 10px;
-}
+/* -- auth views */
 
 .auth-form {
   margin: 100px auto;
@@ -160,19 +179,7 @@ a:hover {
   max-width: 600px;
 }
 
-.heading-review {
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.container {
-  width: 500px;
-  display: flex;
-}
+/* -- image */
 
 .img-div {
   padding: 10px;
@@ -182,18 +189,14 @@ a:hover {
   max-width: 220px;
 }
 
-.update-time {
+/* -- positional */
+
+.row {
   display: flex;
-  align-self: end;
+  flex-wrap: wrap;
 }
 
-.body-div {
-  padding: 10px 10px 0px 0px;
-}
-
-.mobile-header-backing {
-  display: none;
-}
+/* -- small-screen */
 
 @media only screen and (max-width: 480px) {
   body {

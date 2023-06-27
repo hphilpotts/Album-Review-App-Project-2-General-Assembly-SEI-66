@@ -266,7 +266,9 @@ After various attempts using differing approaches and documentation, I have deci
 
 The app has now been successfully rehosted on Cyclic, and Album Cover images will now persist as they are direct image URL links.
 
-## 25/06/23 | Rewrite and Rehost:       
+## June 2023 | Rewrite and Rehost: 
+
+### 25/05/23:       
 
 The first step I have taken is to restructure the project, with the `server.js` entry point remaining at root level, Express App functionality extracted out from `server.js` into `src/app.js`, and DB connection functionality extracted further again into `src/utils/`.     
 
@@ -277,3 +279,7 @@ Landing / sign in page updated. About page added (not yet completed). Fixed midd
 Favicon added. About page updated.     
 
 Mobile formatting issues resolved, overscroll issue resolved.       
+
+### 27/06/23:       
+
+`main.css` formatted to be more readable.

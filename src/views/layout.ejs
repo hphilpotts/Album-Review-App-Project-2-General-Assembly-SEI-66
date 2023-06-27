@@ -27,16 +27,13 @@
 
   <body>
     <div id="inner-body">
-    <!-- There used to be a header above a <br> here with 'ALBUM REVIEW APP' - change back if needed -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark text-center w-text">
       <div class="container-fluid d-flex justify-content-evenly">
-        <!-- could chuck a logo below along with 'Home' - see Bs 'navbar/image and text' -->
         <a class="navbar-brand" id="main-logo" href="/">ALBUM REVIEW APP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <div class="nav-left"></div>  -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
           <a class="nav-link active" aria-current="page" href="/review/index">Reviews</a>
           <a class="nav-link active" aria-current="page" href="/album/index">Albums</a>
           <a class="nav-link active" aria-current="page" href="/album/add">Add Album</a>
@@ -48,7 +45,7 @@
               </form> -->
         <!-- </div> -->
       <!-- </div> -->
-      <!-- <div class="nav-right white-text"> -->
+      <!-- <div class="nav-right w-text"> -->
         <% if(currentUser){ %>
         <a class="nav-link active" aria-current="page" href="/">Hi, <%= currentUser.username %></a>
         <!-- why are these on different lines? can they go side-by-side? -->
@@ -69,10 +66,10 @@
     </div>
 
     <br><br>
-    <nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark">
+    <nav class="navbar fixed-bottom navbar-expand navbar-dark bg-dark text-center">
       <div class="container-fluid d-flex justify-content-evenly small-text">
         <footer>
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse text-center">
           <a class="nav-link active" aria-current="page" href="/review/index">Home</a>
           <a class="nav-link active" aria-current="page" href="https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66">GitHub</a>
           <a class="nav-link active" aria-current="page" href="/about">About</a>
