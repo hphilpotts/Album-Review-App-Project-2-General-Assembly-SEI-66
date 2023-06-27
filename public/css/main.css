@@ -1,4 +1,4 @@
-body{
+body {
   font-family: 'Calistoga', cursive;
   background-color: #212529;
   overflow-x: hidden;
@@ -11,7 +11,9 @@ body{
   overflow-x: hidden;
 }
 
-body, #inner-body, #body-container {
+body,
+#inner-body,
+#body-container {
   min-height: 80vh
 }
 
@@ -19,158 +21,173 @@ body, #inner-body, #body-container {
   padding: 0 3%;
 }
 
-nav{
+nav {
   font-weight: bolder;
   color: white !important;
   margin: -20px;
   padding: 0 3%;
 }
-nav :visited{
+
+nav :visited {
   color: white;
 }
-nav :link{
+
+nav :link {
   color: white;
 }
-nav :hover, #main-logo{
+
+nav :hover,
+#main-logo {
   color: rgb(255, 130, 88);
 }
 
-#main-logo{
-font-size: 30px;
-text-shadow: 1px 1px white;
-/* background: -webkit-linear-gradient(right, rgb(255, 130, 88),rgb(255, 130, 88), rgb(255, 240, 202));
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent; */
+#main-logo {
+  font-size: 30px;
+  text-shadow: 1px 1px white;
 }
+
 .navbar-collapse a {
   margin: 0px 20px 0px 20px;
 }
-.white-text{
+
+.white-text {
   color: white
 }
-#nav-user :hover{
+
+#nav-user :hover {
   color: white;
 }
-#nav-user{
+
+#nav-user {
   color: white;
 }
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
 }
+
 .navbar .navbar-collapse {
   text-align: center;
 }
-/* add this in later when 'add review' is removed */
-/* also shift user options to right? */
-/* .nav-link {
-  font-size: 20px;
-} */
 
 .italic {
   font-style: oblique;
 }
 
-a{
+a {
   color: rgb(38, 38, 38);
   text-decoration: none;
 }
-a:hover{
+
+a:hover {
   color: rgb(255, 130, 88);
   text-shadow: 1px 1px white;
 }
-.add-btn{
+
+.add-btn {
   border: 2px solid darkgray;
   margin: 2px;
 }
-.album-icon{
+
+.album-icon {
   max-width: 150px;
   outline: 1px solid rgb(38, 38, 38);
   border: 1px solid rgb(38, 38, 38);
   border-radius: 5px;
-  /* max-height: 150px; */
- }
-.album-large{
+}
+
+.album-large {
   max-width: 300px;
 }
-.review-preview{
+
+.review-preview {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
- -webkit-line-clamp: 3;
- -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
-/* .review-box, .review-preview{
-  /* max-height: 200px; */
-/* } */
-.large-heading, .review-rating{
+
+.large-heading,
+.review-rating {
   font-size: 60px;
   text-shadow: 2px 2px rgb(255, 130, 88);
 }
-.small-shadow{
+
+.small-shadow {
   text-shadow: 1px 1px rgb(255, 130, 88);
 }
-.larger-text{
+
+.larger-text {
   font-size: 30px;
 }
-.med-text{
+
+.med-text {
   font-size: 20px;
 }
-.highlighted-text{
+
+.highlighted-text {
   text-shadow: 2px 1px white(255, 130, 88);
 }
-.user-edit{
+
+.user-edit {
   padding: 0px 50px;
   font-style: italic;
 }
-.review-content{
+
+.review-content {
   white-space: pre-wrap;
   margin: 0px 20px 40px 20px
 }
-.small-text{
+
+.small-text {
   height: 30px;
   font-size: 14px;
 }
-#copyright{
+
+#copyright {
   font-size: 10px;
 }
-.auth-form{
-  margin: 100px;
+
+.auth-form {
+  margin: 100px auto;
   padding: 50px;
   outline: 3px solid rgb(38, 38, 38);
   border: 2px solid rgb(255, 130, 88);
   border-radius: 20px;
+  max-width: 600px;
 }
-/* .card-width{
-  min-width: 300px;
-} */
-.heading-review{
+
+.heading-review {
   text-align: center;
 }
-.row{
+
+.row {
   display: flex;
   flex-wrap: wrap;
 }
-.container{
+
+.container {
   width: 500px;
-  /* border: 1px solid black; edit colour */
-  /*background: pick a colour */
   display: flex;
 }
-.img-div{
+
+.img-div {
   padding: 10px;
-  /* background: same as .container */
 }
-.review-img{
+
+.review-img {
   max-width: 220px;
 }
-.update-time{
+
+.update-time {
   display: flex;
   align-self: end;
 }
-.body-div{
+
+.body-div {
   padding: 10px 10px 0px 0px;
 }
 
@@ -180,31 +197,37 @@ a:hover{
 
 @media only screen and (max-width: 480px) {
   body {
-    overscroll-behavior-y:contain;
+    overscroll-behavior-y: contain;
   }
+
   /* horizontal scrollbar for tables if mobile screen */
   .tablemobile {
-      overflow-x: auto;
-      display: block;
+    overflow-x: auto;
+    display: block;
   }
-  .form-control{
+
+  .form-control {
     min-width: 200px;
   }
-  .auth-form{
+
+  .auth-form {
     margin: 5%;
     padding: 10%;
     outline: none;
     border: 3px solid rgb(38, 38, 38);
     border-radius: 20px;
   }
-  .mobile-small-text{
+
+  .mobile-small-text {
     font-size: 12px;
   }
-  .mobile-med-text{
+
+  .mobile-med-text {
     font-size: 16px;
     text-align: center;
   }
-  .mobile-hide{
+
+  .mobile-hide {
     display: none;
   }
-  }
+}
