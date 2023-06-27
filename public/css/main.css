@@ -123,13 +123,25 @@ nav :hover,
 
 .album-icon {
   max-width: 150px;
+}
+
+.album-large {
+  max-width: 300px;
+}
+
+.album-icon, .album-large {
   outline: 1px solid rgb(38, 38, 38);
   border: 1px solid rgb(38, 38, 38);
   border-radius: 5px;
 }
 
-.album-large {
-  max-width: 300px;
+.album-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.album-controls-item {
+  margin: 0 1%;
 }
 
 .add-btn {

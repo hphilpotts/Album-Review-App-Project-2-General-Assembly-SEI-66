@@ -282,4 +282,6 @@ Mobile formatting issues resolved, overscroll issue resolved.
 
 ### 27/06/23:       
 
-`main.css` formatted to be more readable.
+`main.css` formatted to be more readable.       
+
+Moved "Edit" and "Delete" buttons from album index view to album detail view - makes more sense from UX perspecitve and cleans up the index page.       

@@ -1,41 +1,37 @@
 <h2 class="large-heading text-center">Albums</h2>
 <br>
 
-<!-- Using a table for now to check data works ok
--- will certainly be changing format further down the line! -->
 <table class="table align-middle table-responsive-sm tablemobile">
-    <tr class="larger-text small-shadow mobile-hide">
-        <th>Album Cover</th>
-        <th class="title-table">Title</th>
-        <th>Artist</th>
-        <th>Year</th>
-        <!-- hidden tracklist as it is probably not needed in index -->
-        <!-- <th>Track List</th> -->
-        <!-- <th>Album Cover</th> -->
-        <th>Genres</th>
-        <!-- <th>Reviews</th> -->
-        <th>Edit</th>
-        <!-- <th>Delete</th> -->
-    </tr>
-<% albums.reverse().forEach(function(album) { %> 
+  <tr class="larger-text small-shadow mobile-hide">
+    <th>Album Cover</th>
+    <th class="title-table">Title</th>
+    <th>Artist</th>
+    <th>Year</th>
+    <th>Genres</th>
+  </tr>
+  <% albums.reverse().forEach(function(album) { %>
     <tr>
-        <td><img class="album-icon" src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
-        <td class="two-line title-table"> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" > <h3 class="mobile-med-text"><%= album.title %></h3></a></td>
-        <td class="med-text mobile-med-text"> <%= album.artist %></td>
-        <td class="mobile-hide"> <%= album.year %></td>
-        <!-- <td> <%= album.trackList %></td> -->
-        <!-- <td> <%= album.albumCover %></td> -->
-        <td class="mobile-hide">
-            <ul>
-<% album.genre.forEach(function(genre) { %>
-                <li><%= genre %></li>
-<% }) %>
-            </ul>
-        </td>
-        <!-- <td> <%= album.review %></td> -->
-        <td class="mobile-hide"> <a href="/album/edit?id=<%= album._id%>">Edit</a></td>
-        <!-- <td> <a href="/album/delete?id=<%= album._id%>">Delete</a></td> -->
+      <td><img class="album-icon" src="<%= album.albumCover%>" alt="<%= album.title %>: album cover."></td>
+      <td class="two-line title-table"> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>">
+          <h3 class="mobile-med-text">
+            <%= album.title %>
+          </h3>
+        </a></td>
+      <td class="med-text mobile-med-text">
+        <%= album.artist %>
+      </td>
+      <td class="mobile-hide">
+        <%= album.year %>
+      </td>
+      <td class="mobile-hide">
+        <ul>
+          <% album.genre.forEach(function(genre) { %>
+            <li>
+              <%= genre %>
+            </li>
+            <% }) %>
+        </ul>
+      </td>
     </tr>
-<% }) %>
-
+    <% }) %>
 </table>

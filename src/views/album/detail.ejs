@@ -3,13 +3,18 @@
     <div>
       <h3 class="large-heading"><%= album.title %></h3>
     </div>
+    <div class="album-controls">
+      <div class="album-controls-item">Added: <%= moment(album.createdAt).fromNow() %></div>
+      <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>">Edit</a></div>
+      <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>">Delete</a></div>
+      <div class="album-controls-item"><a href="/album/index">Back</a></div>
+    </div>
+    <br />
     <img
       class="album-large"
       src="<%= album.albumCover%>"
       alt="<%= album.title %>: album cover."
     /><br /><br />
-    <!-- is this needed? uncomment if so! -->
-    <!-- <div>Created: <%= moment(album.createdAt).fromNow() %></div> -->
     <div class="larger-text small-shadow">Artist: <%= album.artist %></div>
     <div class="larger-text small-shadow">Year: <%= album.year %></div>
     <div class="larger-text small-shadow">
