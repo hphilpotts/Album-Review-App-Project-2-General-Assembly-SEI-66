@@ -285,3 +285,7 @@ Mobile formatting issues resolved, overscroll issue resolved.
 `main.css` formatted to be more readable.       
 
 Moved "Edit" and "Delete" buttons from album index view to album detail view - makes more sense from UX perspecitve and cleans up the index page.       
+
+### 28/06/23:       
+
+Album covers in Album Index now also clickable links to Album Detail. Back to Album Index relocated to bottom of page. "Linked Reviews" section of Album Detail does not render if album is unreviewed.     
