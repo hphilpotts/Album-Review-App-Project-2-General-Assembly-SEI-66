@@ -289,3 +289,5 @@ Moved "Edit" and "Delete" buttons from album index view to album detail view - m
 ### 28/06/23:       
 
 Album covers in Album Index now also clickable links to Album Detail. Back to Album Index relocated to bottom of page. "Linked Reviews" section of Album Detail does not render if album is unreviewed.     
+
+`main.js` `<script>` tag removed from `layout.ejs` as it is only required in `album/add.ejs` view. Updated Add Album form: all fields required (except additional Track and Genre inputs), additional empty Track / Genre inputs are not submitted, max Year input no longer hard-coded but instead set from current year.           
