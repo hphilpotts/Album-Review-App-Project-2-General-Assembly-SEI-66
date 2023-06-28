@@ -17,7 +17,12 @@ const albumSchema = mongoose.Schema({
     // also, how do we let a user upload this themselves?
     genre: [{
         type: String
-    }]
+    }],
+    createdBy: [{
+        // This will be automatically updated whenever a User creates a review
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
 },
 {timestamps: true});
 

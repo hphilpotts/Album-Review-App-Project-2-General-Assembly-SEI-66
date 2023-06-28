@@ -1,14 +1,17 @@
 <div>
-  
+
   <div class="text-center">
     <div>
       <h3 class="large-heading"><%= album.title %></h3>
     </div>
-    <div class="album-controls">
-      <div class="album-controls-item">Added: <%= moment(album.createdAt).fromNow() %></div>
-      <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>">Edit</a></div>
-      <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>">Delete</a></div>
-    </div>
+
+    <% if (album.createdBy[0] == currentUser.id) { %>
+      <div class="album-controls">
+        <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>">Edit</a></div>
+        <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>">Delete</a></div>
+      </div>
+    <% } %>
+
     <img
       class="album-large"
       src="<%= album.albumCover%>"
@@ -37,8 +40,8 @@
       <% let counter = 0; album.genre.forEach(function(genre) { counter++ %>
         <a href="">
           <span class="med-text highlighted-text">
-            <%= genre %> <% if (counter < album.genre.length) { %> <%= ', '
-            %>&nbsp; <% } else {%> <%= '.' %> <% } %>
+            <%= genre %> <% if (counter < album.genre.length) { %> <%= '/'
+            %>&nbsp; <% } %>
           </span>
         </a>
       <% }) %>
