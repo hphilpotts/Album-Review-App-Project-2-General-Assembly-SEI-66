@@ -13,13 +13,11 @@ const moment = require('moment');
 
 // http GET - Load Review form
 exports.review_create_get = (req, res) => {
-    // find list of albums from album collection
-    Album.find()
-    // once this is done, then render add page along with albums data:
-    .then((albums) => {
-        res.render("review/add", {albums})
+    Album.findById(req.query.id)
+    .then((Album) => {
+        console.log(Album._id)
+        res.render("review/add", { Album })
     })
-    // else show me the error
     .catch(err => {
         console.error(err);
     })

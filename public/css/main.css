@@ -41,6 +41,10 @@ a:active {
   text-shadow: 1px 1px rgb(255, 130, 88);
 }
 
+a:hover .hover-shadow {
+  text-shadow: 1px 1px rgb(38, 38, 38)
+}
+
 .highlighted-text {
   text-shadow: 2px 1px white(255, 130, 88);
 }

@@ -9,7 +9,7 @@
 <div class="text-center">
 <% review.album.forEach(function(element) { %>
     <td>
-        <a href="/review/detail?id=<%= review._id %>">
+        <a href="/album/detail?id=<%= element._id %>">
             <img class="album-large album-icon"src="<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
         </a>
     </td>

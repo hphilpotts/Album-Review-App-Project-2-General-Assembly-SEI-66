@@ -2,16 +2,6 @@
 
 <form method="POST" action="/review/add" class="auth-form med-text small-shadow" style="margin-top: 30px;">
 
-    <div class="form-group">
-        <label for="">Album</label>
-        <select name="album[]" required="true" class="form-control">
-            <% albums.forEach(function(album) { %>
-                <option value="<%= album._id %>"><%= album.title %></option>
-    
-            <% }) %>
-        </select>
-    </div>
-
 <div class="form-group">
     <label>Rating /10:</label>
     <input name="rating" type="number" class="form-control" min="0" max="10" step="1" required="true"></input>
@@ -21,6 +11,8 @@
     <label>Content</label> 
 <textarea name="content" type="text" required="true" minlength="50" class="form-control" style="height: 50vh;">Write your review here!</textarea>
 </div>
+
+<input type="hidden" name="album[]" value="<%= Album._id %>" />
 
 <input type="hidden" name="createdBy" value="<%= currentUser._id %>" />
 <br>
