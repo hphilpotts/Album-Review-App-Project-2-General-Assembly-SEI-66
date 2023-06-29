@@ -1,6 +1,6 @@
 <div>
     <% review.album.forEach(function(album) { %> 
-        <h2 class="large-heading text-center"> <span><%=album.artist%>:</span><%= album.title %></h2>
+        <h2 class="large-heading text-center"> <span><%=album.artist%>: </span><a href="/album/detail?id=<%= album.id %>"><%= album.title %></a></h2>
     <% }) %>
 </div><br><hr><br>
 

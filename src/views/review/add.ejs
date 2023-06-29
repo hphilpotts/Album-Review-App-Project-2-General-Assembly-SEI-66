@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <label for="">Album</label>
-        <select name="album[]" multiple="multiple" class="form-control">
+        <select name="album[]" required="true" class="form-control">
             <% albums.forEach(function(album) { %>
                 <option value="<%= album._id %>"><%= album.title %></option>
     
@@ -12,25 +12,14 @@
         </select>
     </div>
 
-<!-- previous code -->
-<!-- <div class="form-group">
-    <label>Album Name:</label>
-    <input name="title" type="text" class="form-control"/>
-</div> -->
-
-<!-- <div class="form-group">
-    <label>Artist:</label>
-    <input name="artist" type="text" class="form-control"/>
-</div> -->   <!--unsure if manual input? Not given in review schema (maybe add artist to review schema) -->
-
 <div class="form-group">
     <label>Rating /10:</label>
-    <input name="rating" type="number" class="form-control" min="0" max="10" step="1"></input>
+    <input name="rating" type="number" class="form-control" min="0" max="10" step="1" required="true"></input>
 </div>
 
 <div class="form-group">
     <label>Content</label> 
-<textarea name="content" type="text" class="form-control" style="height: 50vh;">Write your review here!</textarea>
+<textarea name="content" type="text" required="true" minlength="50" class="form-control" style="height: 50vh;">Write your review here!</textarea>
 </div>
 
 <input type="hidden" name="createdBy" value="<%= currentUser._id %>" />

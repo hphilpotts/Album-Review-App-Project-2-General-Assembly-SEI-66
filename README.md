@@ -291,3 +291,19 @@ Moved "Edit" and "Delete" buttons from album index view to album detail view - m
 Album covers in Album Index now also clickable links to Album Detail. Back to Album Index relocated to bottom of page. "Linked Reviews" section of Album Detail does not render if album is unreviewed.     
 
 `main.js` `<script>` tag removed from `layout.ejs` as it is only required in `album/add.ejs` view. Updated Add Album form: all fields required (except additional Track and Genre inputs), additional empty Track / Genre inputs are not submitted, max Year input no longer hard-coded but instead set from current year.           
+
+`Album.js` model now has `createdBy` property, updated from hidden field in Add Album form. Edit / Delete album controls now only render for the user who added the album.      
+
+### 29/06/23:       
+
+Required fields added to Add Review along with min review length. Multiple albums can no longer be selected. Review detail images now clickable links.
+
+## Main Features & Fixes before rehost:
+- Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
+- Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
+- Add review link to be moved into album detail, album selection to be automatic on this basis.     
+- Implement filter by genre / artist / user.       
+- Delete orphaned reviews when album deleted.       
+- Update error pages/messages.      
+- Ensure full mobile responsiveness.        
+- Ensure all accessibility features present.        

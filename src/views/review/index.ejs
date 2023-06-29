@@ -3,9 +3,11 @@
   <% reviews.forEach(function(review){ %>
   <div class="container">
     <div class="img-div">
-      <% review.album.forEach(function(element) { %>
-      <img src="<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
-      <% }) %>
+      <a href="/review/detail?id=<%= review._id %>">
+        <% review.album.forEach(function(element) { %>
+          <img src="<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
+        <% }) %>
+      </a>
     </div>
     <div class="body-div">
       <% review.album.forEach(function(album) { %>
