@@ -86,7 +86,7 @@ exports.review_delete_get = (req, res) => {
 // http GET - load review edit form 
 
 exports.review_edit_get = (req, res) => {
-    Review.findById(req.query.id)
+    Review.findById(req.query.id).populate('album')
     .then((review) => {
         res.render("review/edit", {review})
     })

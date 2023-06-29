@@ -296,7 +296,9 @@ Album covers in Album Index now also clickable links to Album Detail. Back to Al
 
 ### 29/06/23:       
 
-Required fields added to Add Review along with min review length. Multiple albums can no longer be selected. Review detail images now clickable links.
+Required fields added to Add Review along with min review length. Multiple albums can no longer be selected. Review detail images now clickable links.      
+
+Edit Review form now shows album artist and title.      
 
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      

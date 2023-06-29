@@ -8,6 +8,10 @@
         <input name="title" type="text" value="<%= review.album %>" />
     </div> -->
 
+    <% review.album.forEach(function(album) { %>
+        <h2 class="large-heading text-center"> <span><%=album.artist%>: </span><%= album.title %></h2>
+    <% }) %>
+    
     <div>
         <label>Rating:</label>
         <input class="form-control" name="rating" type="number" value="<%= review.rating %>"/>
