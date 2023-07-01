@@ -300,6 +300,10 @@ Required fields added to Add Review along with min review length. Multiple album
 
 Edit Review form now shows album artist and title.      
 
+### 01/07/23:       
+
+Search by genre functionality added: links added to genre elements in Album Detail and Album Index, clicking renders Album Index filtered by clicked genre.     
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        

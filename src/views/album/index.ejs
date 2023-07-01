@@ -27,7 +27,7 @@
         <ul>
           <% album.genre.forEach(function(genre) { %>
             <li>
-              <%= genre %>
+              <a href="/album/genre_index?genre=<%= genre %>"><%= genre %></a>
             </li>
             <% }) %>
         </ul>

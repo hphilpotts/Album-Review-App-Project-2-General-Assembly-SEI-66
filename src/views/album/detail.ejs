@@ -44,7 +44,7 @@
       <% let counter = 0; album.genre.forEach(function(genre) { counter++ %>
         <a href="">
           <span class="med-text highlighted-text">
-            <%= genre %> <% if (counter < album.genre.length) { %> <%= '/'
+            <a href="/album/genre_index?genre=<%= genre %>"><%= genre %></a> <% if (counter < album.genre.length) { %> <%= '/'
             %>&nbsp; <% } %>
           </span>
         </a>
