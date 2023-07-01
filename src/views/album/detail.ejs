@@ -5,7 +5,7 @@
       <h3 class="large-heading"><%= album.title %></h3>
     </div>
 
-    <% if (album.createdBy[0] == currentUser.id) { %>
+    <% if (currentUser && album.createdBy[0] == currentUser.id) { %>
       <div class="album-controls">
         <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>">Edit</a></div>
         <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>">Delete</a></div>
@@ -18,7 +18,7 @@
       alt="<%= album.title %>: album cover."
     />
     <br /><br />
-    <div class="larger-text small-shadow">Artist: <%= album.artist %></div>
+    <div class="larger-text small-shadow">Artist: <a href="/album/artist_index?artist=<%= album.artist %>"><%= album.artist %></a></div>
     <div class="larger-text small-shadow">Year: <%= album.year %></div>
     <div class="larger-text small-shadow">
         <span>Average Rating:</span>

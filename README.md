@@ -302,7 +302,9 @@ Edit Review form now shows album artist and title.
 
 ### 01/07/23:       
 
-Search by genre functionality added: links added to genre elements in Album Detail and Album Index, clicking renders Album Index filtered by clicked genre.     
+Filter index by genre functionality added: links added to genre elements in Album Detail and Album Index, clicking renders Album Index filtered by clicked genre.     
+
+Fixed bug where no user logged in breaks Album Detail view. Filter index by artist functionality added as per genre filter above.       
 
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      

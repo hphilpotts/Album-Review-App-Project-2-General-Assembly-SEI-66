@@ -25,6 +25,7 @@ router.post('/album/add', upload.single('image'), albumsCtrl.album_create_post);
 
 router.get('/album/index', albumsCtrl.album_index_get);
 router.get('/album/genre_index', albumsCtrl.album_genre_get);
+router.get('/album/artist_index', albumsCtrl.album_artist_get);
 router.get('/album/detail', albumsCtrl.album_detail_get);
 
 router.get('/album/edit', isLoggedIn, albumsCtrl.album_edit_get);

@@ -57,6 +57,19 @@ exports.album_genre_get = (req, res) => {
     })
 }
 
+// HTTP GET - Albums Index by Genre
+
+exports.album_artist_get = (req, res) => {
+    Album.find({ artist: req.query.artist })
+    .then(albums => {
+        res.render('album/index', { albums, moment })
+    })
+    .catch(err => {
+        console.error(err);
+        res.send('ERROR?');
+    })
+}
+
 // HTTP GET - Albums Detail
 exports.album_detail_get = (req, res) => {
     // This is the bit that is causing us problems!
