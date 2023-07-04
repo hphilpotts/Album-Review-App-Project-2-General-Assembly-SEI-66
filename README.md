@@ -306,6 +306,10 @@ Filter index by genre functionality added: links added to genre elements in Albu
 
 Fixed bug where no user logged in breaks Album Detail view. Filter index by artist functionality added as per genre filter above.       
 
+### 04/07/23:       
+
+Filter review by user implemented.      
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        

@@ -68,6 +68,17 @@ exports.review_show_get = (req, res) => {
     })
 };
 
+// http GET - review by createdBy
+exports.review_by_user_get = (req, res) => {
+    Review.find({ createdBy: req.query.user }).populate('album').populate('createdBy')
+    .then(reviews => {
+        res.render("review/index", { reviews, moment })
+    })
+    .catch(err => {
+        console.error(err)
+    })
+}
+
 // http DELETE - Review
 exports.review_delete_get = (req, res) => {
     Review.findByIdAndDelete(req.query.id)

@@ -18,7 +18,7 @@
 
 <div class="text-center">
     <br>
-    <p class="highlighted-text small-shadow larger-text">A review by <%= review.createdBy[0].username %></p>
+    <p class="highlighted-text small-shadow larger-text">A review by <a href="/review/user_index?user=<%= review.createdBy[0]._id %>"><%= review.createdBy[0].username %></a></p>
     <p class="highlighted-text small-shadow larger-text">User rating:</p> <span class="review-rating"><%= review.rating %></span>
 </div>
 <% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>

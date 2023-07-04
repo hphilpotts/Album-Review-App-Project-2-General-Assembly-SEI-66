@@ -68,7 +68,7 @@
       <% album.review.forEach(function(review) { %>
         <div style="margin-left: 20px">
           <a href="/review/detail?id=<%= review._id %>"
-            >Review by <%= review.createdBy[0].username %>
+            >Review by <a href="/review/user_index?user=<%= review.createdBy[0]._id %>"><%= review.createdBy[0].username %></a>
             , rating: <%= review.rating %>
           </a>
         </div>
