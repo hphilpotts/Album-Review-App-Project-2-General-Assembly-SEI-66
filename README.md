@@ -312,7 +312,8 @@ Filter review by user implemented.
 
 ### 06/07/23:       
 
-`flash-connect` messages added for logout and Album / Review CREATE, UPDATE and DELETE operations
+`flash-connect` messages added for logout and Album / Review CREATE, UPDATE and DELETE operations.      
+Messages now disappear after a few seconds.       
 
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
