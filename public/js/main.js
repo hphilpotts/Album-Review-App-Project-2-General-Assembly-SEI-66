@@ -1,3 +1,7 @@
+// ---- LAYOUT ---- //
+
+// TODO : fade out flash messages using jQuery
+
 // ----- ALBUMS ----- //
 
 // Add album, track listing functionality:

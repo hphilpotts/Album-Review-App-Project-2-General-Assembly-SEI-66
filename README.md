@@ -254,7 +254,7 @@ Creating user, see key tip below:
 
 Above policy attached. Key and Secret Key added to `.env` file.     
 
-Installed `aws-sdk dotenv`. At this stage, my app structure deviates singificantly from that in the article. I therefore tried adding Cyclics S3 storage starter code - this caused an internal server error within the Cyclic hosted app. At this stage I am confident my IAM/S3 setup is good, so it is simply a case of finding how to write the JS code required. Removing additions and trying again...            
+Installed `aws-sdk dotenv`. At this stage, my app structure deviates significantly from that in the article. I therefore tried adding Cyclics S3 storage starter code - this caused an internal server error within the Cyclic hosted app. At this stage I am confident my IAM/S3 setup is good, so it is simply a case of finding how to write the JS code required. Removing additions and trying again...            
 
 ## 24/11/22 | Post-production:      
 
@@ -312,7 +312,7 @@ Filter review by user implemented.
 
 ### 06/07/23:       
 
-`flash-connect` messages added for logout and album CREATE, UPDATE and DELETE operations.
+`flash-connect` messages added for logout and Album / Review CREATE, UPDATE and DELETE operations
 
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
@@ -321,5 +321,6 @@ Filter review by user implemented.
 - Implement filter by genre / artist / user.       
 - Delete orphaned reviews when album deleted.       
 - Update error pages/messages.      
+    - Add flash message for sign up - at present this does not display.     
 - Ensure full mobile responsiveness.        
 - Ensure all accessibility features present.        

@@ -35,7 +35,7 @@ const checkDBConnectionStatus = () => {
 
 process.on('SIGINT', function () {
     mongoose.connection.close(function () {
-        console.log('**Disconnected through app termination**\n');
+        console.log('** Disconnected through app termination **\n');
         process.exit(0);
     });
 });

@@ -120,7 +120,7 @@ exports.album_edit_post = (req, res) => {
 exports.album_delete = (req, res) => {
     Album.findByIdAndDelete(req.query.id)// .populate('review') - check if correct??
     .then(() => {
-        req.flash( "success", "Album deleted successfully!");
+        req.flash( "info", "Album deleted successfully!");
         res.redirect('/album/index');
     })
     .catch(err => {

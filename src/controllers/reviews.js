@@ -15,7 +15,6 @@ const moment = require('moment');
 exports.review_create_get = (req, res) => {
     Album.findById(req.query.id)
     .then((Album) => {
-        console.log(Album._id)
         res.render("review/add", { Album })
     })
     .catch(err => {
@@ -36,6 +35,7 @@ exports.review_create_post = (req, res) => {
                 album.save();
             })
         })
+        req.flash("success", "Review added successfully!")
         res.redirect("/review/index")
     })
      .catch((err) => {
@@ -83,6 +83,7 @@ exports.review_by_user_get = (req, res) => {
 exports.review_delete_get = (req, res) => {
     Review.findByIdAndDelete(req.query.id)
     .then(() => {
+        req.flash("info", "Review deleted successfully!");
         res.redirect("/review/index")
     })
     .catch(err => {
@@ -108,6 +109,7 @@ exports.review_edit_get = (req, res) => {
 exports.review_update_put = (req, res) => {
     Review.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
+        req.flash("success", "Review updated successfully!");
         res.redirect("/review/index")
     })
     .catch(err => {
