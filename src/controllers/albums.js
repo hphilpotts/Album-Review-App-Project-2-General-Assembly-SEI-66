@@ -23,6 +23,7 @@ exports.album_create_post = (req, res) => {
 
     album.save()
     .then(() => {
+        req.flash( "success", "Album added successfully!");
         res.redirect('/album/index');
     })
     .catch((err) => {
@@ -106,6 +107,7 @@ exports.album_edit_get = (req, res) => {
 exports.album_edit_post = (req, res) => {
     Album.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
+        req.flash( "success", "Album information updated successfully!");
         res.redirect('/album/index');
     })
     .catch(err => {
@@ -118,6 +120,7 @@ exports.album_edit_post = (req, res) => {
 exports.album_delete = (req, res) => {
     Album.findByIdAndDelete(req.query.id)// .populate('review') - check if correct??
     .then(() => {
+        req.flash( "success", "Album deleted successfully!");
         res.redirect('/album/index');
     })
     .catch(err => {

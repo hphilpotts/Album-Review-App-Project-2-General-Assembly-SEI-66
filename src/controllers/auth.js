@@ -59,7 +59,7 @@ exports.auth_logout_get = (req, res) => {
     // invalidates the session
     req.logout(function(err){
         if(err){return next(err);}
-        // req.flash("success", "You are logged out succesfully!") // replace  "success" with "error" to get different colour in flash message - defined in layouts.ejs
+        req.flash("success", "You are logged out succesfully!") // replace  "success" with "error" to get different colour in flash message - defined in layouts.ejs
             res.redirect("/auth/landing");
     })
 };

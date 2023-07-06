@@ -60,6 +60,17 @@
     <hr />
     <br>
 
+    <% if(alerts.success) { %> <!-- for success alerts-->
+      <% alerts.success.forEach(function(msg){ %>
+          <div class="alert alert-success"><%= msg %></div>
+      <% }) %>
+    <% } %>
+    <% if(alerts.error) { %> <!-- for error alerts-->
+      <% alerts.error.forEach(function(msg){ %>
+          <div class="alert alert-danger"><%= msg %></div>
+      <% }) %>
+    <% } %>
+
     <div id="body-container">
       <%- body %>
     </div>

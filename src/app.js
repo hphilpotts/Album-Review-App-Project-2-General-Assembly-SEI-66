@@ -9,6 +9,10 @@ app.use(expressLayouts); // look into views
 let session = require('express-session');
 let passport = require('./helpers/ppConfig');
 
+const flash = require('connect-flash');
+
+app.use(flash())
+
 require('dotenv').config();
 
 app.use(session({
@@ -23,6 +27,7 @@ app.use(passport.session());
 
 app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
+    res.locals.alerts = req.flash();
     next();
 })
 

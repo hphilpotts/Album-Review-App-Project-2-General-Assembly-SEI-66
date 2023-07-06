@@ -310,6 +310,10 @@ Fixed bug where no user logged in breaks Album Detail view. Filter index by arti
 
 Filter review by user implemented.      
 
+### 06/07/23:       
+
+`flash-connect` messages added for logout and album CREATE, UPDATE and DELETE operations.
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
