@@ -315,6 +315,8 @@ Filter review by user implemented.
 `flash-connect` messages added for logout and Album / Review CREATE, UPDATE and DELETE operations.      
 Messages now disappear after a few seconds.       
 
+Add album form no longer submits when enter key pressed. If event target is trackList or genre input, enter key adds a new input box.       
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        

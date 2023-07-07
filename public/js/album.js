@@ -1,14 +1,3 @@
-// ---- LAYOUT ---- //
-
-alerts = $('.alert');
-for (let i = 0; i < alerts.length; i++) {
-    setTimeout(() => {
-        $(alerts[i]).slideUp(750)
-    }, 2000)
-};
-
-// ----- ALBUMS ----- //
-
 // Add album, track listing functionality:
 const trackParent = $('#track-parent');
 const newInput = '<input type="text" name="trackList" class="form-control"/>';
@@ -23,11 +12,27 @@ const addGenreInput = () => genreParent.append(newGenreInput);
 $('#add-genre').click(addGenreInput);
 $('#genre1').attr('required', 'true');
 
-// Set maximum year based on current year:
+// Sets maximum year rather than relying on hardcoded value:
 const current_year = new Date().getFullYear();
 $('#album-year-input').attr('max', current_year);
 
 $(document).ready(function () {
+    // prevent early submit on enter press:
+    $(window).keydown(function (event) {
+        if (event.keyCode == 13 && event.target.name === 'trackList') {
+            addInput()
+            event.preventDefault();
+            return false;
+        } else if (event.keyCode == 13 && event.target.name === "genre") {
+            addGenreInput();
+            event.preventDefault();
+            return false;
+        } else if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
+    // prevent empty track / genre inputs from being submitted along with valid inputs: 
     $('.remove-empty-inputs').submit(function () {
         $(this).find(':input').filter(function () { return !this.value; }).attr('disabled', 'disabled');
         return true;
