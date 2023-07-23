@@ -15,7 +15,7 @@ const makeLocalDBConnection = () => {
                 if (mongoose.connection.name === undefined) {
                     console.error('Mongoose connection with MongoDB not established!');
                 } else {
-                    console.log('Connected to local MongoDB! Database:', mongoose.connection.name, 'PORT:', mongoose.connection.port,'\n');
+                    console.log('Connected to local MongoDB! Database:', mongoose.connection.name, ', PORT:', mongoose.connection.port,'\n');
                 }
             }
         )
@@ -25,6 +25,9 @@ const makeLocalDBConnection = () => {
 }
 
 const checkDBConnectionStatus = () => {
+    mongoose.connection.on('connected', function () {
+        console.log('Mongoose default connection open!');
+    })
     mongoose.connection.on('error', function (err) {
         console.error('Mongoose connection error:', err);
     })
