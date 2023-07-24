@@ -321,6 +321,30 @@ Add album form no longer submits when enter key pressed. If event target is trac
 
 'Sign in failed' flash message added to `auth_landing_post`.        
 
+Issue seen with flash messages not working with `auth_signup` POST route seems to relate to response not waiting for async session save as per [here on GitHub](https://github.com/mweibel/connect-session-sequelize/issues/20). My workaround is to use `res.render` with the optional `locals`.       
+
+In `auth.js`:       
+
+```
+    user.save()
+    .then(() => {
+        res.render("auth/landing", { message: "Signed up successfully! Please sign in to begin." })
+    })
+    .catch((err)=>{
+        res.render("auth/signup", { message: "Sign up failed, please try again." })
+    })
+```
+
+And in, for example, `landing.ejs`:     
+
+```
+<% if(message) { %>
+    <div class="alert alert-success" role="alert"><%= message %></div>
+<% } %>
+```
+
+With the second code snipped providing an element that effectively mimics a flash notification.     
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        

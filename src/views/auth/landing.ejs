@@ -1,3 +1,7 @@
+<% if(message) { %>
+    <div class="alert alert-success" role="alert"><%= message %></div>
+<% } %>
+
 <h1 class="large-heading text-center">Sign in to your account:</h1>
 
 <form method="POST" action="/auth/landing" class="auth-form"> <!--action was /auth/signin-->

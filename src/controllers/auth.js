@@ -20,11 +20,11 @@ exports.home_get = (req, res) => {
 // API FOR ROOT ROUTE
 
 exports.landing_get = (req, res) => { //potentially exports.auth_landing_get
-    res.render("auth/landing"); 
+    res.render("auth/landing", { message: null }); 
 }; 
 
 exports.signup_get = (req, res) => { //potentially exports.auth_signup_get
-    res.render("auth/signup");
+    res.render("auth/signup", { message: null} );
 };
 
 
@@ -39,13 +39,10 @@ exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not 
 
     user.save()
     .then(() => {
-        req.flash("success", "Signed up successfully! Please sign in to begin:"); // ! does not display
-        // ? is this to do with express sessions? Is there a workaround or alternative approach?        
-        res.redirect("/")
+        res.render("auth/landing", { message: "Signed up successfully! Please sign in to begin." })
     })
     .catch((err)=>{
-        console.error(err)
-        res.send("Please try again later")
+        res.render("auth/signup", { message: "Sign up failed, please try again." })
     })
 };
 
