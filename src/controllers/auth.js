@@ -52,16 +52,17 @@ exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not 
 
 //HTTP POST SIGN IN ROUTE
 exports.auth_landing_post = passport.authenticate('local', {
-    successRedirect: "/album/index", 
+    successRedirect: "/album/index",
     failureRedirect: "/auth/landing",
+    failureFlash: "Sign in failed, please check your username and password are correct and try again."
 })
 
 // HTTP GET - Logout route 
 exports.auth_logout_get = (req, res) => {
     // invalidates the session
-    req.logout(function(err){
-        if(err){return next(err);}
-        req.flash("info", "You are logged out succesfully!") // replace  "success" with "error" to get different colour in flash message - defined in layouts.ejs
-            res.redirect("/auth/landing");
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        req.flash("info", "You have been logged out succesfully!")
+        res.redirect("/auth/landing");
     })
 };

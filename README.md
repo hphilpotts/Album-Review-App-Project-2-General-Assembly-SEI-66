@@ -317,6 +317,10 @@ Messages now disappear after a few seconds.
 
 Add album form no longer submits when enter key pressed. If event target is trackList or genre input, enter key adds a new input box.       
 
+### 24/07/23:       
+
+'Sign in failed' flash message added to `auth_landing_post`.        
+
 ## Main Features & Fixes before rehost:
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
@@ -324,6 +328,6 @@ Add album form no longer submits when enter key pressed. If event target is trac
 - Implement filter by genre / artist / user.       
 - Delete orphaned reviews when album deleted.       
 - Update error pages/messages.      
-    - Add flash message for sign up - at present this does not display.     
+    - Add flash messages for sign up - at present this does not display.     
 - Ensure full mobile responsiveness.        
 - Ensure all accessibility features present.        
