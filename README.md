@@ -346,12 +346,13 @@ And in, for example, `landing.ejs`:
 With the second code snipped providing an element that effectively mimics a flash notification.     
 
 ## Main Features & Fixes before rehost:
+**In bold if done.**
 - Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
-- Add review link to be moved into album detail, album selection to be automatic on this basis.     
-- Implement filter by genre / artist / user.       
+- **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
+- **Implement filter by genre / artist / user.**       
 - Delete orphaned reviews when album deleted.       
-- Update error pages/messages.      
-    - Add flash messages for sign up - at present this does not display.     
+- **Update error pages/messages.**      
+    - **Add flash messages for sign up - at present this does not display.**     
 - Ensure full mobile responsiveness.        
 - Ensure all accessibility features present.        
