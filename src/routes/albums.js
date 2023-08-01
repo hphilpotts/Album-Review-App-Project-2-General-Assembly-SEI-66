@@ -2,32 +2,26 @@
 const { S3Client } = require('@aws-sdk/client-s3');
 const express = require('express');
 const multer = require('multer');
-const multerS3 = require('multer-s3');
+const imgCtrl = require('../controllers/imageController');
 const albumsCtrl = require('../controllers/albums');
 const isLoggedIn = require('../helpers/isLoggedIn');
 
 const router = express.Router();
 router.use(express.urlencoded({ extended: true }));
 
-const s3 = new S3Client();
+const memoryStorage = multer.memoryStorage();
 
-const upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: process.env.S3_BUCKET,
-    region: process.env.AWS_REGION,
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: function (req, file, cb) {
-      cb(null, Date.now().toString() + file.originalname);
-    }
-  })
-})
+const upload = multer({ storage: memoryStorage });
+
 
 // -- Routes:
 router.get('/album/add', isLoggedIn, albumsCtrl.album_create_get);
-router.post('/album/add', upload.single('image'), albumsCtrl.album_create_post);
+router.post('/album/add',
+  upload.single('image'),
+  imgCtrl.resizeUploadedImage,
+  imgCtrl.uploadToS3,
+  albumsCtrl.album_create_post
+);
 
 router.get('/album/index', albumsCtrl.album_index_get);
 router.get('/album/genre_index', albumsCtrl.album_genre_get);
