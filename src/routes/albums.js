@@ -1,23 +1,29 @@
 // -- Requires:
-const express= require('express');
-const router = express.Router();
+const { S3Client } = require('@aws-sdk/client-s3');
+const express = require('express');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const albumsCtrl = require('../controllers/albums');
+const isLoggedIn = require('../helpers/isLoggedIn');
 
+const router = express.Router();
 router.use(express.urlencoded({ extended: true }));
 
-const albumsCtrl = require('../controllers/albums');
+const s3 = new S3Client();
 
-const multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/upload/')
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: process.env.S3_BUCKET,
+    region: process.env.AWS_REGION,
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
     },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + '-' + file.originalname)
+    key: function (req, file, cb) {
+      cb(null, Date.now().toString())
     }
   })
-  let upload = multer({ storage: storage })
-
-const isLoggedIn = require('../helpers/isLoggedIn');
+})
 
 // -- Routes:
 router.get('/album/add', isLoggedIn, albumsCtrl.album_create_get);

@@ -321,7 +321,9 @@ Add album form no longer submits when enter key pressed. If event target is trac
 
 'Sign in failed' flash message added to `auth_landing_post`.        
 
-Issue seen with flash messages not working with `auth_signup` POST route seems to relate to response not waiting for async session save as per [here on GitHub](https://github.com/mweibel/connect-session-sequelize/issues/20). My workaround is to use `res.render` with the optional `locals`.       
+Issue seen with flash messages not working with `auth_signup` POST route seems to relate to response not waiting for async session save as per [here on GitHub](https://github.com/mweibel/connect-session-sequelize/issues/20).         
+
+My workaround is to use `res.render` with the optional `locals`.       
 
 In `auth.js`:       
 
@@ -343,7 +345,17 @@ And in, for example, `landing.ejs`:
 <% } %>
 ```
 
-With the second code snipped providing an element that effectively mimics a flash notification.     
+With the second code snippet providing an element that effectively mimics a flash notification.    
+
+### 01/08/23:       
+
+#### Image upload, storage and access:      
+
+`multer` is already installed as a package from the initial version of the app. I am also installing `multer-s3` and `@aws-sdk/client-s3`.             
+
+After poring over a lot of documentation, articles and slack threads (20 or so tabs open by the end!) I have been able to upload to an old S3 bucket on the third or fourth attempmt. A big moment for me - more than half a year on from my last (and highly unsuccessful) attempt, getting it working this time around was largely painless, with the only snags being a minor region-related difficulty and the delayed realisation that `@aws-sdk/client-s3` can look into the `.env` file for variables.       
+
+The next step is ensuring the uploaded images can now be accessed:      
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
