@@ -1,5 +1,4 @@
 // -- Requires:
-const { S3Client } = require('@aws-sdk/client-s3');
 const express = require('express');
 const multer = require('multer');
 const imgCtrl = require('../controllers/imageController');
@@ -19,7 +18,7 @@ router.get('/album/add', isLoggedIn, albumsCtrl.album_create_get);
 router.post('/album/add',
   upload.single('image'),
   imgCtrl.resizeUploadedImage,
-  imgCtrl.uploadToS3,
+  imgCtrl.storeInS3,
   albumsCtrl.album_create_post
 );
 
