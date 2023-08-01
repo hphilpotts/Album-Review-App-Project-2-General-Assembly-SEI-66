@@ -18,7 +18,7 @@ exports.album_create_get = (req, res) => {
 // HTTP POST - Add new Album API:
 exports.album_create_post = (req, res) => {
     let album = new Album(req.body);
-    album.albumCover = req.file.key;
+    album.albumCover = req.body.key;
 
     album.save()
     .then(() => {
