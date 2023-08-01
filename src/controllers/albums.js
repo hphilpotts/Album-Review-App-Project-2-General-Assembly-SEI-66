@@ -1,4 +1,5 @@
 // -- Requires:
+const sharp = require('sharp');
 
 // Require Models:
 const { Album } = require('../models/Album')
