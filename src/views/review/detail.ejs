@@ -10,7 +10,7 @@
 <% review.album.forEach(function(element) { %>
     <td>
         <a href="/album/detail?id=<%= element._id %>">
-            <img class="album-large album-icon"src="<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
+            <img class="album-large album-icon"src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
         </a>
     </td>
 <% }) %>

@@ -357,7 +357,11 @@ After poring over a lot of documentation, articles and slack threads (20 or so t
 
 The next step is ensuring the uploaded images can now be accessed: firstly, a quick check of `MongoDB Compass` shows that the `albumCover` field has been populating as `"upload/undefined"`. No changes needed for the `Album` model: a string is still fine with S3 rather than static uploads. With a bit of console logging and fiddling about, I have found that the S3 Object Name (and therefore the value required for the albumCover field) is in `req.file.key`, this replaces `let imagePath = '/upload/' + req.file.filename;` from before.     
 
+Now, it should just be a case of tracking all album cover image tags within `/views` and updating them accordingly.         
 
+...and I think it should all be working for newly uploaded album cover images!      
+
+![choose programmatic access](./public/readme_img/s3-working.png)  
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**

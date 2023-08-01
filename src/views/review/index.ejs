@@ -5,7 +5,7 @@
     <div class="img-div">
       <a href="/review/detail?id=<%= review._id %>">
         <% review.album.forEach(function(element) { %>
-          <img src="<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
+          <img src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
         <% }) %>
       </a>
     </div>
