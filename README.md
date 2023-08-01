@@ -355,7 +355,9 @@ With the second code snippet providing an element that effectively mimics a flas
 
 After poring over a lot of documentation, articles and slack threads (20 or so tabs open by the end!) I have been able to upload to an old S3 bucket on the third or fourth attempmt. A big moment for me - more than half a year on from my last (and highly unsuccessful) attempt, getting it working this time around was largely painless, with the only snags being a minor region-related difficulty and the delayed realisation that `@aws-sdk/client-s3` can look into the `.env` file for variables.       
 
-The next step is ensuring the uploaded images can now be accessed:      
+The next step is ensuring the uploaded images can now be accessed: firstly, a quick check of `MongoDB Compass` shows that the `albumCover` field has been populating as `"upload/undefined"`. No changes needed for the `Album` model: a string is still fine with S3 rather than static uploads. With a bit of console logging and fiddling about, I have found that the S3 Object Name (and therefore the value required for the albumCover field) is in `req.file.key`, this replaces `let imagePath = '/upload/' + req.file.filename;` from before.     
+
+
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**

@@ -13,8 +13,7 @@ const albumSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Review'
     }],
-    albumCover: String, // check if this is correct data type for image!
-    // also, how do we let a user upload this themselves?
+    albumCover: String, // string should still work with S3: this will be Object Name
     genre: [{
         type: String
     }],

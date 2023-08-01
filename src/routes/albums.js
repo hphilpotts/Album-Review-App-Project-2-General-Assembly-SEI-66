@@ -17,10 +17,10 @@ const upload = multer({
     bucket: process.env.S3_BUCKET,
     region: process.env.AWS_REGION,
     metadata: function (req, file, cb) {
-      cb(null, {fieldName: file.fieldname});
+      cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
-      cb(null, Date.now().toString())
+      cb(null, Date.now().toString() + file.originalname);
     }
   })
 })
