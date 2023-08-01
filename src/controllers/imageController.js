@@ -11,7 +11,6 @@ exports.resizeUploadedImage = async (req, res, next) => {
 
         file.buffer = await sharp(file.buffer)
             .resize({ width: 300, height: 300 })
-            .grayscale() // TODO remove before deployment
             .toBuffer();
 
         next();
@@ -22,17 +21,17 @@ exports.resizeUploadedImage = async (req, res, next) => {
     }
 }
 
-exports.storeInS3 = async (req, res) => {
+exports.storeInS3 = async (req, res, next) => {
 
     try {
 
-        const { file } = req; // future Harry, FYI: same as const file = req.file
-        if (!file) next(); // skip if no file
+        const { file } = req; // see above if confused
+        if (!file) next();
 
         const key = Date.now().toString() + file.originalname
 
         const params = {
-            Bucket: process.env.S3_Bucket,
+            Bucket: process.env.S3_BUCKET,
             Body: req.file.buffer,
             Key: key
         }
