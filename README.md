@@ -384,4 +384,7 @@ Error handling added for non-image files in `imageController.js` (although this 
 - **Update error pages/messages.**      
     - **Add flash messages for sign up - at present this does not display.**     
 - Ensure full mobile responsiveness.        
-- Ensure all accessibility features present.        
+- Ensure all accessibility features present.       
+
+## Minor issues:        
+- Clear text from Content upon first input in AddReview.        

@@ -117,8 +117,16 @@ exports.album_edit_post = (req, res) => {
 // DELETE
 // HTTP DELETE - Delete Album by ID
 exports.album_delete = (req, res) => {
-    Album.findByIdAndDelete(req.query.id)// .populate('review') - check if correct??
-    .then(() => {
+    Album.findById(req.query.id)
+    // Album.findByIdAndDelete(req.query.id)// .populate('review') - check if correct??
+    .then((foundAlbum) => {
+        console.log(foundAlbum);
+        Review.find({_id: { $in: foundAlbum.review }}).then((reviews) => {
+            console.log(reviews);
+            // for (const review in reviews) {
+            //     console.log(review)
+            // }
+        })
         req.flash( "info", "Album deleted successfully!");
         res.redirect('/album/index');
     })
