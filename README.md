@@ -361,11 +361,13 @@ Now, it should just be a case of tracking all album cover image tags within `/vi
 
 ...and I think it should all be working for newly uploaded album cover images!      
 
-![choose programmatic access](./public/readme_img/s3-working.png)  
+![choose programmatic access](./public/readme_img/s3-working.png)   
+
+Image resize added using `sharp`: uploaded album images now resized to 300 x 300 prior to storage in S3 Bucket.     
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
-- Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
+- **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
 - **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
 - **Implement filter by genre / artist / user.**       
