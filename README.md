@@ -365,6 +365,8 @@ Now, it should just be a case of tracking all album cover image tags within `/vi
 
 Image resize added using `sharp`: uploaded album images now resized to 300 x 300 prior to storage in S3 Bucket.     
 
+Error handling added for non-image files in `imageController.js` (although this is also restricted client-side due to `accept` attribute in form `<input>` tag).        
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      

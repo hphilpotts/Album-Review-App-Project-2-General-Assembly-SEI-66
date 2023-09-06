@@ -9,12 +9,10 @@ exports.resizeUploadedImage = async (req, res, next) => {
         const { file } = req; // future Harry, FYI: same as const file = req.file
         if (!file) next(); // skip if no file
 
-        // TODO prevent non-image-type files from being uploaded
-        // if (file.mimetype !== 'image/jpg' || 'image/png') {
-        //     // Throw specific file not allowed error
-        //     res.status.send(422);
-        //     return
-        // }
+        if (file.mimetype !== 'image/jpg' || 'image/png') {
+            res.status.send(422);
+            return
+        }
 
         file.buffer = await sharp(file.buffer)
             .resize({ width: 300, height: 300 })
