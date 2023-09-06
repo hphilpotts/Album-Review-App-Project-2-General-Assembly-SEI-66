@@ -367,10 +367,17 @@ Image resize added using `sharp`: uploaded album images now resized to 300 x 300
 
 Error handling added for non-image files in `imageController.js` (although this is also restricted client-side due to `accept` attribute in form `<input>` tag).        
 
+### 06/09/23:       
+
+#### Deletion of 'orphaned' Reviews when linked Album is deleted:       
+
+
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
 - Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
+    - _Is this going to be that much of an issue in 'production'? Only really a problem in development where the localhost is being stopped and started frequently...?_             
 - **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
 - **Implement filter by genre / artist / user.**       
 - Delete orphaned reviews when album deleted.       
