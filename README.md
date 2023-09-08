@@ -371,7 +371,7 @@ Error handling added for non-image files in `imageController.js` (although this 
 
 #### Deletion of 'orphaned' Reviews when linked Album is deleted:       
 
-
+`albums.js` controller updated: attempting this all in a single function was not working - successful response being sent but no deletion actually happening. Solution came in the form of separate nested functions: the original `album_delete` functions finds the Album by `id`, the first nested function then finds and deletes the reviews referenced in the found album, then the second nested function deletes the found album.        
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**

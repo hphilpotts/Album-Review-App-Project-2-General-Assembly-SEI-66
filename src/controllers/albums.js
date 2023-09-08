@@ -116,22 +116,37 @@ exports.album_edit_post = (req, res) => {
 
 // DELETE
 // HTTP DELETE - Delete Album by ID
+    // also deletes referenced Review(s) to prevent orphaning of documents
 exports.album_delete = (req, res) => {
     Album.findById(req.query.id)
-    // Album.findByIdAndDelete(req.query.id)// .populate('review') - check if correct??
     .then((foundAlbum) => {
-        console.log(foundAlbum);
-        Review.find({_id: { $in: foundAlbum.review }}).then((reviews) => {
-            console.log(reviews);
-            // for (const review in reviews) {
-            //     console.log(review)
-            // }
-        })
+        deleteReferencedReviews(foundAlbum);
+        deleteAlbum(req.query.id);
         req.flash( "info", "Album deleted successfully!");
         res.redirect('/album/index');
     })
     .catch(err => {
         console.error(err);
-        res.send('Uh oh');
+        res.send('Issue with deleting Album!');
+    })
+}
+
+const deleteReferencedReviews = (foundAlbum) => {
+    Review.deleteMany({_id: { $in: foundAlbum.review }})
+    .then(() => {
+        console.log('deleteMany called');
+    })
+    .catch(err => {
+        console.error(err);
+    })
+}
+
+const deleteAlbum = id => {
+    Album.findByIdAndDelete(id)
+    .then(() => {
+        console.log('findByIdAndDelete called');
+    })
+    .catch(err => {
+        console.error(err);
     })
 }
