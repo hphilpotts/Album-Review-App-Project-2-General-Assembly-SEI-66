@@ -393,6 +393,7 @@ First - I will do a bit of reading: been a long time since I have focused specif
 - Clear error messaging on forms        
 - Client-side validation on forms       
 
+Icon - with label - added to GitHub link in main `<footer>` to emphasise this is an external link.      
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -410,6 +411,7 @@ First - I will do a bit of reading: been a long time since I have focused specif
 
 ## Minor issues:        
 - Clear text from Content upon first input in AddReview.        
+- Update/reformat about page.       
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        
