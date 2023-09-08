@@ -373,18 +373,46 @@ Error handling added for non-image files in `imageController.js` (although this 
 
 `albums.js` controller updated: attempting this all in a single function was not working - successful response being sent but no deletion actually happening. Solution came in the form of separate nested functions: the original `album_delete` functions finds the Album by `id`, the first nested function then finds and deletes the reviews referenced in the found album, then the second nested function deletes the found album.        
 
+### 08/09/23:       
+
+#### Accessibility:        
+
+First - I will do a bit of reading: been a long time since I have focused specifically on accessibility and it would be good to have a refresher! Fromo this I have put together the below checklist:       
+
+##### Accessibilty checklist:     
+- Ensure correct semantic HTML elements are in use across all views     
+- Use clear language wherever possible           
+- Alt text for images       
+    -   _even an empty `alt` attribute is preferable to none_     
+- WAI-ARIA:     
+    -   `role`
+    -   `aria-required` in forms        
+    -   `aria_label` and/or `aria-labelledby`       
+    -   
+- High-contrast/dark mode       
+- Clear error messaging on forms        
+- Client-side validation on forms       
+
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
-- Ensure user sessions persist - at present these are lost on server restart. Use local storage?        
+- _Ensure user sessions persist - at present these are lost on server restart. Use local storage?_        
     - _Is this going to be that much of an issue in 'production'? Only really a problem in development where the localhost is being stopped and started frequently...?_             
 - **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
 - **Implement filter by genre / artist / user.**       
-- Delete orphaned reviews when album deleted.       
+- **Delete orphaned reviews when album deleted.**       
+- Delete album artwork image from S3 bucket when album deleted      
 - **Update error pages/messages.**      
     - **Add flash messages for sign up - at present this does not display.**     
 - Ensure full mobile responsiveness.        
-- Ensure all accessibility features present.       
+- Ensure all accessibility features present.        
 
 ## Minor issues:        
 - Clear text from Content upon first input in AddReview.        
+
+## Housekeeping:        
+- Ensure robust and clear error handling        
+- Clear unneeded comments / `console.log()`s        
+- Refactor where possible       
+- Ensure consistent style across codebase       
