@@ -35,9 +35,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
-          <a class="nav-link active" aria-current="page" href="/review/index">Reviews</a>
-          <a class="nav-link active" aria-current="page" href="/album/index">Albums</a>
-          <a class="nav-link active" aria-current="page" href="/album/add">Add Album</a>
+          <a class="nav-link active" href="/review/index">Reviews</a>
+          <a class="nav-link active" href="/album/index">Albums</a>
+          <a class="nav-link active" href="/album/add">Add Album</a>
           <!-- <a class="nav-link active" aria-current="page" href="/review/add">Add Review</a> -->
           <!-- Search bar in here if needed! -->
               <!-- <form class="d-flex" role="search">
@@ -48,11 +48,11 @@
       <!-- </div> -->
       <!-- <div class="nav-right w-text"> -->
         <% if(currentUser){ %>
-        <a class="nav-link active" aria-current="page" href="/">Hi, <%= currentUser.username %></a>
-        <a class="nav-link active" aria-current="page" href="/auth/logout">Log Out</a>
+        <a class="nav-link active" href="/">Hi, <%= currentUser.username %></a>
+        <a class="nav-link active" href="/auth/logout">Log Out</a>
         <% } else{ %>
-        <a class="nav-link active" aria-current="page" href="/auth/landing">Sign In</a>
-        <a class="nav-link active" aria-current="page" href="/auth/signup">Sign Up</a>
+        <a class="nav-link active" href="/auth/landing">Sign In</a>
+        <a class="nav-link active" href="/auth/signup">Sign Up</a>
         <% } %>
 
       </div>
@@ -63,17 +63,17 @@
 
     <% if(alerts.success) { %>
       <% alerts.success.forEach(function(msg){ %>
-          <div class="alert alert-success" role="alert"><%= msg %></div>
+          <div class="alert alert-success" role="alert" aria-label="success alert"><%= msg %></div>
       <% }) %>
     <% } %>
     <% if(alerts.info) { %>
       <% alerts.info.forEach(function(msg){ %>
-          <div class="alert alert-info" role="alert"><%= msg %></div>
+          <div class="alert alert-info" role="alert" aria-label="information alert"><%= msg %></div>
       <% }) %>
     <% } %>
     <% if(alerts.error) { %>
       <% alerts.error.forEach(function(msg){ %>
-          <div class="alert alert-danger" role="alert"><%= msg %></div>
+          <div class="alert alert-danger" role="alert" aria-label="warning alert"><%= msg %></div>
       <% }) %>
     <% } %>
 
@@ -93,7 +93,7 @@
             aria-current="page" 
             href="https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66"
           >
-            GitHub&nbsp; &nbsp;<i class="bi bi-box-arrow-up-right" aria-label="external site"></i>
+            GitHub&nbsp; &nbsp;<i class="bi bi-box-arrow-up-right" aria-label="external site" style="font-size: smaller"></i>
           </a>
           </div>
           <br>

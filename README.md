@@ -393,7 +393,12 @@ First - I will do a bit of reading: been a long time since I have focused specif
 - Clear error messaging on forms        
 - Client-side validation on forms       
 
+`layout.ejs`: 
+
 Icon - with label - added to GitHub link in main `<footer>` to emphasise this is an external link.      
+
+`aria-label`s added to popup alert notifications. Unneccessary labels - _copied across through bootstrap example code, I think_ - removed from nav elements as `page='current'` not needed.         
+
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
