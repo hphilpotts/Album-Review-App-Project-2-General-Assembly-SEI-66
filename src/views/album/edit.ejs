@@ -3,25 +3,25 @@
 <form method="POST" action="/album/update" class="auth-form med-text small-shadow" style="margin-top: 30px;">
 
     <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" class="form-control" value=" <%= album.title%>"/>
+        <label for="title-input">Title</label>
+        <input id="title-input" type="text" name="title" class="form-control" required value=" <%= album.title%>"/>
     </div>
 
     <div class="form-group">
-        <label for="artist">Artist</label>
-        <input type="text" name="artist" class="form-control" value=" <%= album.artist%>"/>
+        <label for="artist-input">Artist</label>
+        <input id="artist-input" type="text" name="artist" class="form-control" required value=" <%= album.artist%>"/>
     </div>
 
     <div class="form-group">
-        <label for="year">Year</label>
-        <input type="number" name="year" class="form-control" min="1900" max="2023" value="<%= album.year%>" aria-invalid="true"/>
+        <label for="year-input">Year</label>
+        <input id="year-input" type="number" name="year" class="form-control" min="1900" max="2023" value="<%= album.year%>" required aria-invalid="true"/>
     </div>
 
     <div class="form-group">
         <div id="track-parent">
-            <label for="trackList">Track List</label>
+            <label id="trackList-input">Track List</label>
             <% album.trackList.forEach(function(track) { %>
-            <input type="text" name="trackList" class="form-control" value="<%=track%>"/>
+            <input type="text" name="trackList" class="form-control" value="<%=track%>" aria-labelledby="trackList-input"/>
             <% }) %>
         </div>
         <button type="button" id="add-field" class="btn btn-light add-btn" aria-label="add new track input field to form">+</button>
@@ -29,8 +29,9 @@
 
 
     <div class="form-group">
-        <label for="image">Album Cover: </label>
+        <label for="image-input">Album Cover: </label>
         <input 
+            id="image-input"
             type="file" 
             name="image" 
             accept="image/png, image/gif, image/jpeg, image/jpg" 
@@ -42,9 +43,9 @@
 
     <div class="form-group">
         <div id="genre-parent">
-        <label for="genre">Genre</label>
+        <label id="genre-label">Genre</label>
     <% album.genre.forEach(function(genre) { %>
-        <input type="text" name="genre" class="form-control" value="<%=genre%>"/>
+        <input type="text" name="genre" class="form-control" value="<%=genre%>" aria-labelledby="genre-label" />
     <% }) %>
         </div>
         <button type="button" id="add-genre" class="btn btn-light add-btn" aria-label="add new genre input field to form">+</button>

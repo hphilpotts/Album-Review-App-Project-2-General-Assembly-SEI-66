@@ -400,6 +400,8 @@ First - I will do a bit of reading: been a long time since I have focused specif
 
 `views/auth` pages updated as well.     
 
+Client-side validation added to Album forms, along with CSS changes to highlight invalid fields.        
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      

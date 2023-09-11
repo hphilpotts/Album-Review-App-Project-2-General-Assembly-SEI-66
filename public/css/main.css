@@ -49,6 +49,19 @@ a:hover .hover-shadow {
   text-shadow: 2px 1px white(255, 130, 88);
 }
 
+input {
+  border: 1px solid rgb(183, 182, 182);
+}
+
+input:invalid {
+  border: 1px solid rgb(255, 130, 88);
+}
+
+input:placeholder-shown {
+  border: 1px solid rgb(183, 182, 182);
+}
+
+
 /* -- body and associated containers */
 
 body {
