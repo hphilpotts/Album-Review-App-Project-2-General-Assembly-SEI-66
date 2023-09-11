@@ -1,28 +1,27 @@
 <% if(message) { %>
-    <div class="alert alert-success" role="alert"><%= message %></div>
+    <div class="alert alert-success" role="alert" aria-label="Site message popup">
+        <%= message %>
+    </div>
 <% } %>
 
 <h1 class="large-heading text-center">Sign in to your account:</h1>
-
-<form method="POST" action="/auth/landing" class="auth-form"> <!--action was /auth/signin-->
+<form method="POST" action="/auth/landing" class="auth-form">
     <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="emailAddress" class="form-control" />
+        <label for="emailAddress">Email Address</label>
+        <input type="email" name="emailAddress" required="true" aria-required="true" class="form-control" />
     </div>
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" />
+        <label for="password">Password</label>
+        <input type="password" name="password" required="true" aria-required="true" class="form-control" />
     </div>
     <br>
-
     <div>
-        <button type="submit" class="btn btn-dark"">Sign In</button>
+        <button type="submit" class="btn btn-dark">Sign In</button>
     </div>
     <br>
     <br>
     <br>
     <div class="not-registered-link med-text small-shadow">
-        <a href="/auth/signup">Not registered yet? Click here to sign up!</a>    <!--Not sure about the path-->
+        <a href="/auth/signup" title="Sign up page">Not registered yet? Click here to sign up!</a>
     </div>
 </form>
-

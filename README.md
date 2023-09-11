@@ -392,15 +392,13 @@ First - I will do a bit of reading: been a long time since I have focused specif
 - Client-side validation on forms       
 - High-contrast/dark mode?       
 
-`layout.ejs`: 
-
-Icon - with label - added to GitHub link in main `<footer>` to emphasise this is an external link.      
-
-`aria-label`s added to popup alert notifications. Unneccessary labels - _copied across through bootstrap example code, I think_ - removed from nav elements as `page='current'` not needed.         
+`layout.ejs`: Icon - with label - added to GitHub link in main `<footer>` to emphasise this is an external link. `aria-label`s added to popup alert notifications. Unneccessary labels - _copied across through bootstrap example code, I think_ - removed from nav elements as `page='current'` not needed.         
 
 `views/album/` pages updated for improved accessibility. The use of a `<table>` to show the Album Index is not especially accessible: cards or similar would likely be a better approach. _Added to future updates - may yet be brought forward however._               
 
 `views/review/` pages also updated. A few errors - uncovered in the process, including Edit Review not saving review content and also allowing any number value (on a scale that should be out of 10).      
+
+`views/auth` pages updated as well.     
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -426,6 +424,8 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 - 'back to all' button on filtered Album / Review views     
 - Add back button to Add / Edit Review         
 - Make entire Review card clickable?        
+- Filter reviews by user when username is clicked       
+- Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
 - Update/reformat about page.       
 
 ## Housekeeping:        
@@ -437,3 +437,4 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 ## Future additions:        
 - Switch from use of table to show Album indeces to cards instead: this will deliver a visual improvement as well as better accessibility.        
 - Auto-generate `alt` attributes for newly-uploaded albums to describe the cover to visually impared users.     
+- Dark mode         
