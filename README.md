@@ -400,7 +400,7 @@ First - I will do a bit of reading: been a long time since I have focused specif
 
 `views/auth` pages updated as well.     
 
-Client-side validation added to Album forms, along with CSS changes to highlight invalid fields.        
+Client-side validation added to Album forms, along with CSS changes to highlight invalid fields. Auth forms updated,        
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -417,6 +417,7 @@ Client-side validation added to Album forms, along with CSS changes to highlight
 - Ensure all accessibility features present.        
 
 ## Minor issues/updates:        
+- Check if username is taken prior to signup.       
 - Add 'Review Album' button to each album in Album index.       
 - Clear text from Content upon first input in Add Review.        
 - Adjust 'year' input controls in Add Album     
