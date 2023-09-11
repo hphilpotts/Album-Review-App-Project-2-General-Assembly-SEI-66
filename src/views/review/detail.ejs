@@ -1,16 +1,20 @@
 <div>
     <% review.album.forEach(function(album) { %> 
-        <h2 class="large-heading text-center"> <span><%=album.artist%>: </span><a href="/album/detail?id=<%= album.id %>"><%= album.title %></a></h2>
+        <h2 class="large-heading text-center"> 
+            <span><%=album.artist%>: </span>
+            <a href="/album/detail?id=<%= album.id %>" title="Go to Album Page"><%= album.title %></a>
+        </h2>
     <% }) %>
-</div><br><hr><br>
+</div>
 
-<!-- Improvement for later: get album art to sit side-by-side with review by, rating etc -->
+<br><hr><br>
 
 <div class="text-center">
 <% review.album.forEach(function(element) { %>
     <td>
         <a href="/album/detail?id=<%= element._id %>">
-            <img class="album-large album-icon"src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" alt="<%= element.title %>: album cover.">
+            <img class="album-large album-icon"src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" 
+            alt="<%= element.title %>: album cover.">
         </a>
     </td>
 <% }) %>
@@ -24,16 +28,17 @@
 <% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
     <hr>
     <div class="text-center">
-    <a class="user-edit" href="/review/edit?id=<%= review._id %>">Edit Review</a>
-    <a class="user-edit" href="/review/delete?id=<%= review._id %>">Delete Review</a>
+    <a class="user-edit" href="/review/edit?id=<%= review._id %>" role="button">Edit Review</a>
+    <a class="user-edit" href="/review/delete?id=<%= review._id %>" role="button">Delete Review</a>
     </div>
 <% } %>
 <hr>
-<div class="review-content">
+
+<section class="review-content">
     <%= review.content %>
-</div>
+</section>
+
 <div>
-    <!-- Review added: <%= moment(review.createdAt).fromNow() %> -->
 </div><hr>
 
 <% review.createdBy.forEach(function(createdBy){ %>
@@ -44,7 +49,7 @@
 
 <div>
     Last edited: <%= moment(review.updatedAt).fromNow() %>
- </div>
+</div>
 
 <div class="highlighted-text">
 </div>

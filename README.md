@@ -384,14 +384,13 @@ First - I will do a bit of reading: been a long time since I have focused specif
 - Use clear language wherever possible           
 - Alt text for images       
     -   _even an empty `alt` attribute is preferable to none_     
-- WAI-ARIA:     
+- WAI-ARIA, for example:     
     -   `role`
     -   `aria-required` in forms        
     -   `aria_label` and/or `aria-labelledby`       
-    -   
-- High-contrast/dark mode       
 - Clear error messaging on forms        
 - Client-side validation on forms       
+- High-contrast/dark mode?       
 
 `layout.ejs`: 
 
@@ -399,7 +398,9 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 
 `aria-label`s added to popup alert notifications. Unneccessary labels - _copied across through bootstrap example code, I think_ - removed from nav elements as `page='current'` not needed.         
 
-`album/` views updated for improved accessibility. The use of a `<table>` to show the Album Index is not especially accessible: cards or similar would likely be a better approach. _Added to future updates - may yet be brought forward however._                   
+`views/album/` pages updated for improved accessibility. The use of a `<table>` to show the Album Index is not especially accessible: cards or similar would likely be a better approach. _Added to future updates - may yet be brought forward however._               
+
+`views/review/` pages also updated. A few errors - uncovered in the process, including Edit Review not saving review content and also allowing any number value (on a scale that should be out of 10).      
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -412,16 +413,19 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 - Delete album artwork image from S3 bucket when album deleted      
 - **Update error pages/messages.**      
     - **Add flash messages for sign up - at present this does not display.**     
-- Ensure full mobile responsiveness.        
+- Ensure fully responsive design.           
 - Ensure all accessibility features present.        
 
 ## Minor issues/updates:        
+- Add 'Review Album' button to each album in Album index.       
 - Clear text from Content upon first input in Add Review.        
 - Adjust 'year' input controls in Add Album     
 - Add 'confirm delete' dialogue to Delete Album / Review        
 - Add back button to Edit Album / Review pages       
 - Reverse review render order in Review Index       
 - 'back to all' button on filtered Album / Review views     
+- Add back button to Add / Edit Review         
+- Make entire Review card clickable?        
 - Update/reformat about page.       
 
 ## Housekeeping:        
@@ -431,4 +435,5 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 - Ensure consistent style across codebase       
 
 ## Future additions:        
-- Switch from use of table to show Album/Review indeces to cards: will deliver a visual improvement as well as better accessibility.        
+- Switch from use of table to show Album indeces to cards instead: this will deliver a visual improvement as well as better accessibility.        
+- Auto-generate `alt` attributes for newly-uploaded albums to describe the cover to visually impared users.     

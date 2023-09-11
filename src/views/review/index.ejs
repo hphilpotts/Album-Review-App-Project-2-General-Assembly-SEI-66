@@ -1,11 +1,11 @@
 <h2 class="large-heading text-center text-center">Reviews</h2>
 <div class="row">
   <% reviews.forEach(function(review){ %>
-  <div class="container">
+  <section class="container">
     <div class="img-div">
-      <a href="/review/detail?id=<%= review._id %>">
+      <a href="/review/detail?id=<%= review._id %>" title="Go to review">
         <% review.album.forEach(function(element) { %>
-          <img src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" class="rounded-start review-img" alt="..." />
+          <img src="https://project2-albumreviewapp.s3.eu-west-2.amazonaws.com/<%= element.albumCover%>" class="rounded-start review-img" alt="Artwork for <%= element.albumCover%>" />
         <% }) %>
       </a>
     </div>
@@ -23,6 +23,6 @@
     <% }) %>
       <p><small class="text-muted update-time"><%= moment(review.createdAt).fromNow() %></small></p>
     </div>
-  </div>
+  </section>
   <% }) %>
 </div>

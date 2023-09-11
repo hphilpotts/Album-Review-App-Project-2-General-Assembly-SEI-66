@@ -2,33 +2,23 @@
 
 <form class="auth-form med-text small-shadow" style="margin-top: 30px;" method="POST" action="/review/update?_method=PUT" >
 
-<!--  We need to show the album title here! -->
-    <!-- <div>
-        <label>Album:</label>
-        <input name="title" type="text" value="<%= review.album %>" />
-    </div> -->
-
     <% review.album.forEach(function(album) { %>
         <h2 class="large-heading text-center"> <span><%=album.artist%>: </span><%= album.title %></h2>
     <% }) %>
     
     <div>
-        <label>Rating:</label>
-        <input class="form-control" name="rating" type="number" value="<%= review.rating %>"/>
+        <label for="rating">Rating:</label>
+        <input class="form-control" name="rating" type="number" min="0" max="10" step="1" value="<%= review.rating %>" aria-invalid="true"/>
     </div>
 
     <div>
-        <label>Review:</label>
-        <textarea class="form-control" name="isPublished" type="text" style="height: 70vh;"><%= review.content %></textarea>
+        <label for="content">Review content:</label>
+        <textarea class="form-control" name="content" type="text" style="height: 70vh;" aria-invalid="true"><%= review.content %></textarea>
     </div>
 
-    <!-- <div>
-        <label>Review Author</label>
-        <input class="form-control" name="createdBy" type="text" value="<%= review.createdBy %>" />
-    </div> If this div is unnecessary, delete -->
     <br>
 
-    <input type="hidden" name="id" value="<%= review._id %>" />
+    <input type="hidden" name="id" value="<%= review._id %>" aria-hidden="true"/>
 
     <button type="submit" class="btn btn-dark"> Update Review </button>
 
