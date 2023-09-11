@@ -7,8 +7,8 @@
 
     <% if (currentUser && album.createdBy[0] == currentUser.id) { %>
       <div class="album-controls">
-        <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>">Edit</a></div>
-        <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>">Delete</a></div>
+        <div class="album-controls-item"><a href="/album/edit?id=<%= album._id%>" role="button" aria-label="Edit Album">Edit</a></div>
+        <div class="album-controls-item"><a href="/album/delete?id=<%= album._id%>" role="button" aria-label="Delete Album">Delete</a></div>
       </div>
     <% } %>
 
@@ -35,7 +35,7 @@
       </div>
       <hr>
       <div>
-        <a href="/review/add?id=<%= album._id %>"><span class="larger-text small-shadow hover-shadow">Add a review</span></a>
+        <a href="/review/add?id=<%= album._id %>" role="button"><span class="larger-text small-shadow hover-shadow">Add a review</span></a>
       </div>
     <hr />
 

@@ -4,30 +4,37 @@
     class="auth-form med-text small-shadow remove-empty-inputs" style="margin-top: 30px;">
 
     <div class="form-group">
-        <label>Title</label>
+        <label for="title">Title</label>
         <input type="text" name="title" required="true" class="form-control" />
     </div>
 
     <div class="form-group">
-        <label>Artist</label>
+        <label for="artist">Artist</label>
         <input type="text" name="artist" required="true" class="form-control" />
     </div>
     <div class="form-group">
-        <label>Album Cover </label>
-        <input type="file" name="image" accept="image/png, image/gif, image/jpeg, image/jpg" required="true" class="form-control mobile-small-text">
+        <label for="image">Album Cover </label>
+        <input 
+            type="file" 
+            name="image" 
+            accept="image/png, image/gif, image/jpeg, image/jpg" 
+            required="true" 
+            aria-invalid="true"
+            class="form-control mobile-small-text" 
+        >
     </div>
 
     <div class="form-group">
-        <label>Year</label>
-        <input type="number" name="year" min="1900" required="true" class="form-control" id="album-year-input" />
+        <label for="year">Year</label>
+        <input type="number" name="year" min="1900" required="true" class="form-control" id="album-year-input" aria-invalid="true"/>
     </div>
 
     <div class="form-group">
         <div id="track-parent">
-            <label>Track List</label>
+            <label for="trackList">Track List</label>
             <input type="text" name="trackList" class="form-control" id="track1" />
         </div>
-        <button type="button" id="add-field" class="btn btn-light add-btn">+</button>
+        <button type="button" id="add-field" class="btn btn-light add-btn" aria-label="add new track input field to form">+</button>
     </div class="form-group">
     <br>
 
@@ -35,13 +42,13 @@
 
         <div class="form-group">
             <div id="genre-parent">
-                <label>Genre</label>
+                <label for="genre">Genre</label>
                 <input type="text" name="genre" class="form-control" id="genre1" />
             </div>
-            <button type="button" id="add-genre" class="btn btn-light add-btn">+</button>
+            <button type="button" id="add-genre" class="btn btn-light add-btn" aria-label="add new genre input field to form">+</button>
         </div>
         <br>
-        <input type="hidden" name="createdBy" value="<%= currentUser._id %>" />
+        <input type="hidden" name="createdBy" value="<%= currentUser._id %>" aria-hidden="true"/>
         <input type="submit" class="btn btn-dark" name="Submit Album"></input>
 
 </form>

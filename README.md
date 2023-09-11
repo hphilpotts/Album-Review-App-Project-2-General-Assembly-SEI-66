@@ -399,6 +399,7 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 
 `aria-label`s added to popup alert notifications. Unneccessary labels - _copied across through bootstrap example code, I think_ - removed from nav elements as `page='current'` not needed.         
 
+`album/` views updated for improved accessibility. The use of a `<table>` to show the Album Index is not especially accessible: cards or similar would likely be a better approach. _Added to future updates - may yet be brought forward however._                   
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -414,8 +415,13 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 - Ensure full mobile responsiveness.        
 - Ensure all accessibility features present.        
 
-## Minor issues:        
-- Clear text from Content upon first input in AddReview.        
+## Minor issues/updates:        
+- Clear text from Content upon first input in Add Review.        
+- Adjust 'year' input controls in Add Album     
+- Add 'confirm delete' dialogue to Delete Album / Review        
+- Add back button to Edit Album / Review pages       
+- Reverse review render order in Review Index       
+- 'back to all' button on filtered Album / Review views     
 - Update/reformat about page.       
 
 ## Housekeeping:        
@@ -423,3 +429,6 @@ Icon - with label - added to GitHub link in main `<footer>` to emphasise this is
 - Clear unneeded comments / `console.log()`s        
 - Refactor where possible       
 - Ensure consistent style across codebase       
+
+## Future additions:        
+- Switch from use of table to show Album/Review indeces to cards: will deliver a visual improvement as well as better accessibility.        
