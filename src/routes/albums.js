@@ -30,6 +30,6 @@ router.get('/album/detail', albumsCtrl.album_detail_get);
 router.get('/album/edit', isLoggedIn, albumsCtrl.album_edit_get);
 router.post('/album/update', albumsCtrl.album_edit_post);
 
-router.get('/album/delete', isLoggedIn, albumsCtrl.album_delete);
+router.get('/album/delete', isLoggedIn, imgCtrl.deleteFromS3, albumsCtrl.album_delete);
 
 module.exports = router;

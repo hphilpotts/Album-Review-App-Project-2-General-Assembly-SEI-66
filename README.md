@@ -410,16 +410,15 @@ Client-side validation added to Album forms, along with CSS changes to highlight
 - **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
 - **Implement filter by genre / artist / user.**       
 - **Delete orphaned reviews when album deleted.**       
-- Delete album artwork image from S3 bucket when album deleted      
+- **Delete album artwork image from S3 bucket when album deleted**      
 - **Update error pages/messages.**      
     - **Add flash messages for sign up - at present this does not display.**     
 - Ensure fully responsive design.           
-- Ensure all accessibility features present.        
+- **Ensure all accessibility features present.**        
 
 ## Minor issues/updates:        
 - Check if username is taken prior to signup.       
 - Add 'Review Album' button to each album in Album index.       
-- Clear text from Content upon first input in Add Review.        
 - Adjust 'year' input controls in Add Album     
 - Add 'confirm delete' dialogue to Delete Album / Review        
 - Add back button to Edit Album / Review pages       
@@ -430,6 +429,7 @@ Client-side validation added to Album forms, along with CSS changes to highlight
 - Filter reviews by user when username is clicked       
 - Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
 - Update/reformat about page.       
+- Fix `file.mimetype` check in `imageController.js` which is causing errors     
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        
