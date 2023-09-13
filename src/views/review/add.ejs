@@ -3,15 +3,15 @@
 <form method="POST" action="/review/add" class="auth-form med-text small-shadow" style="margin-top: 30px;">
 
     <div class="form-group">
-        <label for="rating">Rating /10:</label>
-        <input name="rating" type="number" class="form-control" min="0" max="10" step="1" required="true"
+        <label for="rating-input">Rating /10:</label>
+        <input id="rating-input" name="rating" type="number" class="form-control" min="0" max="10" step="1" required="true"
             aria-invalid="true"></input>
     </div>
 
     <div class="form-group">
-        <label for="content">Review content:</label>
-        <textarea name="content" type="text" required="true" minlength="50" class="form-control" style="height: 50vh;"
-            aria-invalid="true">Write your review here!</textarea>
+        <label for="content-input">Review content:</label>
+        <textarea id="content-input" name="content" type="text" required="true" minlength="50" maxlength="10000" class="form-control" style="height: 50vh;"
+            aria-invalid="true" placeholder="Add your review here (minumum length: 50 characters)."></textarea>
     </div>
 
     <input type="hidden" name="album[]" value="<%= Album._id %>" aria-hidden="true" />

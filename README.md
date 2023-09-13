@@ -400,7 +400,7 @@ First - I will do a bit of reading: been a long time since I have focused specif
 
 `views/auth` pages updated as well.     
 
-Client-side validation added to Album forms, along with CSS changes to highlight invalid fields. Auth forms updated,        
+Client-side validation added to Album forms, along with CSS changes to highlight invalid fields. Auth forms and Review forms also updated.       
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**

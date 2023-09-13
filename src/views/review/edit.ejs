@@ -7,13 +7,14 @@
     <% }) %>
     
     <div>
-        <label for="rating">Rating:</label>
-        <input class="form-control" name="rating" type="number" min="0" max="10" step="1" value="<%= review.rating %>" aria-invalid="true"/>
+        <label for="rating-input">Rating:</label>
+        <input id="rating-input" class="form-control" name="rating" type="number" min="0" max="10" step="1" required value="<%= review.rating %>" aria-invalid="true"/>
     </div>
 
     <div>
-        <label for="content">Review content:</label>
-        <textarea class="form-control" name="content" type="text" style="height: 70vh;" aria-invalid="true"><%= review.content %></textarea>
+        <label for="content-input">Review content:</label>
+        <textarea id="content-input" class="form-control" name="content" type="text" minlength="50" maxlength="10000" required 
+            style="height: 70vh;" aria-invalid="true"><%= review.content %></textarea>
     </div>
 
     <br>
