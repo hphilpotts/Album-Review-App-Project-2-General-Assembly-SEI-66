@@ -411,6 +411,7 @@ Last of the big jobs before setting about the business of rehosting is improving
 - Navbar updated: restructured and flex direction reversed to push links to the right of the view.      
 - Main content centred and given max width so that it does not become sparse on the very largest of displays.       
 - Use of `<br>`s and similar in `layout.ejs` removed in place of `vh`-based margins.        
+- Album 
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -441,6 +442,7 @@ Last of the big jobs before setting about the business of rehosting is improving
 - Update/reformat about page.       
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
 - change genres in album index - set max number to show in `<ul>`       
+- When enter pressed on add field buttons, new field should be added to form        
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        

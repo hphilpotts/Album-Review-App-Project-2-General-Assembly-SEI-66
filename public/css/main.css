@@ -114,6 +114,10 @@ body,
   padding: 10px 10px 0px 0px;
 }
 
+.alert {
+  margin-top: 10vh;
+}
+
 /* -- nav */
 
 nav {
@@ -179,6 +183,10 @@ nav :hover,
 
 .album-controls-item {
   margin: 0 1%;
+}
+
+#track-parent {
+  padding: 1px;
 }
 
 .add-btn {
