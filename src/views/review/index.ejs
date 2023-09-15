@@ -1,7 +1,7 @@
 <h2 class="large-heading text-center text-center">Reviews</h2>
-<div class="row">
-  <% reviews.forEach(function(review){ %>
-  <section class="container">
+<div class="row review-index-body">
+  <% reviews.reverse().forEach(function(review){ %>
+  <section class="review-container">
     <div class="img-div">
       <a href="/review/detail?id=<%= review._id %>" title="Go to review">
         <% review.album.forEach(function(element) { %>
@@ -13,7 +13,7 @@
       <% review.album.forEach(function(album) { %>
       <a href="/review/detail?id=<%= review._id %>">
         <h5 class="card-title small-shadow">
-          <%= album.artist %>: <%= album.title %> &nbsp; &nbsp; <% }) %>
+          <%= album.artist %>: <%= album.title %> &nbsp; <% }) %>
           <span class=""><%= review.rating %>/10</span>
         </h5></a
       >

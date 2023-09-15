@@ -3,6 +3,7 @@
 :root {
   --primary-orange: rgb(255, 130, 88);
   --bg-beige: rgb(255, 240, 202);
+  --bg-beige-darker: rgb(225, 211, 176);
   --dark-grey: rgb(38, 38, 38);
 }
 
@@ -105,15 +106,6 @@ body,
   margin: 0 auto;
 }
 
-.container {
-  width: 500px;
-  display: flex;
-}
-
-.body-div {
-  padding: 10px 10px 0px 0px;
-}
-
 .alert {
   margin-top: 10vh;
 }
@@ -208,6 +200,29 @@ nav :hover,
 .review-rating {
   font-size: 60px;
   text-shadow: 2px 2px var(--primary-orange);
+}
+
+.review-index-body {
+  justify-content: center;
+}
+
+.review-container {
+  width: 500px;
+  max-width: 99vw;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  margin: 0.25rem;
+  padding: auto 1rem;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.body-div {
+  padding: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .review-content {
