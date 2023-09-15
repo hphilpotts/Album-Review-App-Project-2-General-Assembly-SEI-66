@@ -409,7 +409,8 @@ Client-side validation added to Album forms, along with CSS changes to highlight
 Last of the big jobs before setting about the business of rehosting is improving the responsiveness of the site design: in particular, the site suffers on larger screens (_a result, I think, of my new focus at the time on mobile-first design_).        
 
 - Navbar updated: restructured and flex direction reversed to push links to the right of the view.      
-
+- Main content centred and given max width so that it does not become sparse on the very largest of displays.       
+- Use of `<br>`s and similar in `layout.ejs` removed in place of `vh`-based margins.        
 
 ## Main Features & Fixes before rehost:
 **In bold if done.**
@@ -439,6 +440,7 @@ Last of the big jobs before setting about the business of rehosting is improving
 - Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
 - Update/reformat about page.       
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
+- change genres in album index - set max number to show in `<ul>`       
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        

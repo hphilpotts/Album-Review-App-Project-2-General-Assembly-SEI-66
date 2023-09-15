@@ -96,6 +96,13 @@ body,
 
 #body-container {
   padding: 0 3%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+#body-inner {
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .container {
