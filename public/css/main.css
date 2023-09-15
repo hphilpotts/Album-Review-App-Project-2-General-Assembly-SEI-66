@@ -1,4 +1,12 @@
-/* -- generic */
+/* COLOUR VARIABLES */
+
+:root {
+  --primary-orange: rgb(255, 130, 88);
+  --bg-beige: rgb(255, 240, 202);
+  --dark-grey: rgb(38, 38, 38);
+}
+
+/* -- text */
 
 .italic {
   font-style: oblique;
@@ -26,6 +34,16 @@
   text-decoration: none;
 }
 
+.small-shadow {
+  text-shadow: 1px 1px var(--primary-orange);
+}
+
+.highlighted-text {
+  text-shadow: 2px 1px white(255, 130, 88);
+}
+
+/* -- links */
+
 a {
   color: #212529;
   text-decoration: none;
@@ -33,28 +51,22 @@ a {
 
 a:hover,
 a:active {
-  color: rgb(255, 130, 88);
+  color: var(--primary-orange);
   text-shadow: 1px 1px white;
 }
 
-.small-shadow {
-  text-shadow: 1px 1px rgb(255, 130, 88);
-}
-
 a:hover .hover-shadow {
-  text-shadow: 1px 1px rgb(38, 38, 38)
+  text-shadow: 1px 1px var(--dark-grey)
 }
 
-.highlighted-text {
-  text-shadow: 2px 1px white(255, 130, 88);
-}
+/* -- inputs */
 
 input {
   border: 1px solid rgb(183, 182, 182);
 }
 
 input:invalid {
-  border: 1px solid rgb(255, 130, 88);
+  border: 1px solid var(--primary-orange);
 }
 
 input:placeholder-shown {
@@ -66,14 +78,13 @@ input:placeholder-shown {
 
 body {
   font-family: 'Calistoga', cursive;
-  background-color: #212529;
+  background-color: var(--dark-grey);
   overflow-x: hidden;
 }
 
 #inner-body {
-  background-color: rgb(255, 240, 202);
+  background-color: var(--bg-beige);
   margin: none;
-  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -102,6 +113,7 @@ nav {
   font-weight: bolder;
   margin: -20px;
   padding: 0 3%;
+  white-space: nowrap;
 }
 
 nav :visited,
@@ -114,7 +126,7 @@ nav :active {
 
 nav :hover,
 #main-logo {
-  color: rgb(255, 130, 88);
+  color: var(--primary-orange);
 }
 
 #main-logo {
@@ -146,9 +158,10 @@ nav :hover,
   max-width: 300px;
 }
 
-.album-icon, .album-large {
-  outline: 1px solid rgb(38, 38, 38);
-  border: 1px solid rgb(38, 38, 38);
+.album-icon,
+.album-large {
+  outline: 1px solid var(--dark-grey);
+  border: 1px solid var(--dark-grey);
   border-radius: 5px;
 }
 
@@ -179,7 +192,7 @@ nav :hover,
 .large-heading,
 .review-rating {
   font-size: 60px;
-  text-shadow: 2px 2px rgb(255, 130, 88);
+  text-shadow: 2px 2px var(--primary-orange);
 }
 
 .review-content {
@@ -202,8 +215,8 @@ nav :hover,
 .auth-form {
   margin: 100px auto;
   padding: 50px;
-  outline: 3px solid rgb(38, 38, 38);
-  border: 2px solid rgb(255, 130, 88);
+  outline: 3px solid var(--dark-grey);
+  border: 2px solid var(--primary-orange);
   border-radius: 20px;
   max-width: 600px;
 }
@@ -263,7 +276,7 @@ nav :hover,
     margin: 1%;
     padding: 1;
     outline: none;
-    border: 3px solid rgb(38, 38, 38);
+    border: 3px solid var(--dark-grey);
     border-radius: 20px;
   }
 

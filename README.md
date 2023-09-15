@@ -402,6 +402,15 @@ First - I will do a bit of reading: been a long time since I have focused specif
 
 Client-side validation added to Album forms, along with CSS changes to highlight invalid fields. Auth forms and Review forms also updated.       
 
+### 15/09/23:       
+
+#### Responive Design:      
+
+Last of the big jobs before setting about the business of rehosting is improving the responsiveness of the site design: in particular, the site suffers on larger screens (_a result, I think, of my new focus at the time on mobile-first design_).        
+
+- Navbar updated: restructured and flex direction reversed to push links to the right of the view.      
+
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
