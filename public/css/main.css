@@ -349,4 +349,8 @@ nav :hover,
     height: 100%;
   }
 
+  .mobile-footer-link {
+    font-size: 0.66rem;
+  }
+
 }
