@@ -23,12 +23,24 @@
               alt="<%= album.title %>: album cover.">
           </a>
         </td>
-        <td class="two-line title-table"> <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" title="Album page">
+        <td class="hidden two-line title-table mobile-show"> 
+          <a class="peach highlighted-text mobile-album-index" href="/album/detail?id=<%=album._id%>" title="Album page">
+            <h3 class="mobile-med-text small-shadow" >
+              <%= album.title %>
+            </h3>
+            <h3 class="mobile-small-text text-center">
+              <%= album.artist %>
+            </h3>
+          </a>
+        </td>
+        <td class="two-line title-table mobile-hide"> 
+          <a class="peach highlighted-text" href="/album/detail?id=<%=album._id%>" title="Album page">
             <h3 class="mobile-med-text">
               <%= album.title %>
             </h3>
-          </a></td>
-        <td class="med-text mobile-med-text">
+          </a>
+        </td>
+        <td class="med-text mobile-med-text mobile-hide">
           <a href="/album/artist_index?artist=<%= album.artist %>" title="Albums by <%= album.artist %>">
             <%= album.artist %>
           </a>

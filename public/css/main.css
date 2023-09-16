@@ -7,6 +7,12 @@
   --dark-grey: rgb(38, 38, 38);
 }
 
+/* -- generic */
+
+.hidden {
+  display: none;
+}
+
 /* -- text */
 
 .italic {
@@ -133,8 +139,12 @@ nav :hover,
 }
 
 #main-logo {
-  font-size: 30px;
+  font-size: 1.5rem;
   text-shadow: 1px 1px white;
+}
+
+#navbar-inner {
+  max-width: 100dvw;
 }
 
 .navbar-collapse a {
@@ -163,9 +173,8 @@ nav :hover,
 
 .album-icon,
 .album-large {
-  outline: 1px solid var(--dark-grey);
   border: 1px solid var(--dark-grey);
-  border-radius: 5px;
+  border-radius: 3%;
 }
 
 .album-controls {
@@ -311,7 +320,7 @@ nav :hover,
   }
 
   .large-heading {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -327,4 +336,17 @@ nav :hover,
   .mobile-hide {
     display: none;
   }
+
+  .mobile-show {
+    display: table-cell;
+    height: 100%;
+  }
+
+  .mobile-album-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
 }
