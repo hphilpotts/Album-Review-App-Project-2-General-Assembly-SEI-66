@@ -413,6 +413,10 @@ Last of the big jobs before setting about the business of rehosting is improving
 - Use of `<br>`s and similar in `layout.ejs` removed in place of `vh`-based margins.        
 - Album views updated along with Review views.      
 
+I then began testing in ngrok - as always, the difference between the dev tools simulated device and an actual device is quite striking.        
+
+Various changes made, in particular to the Albums Index table as well as font sizes and the use of an outer border.     
+
 ## Main Features & Fixes before rehost:
 **In bold if done.**
 - **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
@@ -437,12 +441,14 @@ Last of the big jobs before setting about the business of rehosting is improving
 - 'back to all' button on filtered Album / Review views     
 - Add back button to Add / Edit Review         
 - Make entire Review card clickable?        
+- Linked reviews in Album detail confusing - whole element should link to review        
 - Filter reviews by user when username is clicked       
 - Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
 - Update/reformat about page.       
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
 - change genres in album index - set max number to show in `<ul>`       
 - When enter pressed on add field buttons, new field should be added to form        
+- Footer 'bounces' on mobile when browser bar shows/hides - can this be improved?       
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        
