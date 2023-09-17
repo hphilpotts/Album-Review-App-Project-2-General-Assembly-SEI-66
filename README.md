@@ -418,18 +418,17 @@ I then began testing in ngrok - as always, the difference between the dev tools 
 Various changes made, in particular to the Albums Index table as well as font sizes and the use of an outer border.     
 
 ## Main Features & Fixes before rehost:
-**In bold if done.**
-- **Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)**      
+- ~~Implement image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)~~      
 - _Ensure user sessions persist - at present these are lost on server restart. Use local storage?_        
     - _Is this going to be that much of an issue in 'production'? Only really a problem in development where the localhost is being stopped and started frequently...?_             
-- **Add review link to be moved into album detail, album selection to be automatic on this basis.**     
-- **Implement filter by genre / artist / user.**       
-- **Delete orphaned reviews when album deleted.**       
-- **Delete album artwork image from S3 bucket when album deleted**      
-- **Update error pages/messages.**      
-    - **Add flash messages for sign up - at present this does not display.**     
-- Ensure fully responsive design.           
-- **Ensure all accessibility features present.**        
+- ~~Add review link to be moved into album detail, album selection to be automatic on this basis.~~     
+- ~~Implement filter by genre / artist / user.~~       
+- ~~Delete orphaned reviews when album deleted.~~       
+- ~~Delete album artwork image from S3 bucket when album deleted~~      
+- ~~Update error pages/messages.~~      
+    - ~~Add flash messages for sign up - at present this does not display.~~     
+- ~~Ensure fully responsive design.~~           
+- ~~Ensure all accessibility features present.~~        
 
 ## Minor issues/updates:        
 - Check if username is taken prior to signup.       

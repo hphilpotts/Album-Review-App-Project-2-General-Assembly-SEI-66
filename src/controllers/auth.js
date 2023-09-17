@@ -31,8 +31,23 @@ exports.signup_get = (req, res) => { //potentially exports.auth_signup_get
 
 //HTTP POST - Signup Route - To post the data into the database
 
-exports.auth_signup_post = (req, res) => { // auth_signup_post ? or does it not matter as long as it is consisten
+exports.auth_signup_post = async (req, res) =>  {
+
     let user = new User(req.body);
+
+    const usernameTaken = await User.exists({username: user.username});
+    const emailTaken = await User.exists({emailAddress: user.emailAddress});
+
+    if (usernameTaken) {
+        req.flash("error", "Username already in use, please choose another");
+        res.redirect('/auth/signup')
+    }
+
+    if (emailTaken) {
+        req.flash("error", "Account with this email already exists, please sign in instead");
+        res.redirect('/auth/landing')
+    }
+
     let hash = bcrypt.hashSync(req.body.password, salt);
 
     user.password = hash;
