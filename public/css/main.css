@@ -27,6 +27,10 @@
   font-size: 20px;
 }
 
+.smaller-text {
+  font-size: 1rem;
+}
+
 .small-text {
   height: 30px;
   font-size: 14px;
@@ -78,6 +82,17 @@ input:invalid {
 
 input:placeholder-shown {
   border: 1px solid rgb(183, 182, 182);
+}
+
+input.disable-spin::-webkit-outer-spin-button,
+input.disable-spin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.disable-spin[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 
@@ -280,6 +295,15 @@ nav :hover,
 .center-content {
   display: flex;
   justify-content: space-around;
+}
+
+.float-right {
+  float: right;
+  clear: right;
+}
+
+.button-padding {
+  padding: 6px 12px;
 }
 
 /* -- small-screen */

@@ -431,16 +431,17 @@ Various changes made, in particular to the Albums Index table as well as font si
 - ~~Ensure all accessibility features present.~~        
 
 ## Minor issues/updates:        
-- Check if username is taken prior to signup.       
+- ~~Check if username is taken prior to signup.~~       
 - Add 'Review Album' button to each album in Album index.       
-- Adjust 'year' input controls in Add Album     
 - Add 'confirm delete' dialogue to Delete Album / Review        
-- Add back button to Edit Album / Review pages       
 - Reverse review render order in Review Index       
 - 'back to all' button on filtered Album / Review views     
 - Add back button to Add / Edit Review         
 - Make entire Review card clickable?        
-- Linked reviews in Album detail confusing - whole element should link to review        
+- ~~Add back button to Add/ Edit Album~~               
+- ~~Restyle 'Add Review' link to appear as a button in Album Detail.~~      
+- ~~Linked reviews in Album detail confusing - whole element should link to review~~        
+- ~~Adjust 'year' input controls in Add/Edit Album~~             
 - Filter reviews by user when username is clicked       
 - Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
 - Update/reformat about page.       

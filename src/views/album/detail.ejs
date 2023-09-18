@@ -6,7 +6,8 @@
     </div>
 
     <div>
-      <a href="/review/add?id=<%= album._id %>" role="button">
+      <br>
+      <a class="btn btn-dark" href="/review/add?id=<%= album._id %>" role="button">
         <span class="hover-shadow">
           Add Review
         </span>
@@ -14,6 +15,7 @@
     </div>
 
     <% if (currentUser && album.createdBy[0] == currentUser.id) { %>
+      <br>
       <div class="album-controls">
         <div class="album-controls-item">
           <a href="/album/edit?id=<%= album._id%>" role="button" aria-label="Edit Album">Edit Album</a>
@@ -78,7 +80,7 @@
       <% album.review.forEach(function(review) { %>
         <div style="margin-left: 20px">
           <a href="/review/detail?id=<%= review._id %>"
-            >Review by <a href="/review/user_index?user=<%= review.createdBy[0]._id %>"><%= review.createdBy[0].username %></a>
+            >Review by <%= review.createdBy[0].username %>
             , rating: <%= review.rating %>
           </a>
         </div>
