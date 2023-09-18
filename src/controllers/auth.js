@@ -39,26 +39,29 @@ exports.auth_signup_post = async (req, res) =>  {
     const emailTaken = await User.exists({emailAddress: user.emailAddress});
 
     if (usernameTaken) {
+
         req.flash("error", "Username already in use, please choose another");
-        res.redirect('/auth/signup')
-    }
+        res.redirect('/auth/signup');
 
-    if (emailTaken) {
+    } else if (emailTaken) {
+
         req.flash("error", "Account with this email already exists, please sign in instead");
-        res.redirect('/auth/landing')
+        res.redirect('/auth/landing');
+
+    } else {
+
+        let hash = bcrypt.hashSync(req.body.password, salt);
+
+        user.password = hash;
+    
+        user.save()
+        .then(() => {
+            res.render("auth/landing", { message: "Signed up successfully! Please sign in to begin." });
+        })
+        .catch((err)=>{
+            res.render("auth/signup", { message: "Sign up failed, please try again." });
+        })
     }
-
-    let hash = bcrypt.hashSync(req.body.password, salt);
-
-    user.password = hash;
-
-    user.save()
-    .then(() => {
-        res.render("auth/landing", { message: "Signed up successfully! Please sign in to begin." })
-    })
-    .catch((err)=>{
-        res.render("auth/signup", { message: "Sign up failed, please try again." })
-    })
 };
 
 
