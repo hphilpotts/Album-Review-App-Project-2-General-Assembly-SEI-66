@@ -1,5 +1,23 @@
 <div>
 
+  <div id="confirm-delete" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Album Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Warning: Are you sure you want to delete this album? Once completed, this action cannot be undone!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Cancel</button>
+          <a href="/album/delete?id=<%=album._id%>&key=<%=album.albumCover%>" role="button" class="btn btn-danger">Yes, Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="text-center">
     <div>
       <h3 class="large-heading"><%= album.title %></h3>
@@ -21,7 +39,7 @@
           <a href="/album/edit?id=<%= album._id%>" role="button" aria-label="Edit Album">Edit Album</a>
         </div>
         <div class="album-controls-item">
-          <a href="/album/delete?id=<%= album._id %>&key=<%= album.albumCover %>" role="button" aria-label="Delete Album">Delete Album</a>
+          <a role="button" data-bs-toggle="modal" data-bs-target="#confirm-delete" aria-label="Delete Album">Delete Album</a>
         </div>
       </div>
     <% } %>
