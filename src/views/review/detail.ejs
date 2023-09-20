@@ -1,4 +1,24 @@
 <div>
+
+    <div id="confirm-delete" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Confirm Review Deletion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Warning: Are you sure you want to delete this review? Once completed, this action cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Cancel</button>
+              <a href="/review/delete?id=<%= review._id %>" role="button" class="btn btn-danger no-shadow">Yes, Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     <% review.album.forEach(function(album) { %> 
         <h2 class="large-heading text-center"> 
             <span><%=album.artist%>: </span>
@@ -29,7 +49,7 @@
     <hr>
     <div class="text-center">
     <a class="user-edit" href="/review/edit?id=<%= review._id %>" role="button">Edit Review</a>
-    <a class="user-edit" href="/review/delete?id=<%= review._id %>" role="button">Delete Review</a>
+    <a class="user-edit" role="button" data-bs-toggle="modal" data-bs-target="#confirm-delete" aria-label="Delete Album">Delete Review</a>
     </div>
 <% } %>
 <hr>

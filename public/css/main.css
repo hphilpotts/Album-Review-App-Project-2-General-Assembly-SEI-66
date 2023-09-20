@@ -70,6 +70,10 @@ a:hover .hover-shadow {
   text-shadow: 1px 1px var(--dark-grey)
 }
 
+.no-shadow {
+  text-shadow: none !important;
+}
+
 /* -- inputs */
 
 input {
