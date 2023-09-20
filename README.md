@@ -436,9 +436,9 @@ Various changes made, in particular to the Albums Index table as well as font si
 ## Minor issues/updates:        
 - ~~Check if username is taken prior to signup.~~       
 - ~~Add 'confirm delete' dialogue to Delete Album / Review~~        
-- Reverse review render order in Review Index       
+- ~~Reverse review render order in Review Index~~       
 - 'back to all' button on filtered Album / Review views     
-- Add back button to Add / Edit Review         
+- ~~Add back button to Add / Edit Review~~         
 - Make entire Review card clickable?        
 - ~~Add back button to Add/ Edit Album~~               
 - ~~Restyle 'Add Review' link to appear as a button in Album Detail.~~      
@@ -451,6 +451,7 @@ Various changes made, in particular to the Albums Index table as well as font si
 - change genres in album index - set max number to show in `<ul>`       
 - When enter pressed on add field buttons, new field should be added to form        
 - Footer 'bounces' on mobile when browser bar shows/hides - can this be improved?       
+- Account for very long album titles (e.g. _Swordfishtrombones_) which overlap containers.      
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        

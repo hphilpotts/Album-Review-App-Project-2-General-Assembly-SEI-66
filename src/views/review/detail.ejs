@@ -21,8 +21,8 @@
 
     <% review.album.forEach(function(album) { %> 
         <h2 class="large-heading text-center"> 
-            <span><%=album.artist%>: </span>
-            <a href="/album/detail?id=<%= album.id %>" title="Go to Album Page"><%= album.title %></a>
+          <a href="/album/detail?id=<%= album.id %>" title="Go to Album Page"><span><%=album.artist%>: </span>
+            <%= album.title %></a>
         </h2>
     <% }) %>
 </div>
