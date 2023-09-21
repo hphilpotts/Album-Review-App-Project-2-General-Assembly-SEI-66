@@ -421,7 +421,9 @@ Various changes made, in particular to the Albums Index table as well as font si
 
 #### Minor edits:       
 
-
+All largely straightforward.        
+- MUI Modals were useful for dialogues thanks to their built-in JS.     
+- Back button added to filtered Album/Review index views: used JS in frontend as this has access to the URL.        
 
 ## Main Features & Fixes completeed prior to rehost:
 - Implemented image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
@@ -437,7 +439,7 @@ Various changes made, in particular to the Albums Index table as well as font si
 - ~~Check if username is taken prior to signup.~~       
 - ~~Add 'confirm delete' dialogue to Delete Album / Review~~        
 - ~~Reverse review render order in Review Index~~       
-- 'back to all' button on filtered Album / Review views     
+- ~~'back to all' button on filtered Album / Review views~~     
 - ~~Add back button to Add / Edit Review~~         
 - Make entire Review card clickable?        
 - ~~Add back button to Add/ Edit Album~~               
