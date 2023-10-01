@@ -41,16 +41,16 @@
         </div>
 
         <div class="collapse navbar-collapse text-center flex-row-reverse" id="navbar-link-container">
-          <a class="nav-link active" href="/review/index">Reviews</a>
-          <a class="nav-link active" href="/album/index">Albums</a>
-          <a class="nav-link active" href="/album/add">Add Album</a>
         <% if(currentUser){ %>
-          <a class="nav-link active" href="/">Hi, <%= currentUser.username %></a>
           <a class="nav-link active" href="/auth/logout">Log Out</a>
+          <a class="nav-link active" href="/review/user_index?user=<%= currentUser.id %>">Hi, <%= currentUser.username %></a>
         <% } else{ %>
-            <a class="nav-link active" href="/auth/landing">Sign In</a>
-            <a class="nav-link active" href="/auth/signup">Sign Up</a>
+          <a class="nav-link active" href="/auth/signup">Sign Up</a>
+          <a class="nav-link active" href="/auth/landing">Sign In</a>
         <% } %>
+          <a class="nav-link active" href="/album/add">Add Album</a>
+          <a class="nav-link active" href="/album/index">Albums</a>
+          <a class="nav-link active" href="/review/index">Reviews</a>
         </div>
 
       </div>

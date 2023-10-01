@@ -446,8 +446,8 @@ All largely straightforward.
 - ~~Restyle 'Add Review' link to appear as a button in Album Detail.~~      
 - ~~Linked reviews in Album detail confusing - whole element should link to review~~        
 - ~~Adjust 'year' input controls in Add/Edit Album~~             
-- Filter reviews by user when username is clicked       
-- Filter reviews by current user when 'Hello, currentUser' nav link is clicked      
+- ~~Filter reviews by user when username is clicked~~       
+- ~~Filter reviews by current user when 'Hello, currentUser' nav link is clicked~~      
 - Update/reformat about page.       
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
 - change genres in album index - set max number to show in `<ul>`       
