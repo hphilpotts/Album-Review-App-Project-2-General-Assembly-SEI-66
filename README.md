@@ -417,7 +417,9 @@ I then began testing in ngrok - as always, the difference between the dev tools 
 
 Various changes made, in particular to the Albums Index table as well as font sizes and the use of an outer border.     
 
-## 17/09/23:        
+## 02/10/23:        
+
+Minor updates include a limit on the number of genre inputs that can be added to the Add Album form.      
 
 #### Minor edits:       
 
@@ -441,7 +443,6 @@ All largely straightforward.
 - ~~Reverse review render order in Review Index~~       
 - ~~'back to all' button on filtered Album / Review views~~     
 - ~~Add back button to Add / Edit Review~~         
-- Make entire Review card clickable?        
 - ~~Add back button to Add/ Edit Album~~               
 - ~~Restyle 'Add Review' link to appear as a button in Album Detail.~~      
 - ~~Linked reviews in Album detail confusing - whole element should link to review~~        
@@ -450,8 +451,8 @@ All largely straightforward.
 - ~~Filter reviews by current user when 'Hello, currentUser' nav link is clicked~~      
 - Update/reformat about page.       
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
-- change genres in album index - set max number to show in `<ul>`       
-- When enter pressed on add field buttons, new field should be added to form        
+- ~~change genres in album index - set max number to show in `<ul>`~~       
+- ~~When enter pressed on add field buttons, new field should be added to form~~        
 - Footer 'bounces' on mobile when browser bar shows/hides - can this be improved?       
 - Account for very long album titles (e.g. _Swordfishtrombones_) which overlap containers.      
 

@@ -35,7 +35,7 @@
             <label id="trackList-input">Track List</label>
             <input type="text" name="trackList" class="form-control" id="track1" placeholder=" " aria-labelledby="trackList-input" />
         </div>
-        <button type="button" id="add-field" class="btn btn-light add-btn" aria-label="add new track input field to form">+</button>
+        <button type="button" id="add-field" name="addTrack" class="btn btn-light add-btn" aria-label="add new track input field to form">+</button>
     </div class="form-group">
     <br>
 
@@ -46,7 +46,8 @@
                 <label id="genre-input">Genre</label>
                 <input type="text" name="genre" class="form-control" id="genre1" placeholder=" " aria-labelledby="genre-input" />
             </div>
-            <button type="button" id="add-genre" class="btn btn-light add-btn" aria-label="add new genre input field to form">+</button>
+            <button type="button" id="add-genre" name="addGenre" class="btn btn-light add-btn" 
+                aria-label="add new genre input field to form">+</button>
         </div>
         <br>
         <input type="hidden" name="createdBy" value="<%= currentUser._id %>" aria-hidden="true"/>

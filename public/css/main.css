@@ -5,6 +5,7 @@
   --bg-beige: rgb(255, 240, 202);
   --bg-beige-darker: rgb(225, 211, 176);
   --dark-grey: rgb(38, 38, 38);
+  --light-grey: rgb(100, 100, 100);
 }
 
 /* -- generic */
@@ -68,6 +69,10 @@ a:active {
 
 a:hover .hover-shadow {
   text-shadow: 1px 1px var(--dark-grey)
+}
+
+a:hover .white-hover-shadow {
+  text-shadow: 1px 1px white;
 }
 
 .no-shadow {

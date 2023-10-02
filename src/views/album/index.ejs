@@ -50,13 +50,15 @@
         </td>
         <td class="mobile-hide">
           <ul>
-            <% album.genre.forEach(function(genre) { %>
+            <% album.genre.forEach(function(genre, index) { %>
+              <% if (index < 3) { %>
               <li>
                 <a href="/album/genre_index?genre=<%= genre %>" title="<%= genre %> albums">
-                  <%= genre %>
+                  <%= genre %>      
                 </a>
               </li>
-              <% }) %>
+              <% } %>
+            <% }) %>
           </ul>
         </td>
       </tr>

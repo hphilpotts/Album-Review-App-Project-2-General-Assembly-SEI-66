@@ -12,7 +12,7 @@
     <div class="body-div">
       <% review.album.forEach(function(album) { %>
       <a href="/review/detail?id=<%= review._id %>">
-        <h5 class="card-title small-shadow">
+        <h5 class="card-title small-shadow white-hover-shadow">
           <%= album.artist %>: <%= album.title %> &nbsp; <% }) %>
           <span class=""><%= review.rating %>/10</span>
         </h5></a
