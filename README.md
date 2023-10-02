@@ -453,16 +453,17 @@ All largely straightforward.
 - Fix `file.mimetype` check in `imageController.js` which is causing errors     
 - ~~change genres in album index - set max number to show in `<ul>`~~       
 - ~~When enter pressed on add field buttons, new field should be added to form~~        
-- Footer 'bounces' on mobile when browser bar shows/hides - can this be improved?       
-- Account for very long album titles (e.g. _Swordfishtrombones_) which overlap containers.      
+- ~~Account for very long album titles (e.g. _Swordfishtrombones_) which overlap containers.~~      
 
 ## Housekeeping:        
 - Ensure robust and clear error handling        
 - Clear unneeded comments / `console.log()`s        
 - Refactor where possible       
 - Ensure consistent style across codebase       
+- Split README out into sections.       
 
-## Future additions:        
+## Future additions / updates:        
+- Footer 'bounces' on mobile when browser bar shows/hides - can this be improved?       
 - Switch from use of table to show Album indeces to cards instead: this will deliver a visual improvement as well as better accessibility.        
 - Auto-generate `alt` attributes for newly-uploaded albums to describe the cover to visually impared users.     
 - Dark mode         
