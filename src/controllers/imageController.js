@@ -9,11 +9,10 @@ exports.resizeUploadedImage = async ( req, res, next) => {
         const { file } = req; // future Harry, FYI: same as const file = req.file
         if (!file) next(); // skip if no file
 
-        // ? is this causing the below error seen occasionally ?
-        // if (file.mimetype !== 'image/jpg' || 'image/png') {
-        //     res.status.send(422);
-        //     return
-        // }
+        if (file.mimetype !== 'image/jpeg' || 'image/png') {
+            res.status.send(422);
+            return
+        }
 
         file.buffer = await sharp(file.buffer)
             .resize({ width: 300, height: 300 })
@@ -23,9 +22,7 @@ exports.resizeUploadedImage = async ( req, res, next) => {
 
     } catch (err) {
         console.error(err);
-        res.status.send(400); // ! occasional error on this line
-                                // along the lines of 'res.status.send(400)' is not a function
-                                // above if (file.mimetype [...] ... seems to be causing the issue
+        res.status.send(400); 
     }
 }
 
