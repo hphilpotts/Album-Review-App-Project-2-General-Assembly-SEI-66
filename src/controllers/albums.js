@@ -1,20 +1,21 @@
-// -- Requires:
+// --- Albums Controller ---
+
 
 // Require Models:
-const { Album } = require('../models/Album')
-const { User } = require('../models/User');
+const { Album } = require('../models/Album');
 const { Review } = require('../models/Review');
 
 // Require moment for timestamp formatting:
 const moment = require('moment');
 
-// -- APIs:
 
-// CREATE
+// -- CREATE
+
 // HTTP GET - Load New Album Form:
 exports.album_create_get = (req, res) => {
     res.render('album/add');
 }
+
 // HTTP POST - Add new Album API:
 exports.album_create_post = (req, res) => {
     let album = new Album(req.body);
@@ -25,13 +26,15 @@ exports.album_create_post = (req, res) => {
         req.flash( "success", "Album added successfully!");
         res.redirect('/album/index');
     })
-    .catch((err) => {
+    .catch(err => {
         console.error(err);
-        res.send('THIS IS AN ERROR')
+        res.status(400).send('Error adding album. Please try again in a moment!');
     })
 }
 
-// READ
+
+// -- READ
+
 // HTTP GET - Albums Index
 exports.album_index_get = (req, res) => {
     Album.find()
@@ -40,39 +43,36 @@ exports.album_index_get = (req, res) => {
     })
     .catch(err => {
         console.error(err);
-        res.send('ERROR?');
+        res.status(400).send('Error getting Album index. Please try again in a moment!');
     })
 }
 
 // HTTP GET - Albums Index by Genre
-
 exports.album_genre_get = (req, res) => {
     Album.find({ genre: req.query.genre })
     .then(albums => {
-        res.render('album/index', { albums, moment })
+        res.render('album/index', { albums, moment });
     })
     .catch(err => {
         console.error(err);
-        res.send('ERROR?');
+        res.status(400).send('Error getting Albums by genre. Please try again in a moment!');
     })
 }
 
 // HTTP GET - Albums Index by Genre
-
 exports.album_artist_get = (req, res) => {
     Album.find({ artist: req.query.artist })
     .then(albums => {
-        res.render('album/index', { albums, moment })
+        res.render('album/index', { albums, moment });
     })
     .catch(err => {
         console.error(err);
-        res.send('ERROR?');
+        res.status(400).send('Error getting Albums by artist. Please try again in a moment!');
     })
 }
 
 // HTTP GET - Albums Detail
 exports.album_detail_get = (req, res) => {
-    // This is the bit that is causing us problems!
     Album.findById(req.query.id).populate({ 
         path: 'review',
         populate: {
@@ -80,25 +80,27 @@ exports.album_detail_get = (req, res) => {
           model: 'User'
         } 
       })
-    .then
-    (album => {
+    .then(album => {
         res.render('album/detail', { album, moment });
     })
     .catch(err => {
         console.error(err);
-        res.send('...ERROR?');
+        res.status(400).send('Error getting Album detail. Please try again in a moment!');
     })
 }
 
-// UPDATE
+
+// -- UPDATE
+
 // HTTP GET - Get Edit Albums Page by ID:
 exports.album_edit_get = (req, res) => {
     Album.findById(req.query.id)
-    .then((album) => {
-        res.render('album/edit', { album })
+    .then(album => {
+        res.render('album/edit', { album });
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error editing album. Please try again in a moment!');
     })
 }
 
@@ -111,15 +113,18 @@ exports.album_edit_post = (req, res) => {
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error updating album. Please try again in a moment!');
     })
 }
 
-// DELETE
+
+// -- DELETE
+
 // HTTP DELETE - Delete Album by ID
     // also deletes referenced Review(s) to prevent orphaning of documents
 exports.album_delete = (req, res) => {
     Album.findById(req.query.id)
-    .then((foundAlbum) => {
+    .then(foundAlbum => {
         deleteReferencedReviews(foundAlbum);
         deleteAlbum(req.query.id);
         req.flash( "info", "Album deleted successfully!");
@@ -127,26 +132,28 @@ exports.album_delete = (req, res) => {
     })
     .catch(err => {
         console.error(err);
-        res.send('Issue with deleting Album!');
+        res.status(400).send('Error deleting album. Please try again in a moment!');
     })
 }
 
-const deleteReferencedReviews = (foundAlbum) => {
+const deleteReferencedReviews = foundAlbum => {
     Review.deleteMany({_id: { $in: foundAlbum.review }})
     .then(() => {
-        console.log('deleteMany called');
+        console.info('...Referenced reviews deleted successfully...');
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error deleting album: referenced reviews deletion issue. Please try again in a moment!');
     })
 }
 
 const deleteAlbum = id => {
     Album.findByIdAndDelete(id)
     .then(() => {
-        console.log('findByIdAndDelete called');
+        console.info('...Album deleted successfully. No more jobs!');
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error deleting album: delete album by Id issue. Please try again in a moment!');
     })
 }

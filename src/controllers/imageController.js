@@ -3,14 +3,15 @@ const { S3Client, PutObjectCommand, DeleteObjectCommand } = require('@aws-sdk/cl
 
 const s3 = new S3Client({ region: process.env.AWS_REGION })
 
-exports.resizeUploadedImage = async ( req, res, next) => {
+exports.resizeUploadedImage = async (req, res, next) => {
     try {
 
         const { file } = req; // future Harry, FYI: same as const file = req.file
         if (!file) next(); // skip if no file
 
-        if (file.mimetype !== 'image/jpeg' || 'image/png') {
-            res.status.send(422);
+        // check if file is correct type
+        if (['image/jpeg', 'image/png'].includes(file.mimetype) === false) {
+            res.status(422).send('Incorrect file type uploaded, please try again with a .jpeg or .png image!');
             return
         }
 
@@ -22,7 +23,7 @@ exports.resizeUploadedImage = async ( req, res, next) => {
 
     } catch (err) {
         console.error(err);
-        res.status.send(400); 
+        res.status(400).send('Error resizing uploaded image. Please try again in a moment!');
     }
 }
 
@@ -50,7 +51,7 @@ exports.storeInS3 = async (req, res, next) => {
 
     } catch (err) {
         console.error(err);
-        res.send('WHY DAMMIT WHY');
+        res.status(400).send('Error uploading image to S3 Bucket. Please try again in a moment!');
     }
 
 }
@@ -58,11 +59,7 @@ exports.storeInS3 = async (req, res, next) => {
 exports.deleteFromS3 = async (req, res, next) => {
     try {
 
-        console.log(req.query);
-
         const key = req.query.key;
-
-        console.log(key);
 
         const params = {
             Bucket: process.env.S3_BUCKET,
@@ -73,12 +70,12 @@ exports.deleteFromS3 = async (req, res, next) => {
 
         await s3.send(command);
 
-        console.log('delet');
+        console.info('Image deleted from S3 Bucket successfully...');
 
         next();
 
     } catch (err) {
         console.error(err);
-        res.send('Error deleting image from bucket.');
+        res.status(400).send('Error deleting image from bucket.');
     }
 }
