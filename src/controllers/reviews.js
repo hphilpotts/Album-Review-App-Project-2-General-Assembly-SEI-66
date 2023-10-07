@@ -1,28 +1,29 @@
+// --- Review Controller ---
+
+
+// Require Models:
 const {Review} = require("../models/Review");
-
-// Album model and mongoose for related collections
 const { Album } = require('../models/Album');
-const { default: mongoose } = require('mongoose');
 
-
-
-// Require Moment Lib
+// Require moment for timestamp formatting:
 const moment = require('moment');
 
-// APIs for Reviews
 
-// http GET - Load Review form
+// -- CREATE
+
+// HTTP GET - Load New Review Form:
 exports.review_create_get = (req, res) => {
     Album.findById(req.query.id)
-    .then((Album) => {
-        res.render("review/add", { Album })
+    .then(Album => {
+        res.render("review/add", { Album });
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error loading Create Review form. Please try again in a moment!');
     })
-};
+}
 
-// http post - Review
+// HTTP POST - Add new Review:
 exports.review_create_post = (req, res) => {
 
     let review = new Review(req.body);
@@ -35,17 +36,19 @@ exports.review_create_post = (req, res) => {
                 album.save();
             })
         })
-        req.flash("success", "Review added successfully!")
-        res.redirect("/review/index")
+        req.flash("success", "Review added successfully!");
+        res.redirect("/review/index");
     })
-     .catch((err) => {
+     .catch(err => {
          console.error(err);
-         res.send("Please try again later!!!");
+        res.status(400).send('Error creating Review. Please try again in a moment!');
      })   
-};
+}
 
-// http GET - review index API
 
+// -- READ
+
+// HTTP GET - Reviews Index:
 exports.review_index_get = (req, res) => {
     Review.find().populate('album').populate('createdBy')
     .then(reviews =>{
@@ -53,66 +56,74 @@ exports.review_index_get = (req, res) => {
     })
     .catch(err => {
         console.error(err);
+        res.status(400).send('Error loading Reviews. Please try again in a moment!');
     })
-};
+}
 
-// http GET - review by ID
+// HTTP GET - Review Detail:
 exports.review_show_get = (req, res) => {
-    // find review by id
     Review.findById(req.query.id).populate('album').populate('createdBy') // can call .populate() with other info here
     .then(review => {
-        res.render("review/detail", {review, moment})
+        res.render("review/detail", {review, moment});
     })
     .catch(err => {
-        console.error(err)
+        console.error(err);
+        res.status(400).send('Error loading Review Page. Please try again in a moment!');
     })
-};
+}
 
-// http GET - review by createdBy
+// HTTP GET - Reviews by User
 exports.review_by_user_get = (req, res) => {
     Review.find({ createdBy: req.query.user }).populate('album').populate('createdBy')
     .then(reviews => {
-        res.render("review/index", { reviews, moment })
+        res.render("review/index", { reviews, moment });
     })
     .catch(err => {
-        console.error(err)
+        console.error(err);
+        res.status(400).send('Error loading Reviews filtered by user. Please try again in a moment!');
     })
 }
 
-// http DELETE - Review
-exports.review_delete_get = (req, res) => {
-    Review.findByIdAndDelete(req.query.id)
-    .then(() => {
-        req.flash("info", "Review deleted successfully!");
-        res.redirect("/review/index")
-    })
-    .catch(err => {
-        console.error(err)
-    })
-}
 
-// Edit API
+// -- UPDATE
 
-// http GET - load review edit form 
-
+// HTTP GET - Load Edit Review Form:
 exports.review_edit_get = (req, res) => {
     Review.findById(req.query.id).populate('album')
-    .then((review) => {
-        res.render("review/edit", {review})
+    .then(review => {
+        res.render("review/edit", {review});
     })
     .catch(err => {
-        console.error(err)
+        console.error(err);
+        res.status(400).send('Error loading Edit Review form. Please try again in a moment!');
     })
-};
+}
 
-// http PUT - article update
+// HTTP PUT - Update Review:
 exports.review_update_put = (req, res) => {
     Review.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
         req.flash("success", "Review updated successfully!");
-        res.redirect("/review/index")
+        res.redirect("/review/index");
     })
     .catch(err => {
-        console.error(err)
+        console.error(err);
+        res.status(400).send('Error updating Review. Please try again in a moment!');
+    })
+}
+
+
+// -- DELETE
+
+// HTTP DELETE - Delete Review by ID:
+exports.review_delete_get = (req, res) => {
+    Review.findByIdAndDelete(req.query.id)
+    .then(() => {
+        req.flash("info", "Review deleted successfully!");
+        res.redirect("/review/index");
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(400).send('Error deleting Review. Please try again in a moment!');
     })
 }
