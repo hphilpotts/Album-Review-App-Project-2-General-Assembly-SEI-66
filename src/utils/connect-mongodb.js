@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const makeLocalDBConnection = () => {
+const makeDBConnection = () => {
     mongoose.set('strictQuery', true); // this and second param in mongoose.connect() below are there to prevent deprecation warnings
-    const mongoDBLocalURL = process.env.MONGODB_LOCAL_URL;
+    const mongoDBURL = process.env.MONGODB_ATLAS_URL;
 
-    if (mongoDBLocalURL === undefined) throw new Error('Environment variable `MONGODB_LOCAL_URL` is undefined.');
+    if (mongoDBURL === undefined) throw new Error('Environment variable `MONGODB_ATLAS_URL` is undefined.');
 
     try {
         mongoose.connect(
-            mongoDBLocalURL,
+            mongoDBURL,
             { useNewUrlParser: true, useUnifiedTopology: true },
             () => {
                 if (mongoose.connection.name === undefined) {
                     console.error('Mongoose connection with MongoDB not established!');
                 } else {
-                    console.log('Connected to local MongoDB! Database:', mongoose.connection.name, ', PORT:', mongoose.connection.port,'\n');
+                    console.log('Connected to MongoDB! Database:', mongoose.connection.name, ', PORT:', mongoose.connection.port,'\n');
                 }
             }
         )
@@ -43,4 +43,4 @@ process.on('SIGINT', function () {
     })
 })
 
-module.exports = { makeLocalDBConnection, checkDBConnectionStatus };
+module.exports = { makeDBConnection, checkDBConnectionStatus };

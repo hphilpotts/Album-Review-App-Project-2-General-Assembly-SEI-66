@@ -43,8 +43,8 @@ app.use('/', reviewsRouter);
 app.set('view engine', 'ejs');
 app.set('views', './src/views'); // views directory needs setting as it is not at root level
 
-const databaseConnection = require('./utils/connect-local-mongodb');
-databaseConnection.makeLocalDBConnection();
+const databaseConnection = require('./utils/connect-mongodb');
+databaseConnection.makeDBConnection();
 databaseConnection.checkDBConnectionStatus();
 
 module.exports = { app }

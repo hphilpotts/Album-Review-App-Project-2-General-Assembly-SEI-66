@@ -9,7 +9,7 @@ app.listen(PORT, function () {
     }
 
     try {
-        console.log(`Album Review App is running on:\x1b[36m http://localhost:${PORT} \x1b[0m`);
+        console.log(`Album Review App is running on:\x1b[36m ${PORT} \x1b[0m`);
     } catch {
         console.error(error);
     }
