@@ -5,7 +5,7 @@ const makeLocalDBConnection = () => {
     mongoose.set('strictQuery', true); // this and second param in mongoose.connect() below are there to prevent deprecation warnings
     const mongoDBLocalURL = process.env.MONGODB_LOCAL_URL;
 
-    if (mongoDBLocalURL === undefined) throw new Error('Environment variable `MONGODB_LOCAL_URL` is undefined.')
+    if (mongoDBLocalURL === undefined) throw new Error('Environment variable `MONGODB_LOCAL_URL` is undefined.');
 
     try {
         mongoose.connect(
@@ -20,7 +20,7 @@ const makeLocalDBConnection = () => {
             }
         )
     } catch {
-        console.error(Error)
+        console.error(Error);
     }
 }
 
@@ -40,7 +40,7 @@ process.on('SIGINT', function () {
     mongoose.connection.close(function () {
         console.log('** Disconnected through app termination **\n');
         process.exit(0);
-    });
-});
+    })
+})
 
 module.exports = { makeLocalDBConnection, checkDBConnectionStatus };

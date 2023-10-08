@@ -11,7 +11,7 @@ let passport = require('./helpers/ppConfig');
 
 const flash = require('connect-flash');
 
-app.use(flash())
+app.use(flash());
 
 require('dotenv').config();
 
