@@ -1,20 +1,29 @@
+// -- Auth Routes ---
+
+
+// -- Requires / setup:
 const express = require('express');
+const authController = require("../controllers/auth");
+const IsLoggedIn = require('../helpers/isLoggedIn');
 
 const router = express.Router();
 
-const authCtrl = require("../controllers/auth");
 
-const IsLoggedIn = require('../helpers/isLoggedIn');
+// -- Routes:
 
-router.get('/', IsLoggedIn, authCtrl.home_get)
-router.get("/auth/landing", authCtrl.landing_get); // verify whether to use auth_landing_get instead
-// router.post("/", authCtrl.landing_post);
-router.post("/auth/landing", authCtrl.auth_landing_post); // sign in POST route ///double check if / or /landing
-router.get("/auth/signup", authCtrl.signup_get); // again verify whether to use auth_signup_get instead
-router.post("/auth/signup", authCtrl.auth_signup_post);
+// Home
+router.get('/', IsLoggedIn, authController.home_get);
 
-router.get("/auth/logout", authCtrl.auth_logout_get);
+// Landing / Sign In
+router.get("/auth/landing", authController.landing_get);
+router.post("/auth/landing", authController.auth_landing_post);
 
+// Sign Up
+router.get("/auth/signup", authController.signup_get);
+router.post("/auth/signup", authController.auth_signup_post);
+
+// Log Out
+router.get("/auth/logout", authController.auth_logout_get);
 
 
 module.exports = router;

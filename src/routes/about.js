@@ -1,9 +1,15 @@
-const express= require('express');
+// -- About Routes ---
+
+
+// -- Requires / setup:
+const express = require('express');
+const aboutController = require('../controllers/about');
 
 const router = express.Router();
 
-const aboutCtrl = require('../controllers/about')
 
-router.get('/about', aboutCtrl.about_get);
+// -- Routes:
+router.get('/about', aboutController.about_get);
+
 
 module.exports = router;
