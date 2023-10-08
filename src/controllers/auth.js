@@ -17,15 +17,18 @@ exports.home_get = (req, res) => {
     res.redirect("/review/index");
 }
 
+
 // HTTP GET - Load Sign Up landing page:
 exports.landing_get = (req, res) => {
     res.render("auth/landing", { message: null }); 
 }
 
+
 // HTTP GET - Load Sign Up page:
 exports.signup_get = (req, res) => {
     res.render("auth/signup", { message: null} );
 }
+
 
 // HTTP POST - Create new user:
 exports.auth_signup_post = async (req, res) =>  {
@@ -69,6 +72,7 @@ exports.auth_landing_post = passport.authenticate('local', {
     failureRedirect: "/auth/landing",
     failureFlash: "Sign in failed, please check your username and password are correct and try again."
 })
+
 
 // HTTP GET - Logout: 
 exports.auth_logout_get = (req, res) => {
