@@ -1,8 +1,10 @@
+// --- Auth Controller ---
+
+
 // Require User Model
-const User = require("../models/User")
+const User = require("../models/User");
 
 //require passport configuration
-// install dependencies passport and passport-local
 let passport = require('../helpers/ppConfig');
 
 // require bcrypt for hashing password
@@ -10,27 +12,22 @@ const bcrypt = require('bcrypt');
 const salt = 10;
 
 
-// Route for '/'
-
+// HTTP GET - Redirect to Review Index on root:
 exports.home_get = (req, res) => {
     res.redirect("/review/index");
-};
+}
 
-
-// API FOR ROOT ROUTE
-
-exports.landing_get = (req, res) => { //potentially exports.auth_landing_get
+// HTTP GET - Load Sign Up landing page:
+exports.landing_get = (req, res) => {
     res.render("auth/landing", { message: null }); 
-}; 
+}
 
-exports.signup_get = (req, res) => { //potentially exports.auth_signup_get
+// HTTP GET - Load Sign Up page:
+exports.signup_get = (req, res) => {
     res.render("auth/signup", { message: null} );
-};
+}
 
-
-
-//HTTP POST - Signup Route - To post the data into the database
-
+// HTTP POST - Create new user:
 exports.auth_signup_post = async (req, res) =>  {
 
     let user = new User(req.body);
@@ -58,26 +55,27 @@ exports.auth_signup_post = async (req, res) =>  {
         .then(() => {
             res.render("auth/landing", { message: "Signed up successfully! Please sign in to begin." });
         })
-        .catch((err)=>{
+        .catch(err => {
+            console.error(err);
             res.render("auth/signup", { message: "Sign up failed, please try again." });
         })
     }
-};
+}
 
 
-//HTTP POST SIGN IN ROUTE
+// HTTP POST - Sign in:
 exports.auth_landing_post = passport.authenticate('local', {
     successRedirect: "/album/index",
     failureRedirect: "/auth/landing",
     failureFlash: "Sign in failed, please check your username and password are correct and try again."
 })
 
-// HTTP GET - Logout route 
+// HTTP GET - Logout: 
 exports.auth_logout_get = (req, res) => {
     // invalidates the session
     req.logout(function (err) {
-        if (err) { return next(err); }
-        req.flash("info", "You have been logged out succesfully!")
+        if (err) { return next(err) }
+        req.flash("info", "You have been logged out succesfully!");
         res.redirect("/auth/landing");
     })
-};
+}
