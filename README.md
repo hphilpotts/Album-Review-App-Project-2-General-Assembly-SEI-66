@@ -16,6 +16,12 @@ I was 'Team Leader' for this project, taking responsibility for Git version cont
 
 [Deployment link](https://albumreviewapp.cyclic.app/review/index)      
 
+README - jump to:
+- [Description](https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66#description)
+- [Production Process](https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66#production-process)       
+- [Rehost November 2022](https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66#november-2022--rehost)      
+- [Rewrite & Rehost 2023](https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66#june-2023--rewrite-and-rehost)       
+
 ## Getting started & Install:       
 
 Please feel free to sign in as user: `guest@guest.com` // pw: `London2012`, or you can create your own account with 'Sign Up'.      
@@ -232,6 +238,8 @@ Challenges faced during the project included:
 
 ---
 
+# November 2022 | Rehost:
+
 ## 23/11/22 | Post-production:     
 
 With Heroku moving to paid-only on 28/11/22, this seems as good a time as any to re-host the app elsewhere and fix the image upload issue at the same time.         
@@ -266,7 +274,7 @@ After various attempts using differing approaches and documentation, I have deci
 
 The app has now been successfully rehosted on Cyclic, and Album Cover images will now persist as they are direct image URL links.
 
-## June 2023 | Rewrite and Rehost: 
+# June 2023 | Rewrite and Rehost: 
 
 ### 25/05/23:       
 
