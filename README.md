@@ -6,15 +6,19 @@
 
 ## Description:       
 
-This is a full-stack web app - _Album Review App_: a site where users can add and then review music albums - built as part of a paired project with [Milos Jocic](https://github.com/milosjocic1) over the course of a week, for the second project in GA London's Software Engineering Immersive course. The app uses an Express framework, Node.js platform and an Atlas-hosted MongoDB NoSQL database. The deployed project was presented to my GA Instructional Team and fellow SEI cohort on 26/08/22.        
+This is a full-stack web app - _Album Review App_: a site where users can add and then review music albums - built as part of a paired project with [Milos Jocic](https://github.com/milosjocic1) over the course of a week, for the second project in GA London's Software Engineering Immersive course.   
+
+The app uses an Express framework, Node.js platform and an Atlas-hosted MongoDB NoSQL database. The deployed project was presented to my GA Instructional Team and fellow SEI cohort on 26/08/22.        
 
 I was 'Team Leader' for this project, taking responsibility for Git version control and deployment of the completed app. I worked on broader functionality across the site both in Frontend and Backend: setting up `server.js` config, creating Models, writing routes and APIs, implementing Views, forms and user input. I also took ownership of UI styling and mobile responsive formatting.        
+
+The current and latest version (_October 2023_) of this app has been updated and redeployed since the original deployment back in September 2022. While the vast majority of the repo has been edited and revised as part of the update, the original spirit and look of the app has been retained.     
 
 ![Main app image](./public/readme_img/project2_main.png)        
 
 ## Links:        
 
-[Deployment link](https://albumreviewapp.cyclic.app/review/index)      
+[Deployment link](https://album-review-app-2023-47cad518b337.herokuapp.com/)      
 
 README - jump to:
 - [Description](https://github.com/hphilpotts/Album-Review-App-Project-2-General-Assembly-SEI-66#description)
@@ -434,6 +438,14 @@ Minor updates include a limit on the number of genre inputs that can be added to
 All largely straightforward.        
 - MUI Modals were useful for dialogues thanks to their built-in JS.     
 - Back button added to filtered Album/Review index views: used JS in frontend as this has access to the URL.        
+
+## 08/10/23: Rehosted!      
+
+Finally redeployed the App - about a year on from when the first version was deployed - using Heroku.   
+
+I decided to use Heroku for simplicity's sake, with a MongoDB Atlas database.       
+
+
 
 ## Main Features & Fixes completeed prior to rehost:
 - Implemented image upload to S3 bucket (required due to Heroku's ephemeral file storage and associated loss of uploads)      
