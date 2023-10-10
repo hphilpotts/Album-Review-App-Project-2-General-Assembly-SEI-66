@@ -1,21 +1,44 @@
 // Add album, track listing functionality:
+let trackFieldCount = 1;
 const trackParent = $('#track-parent');
-const newInput = '<input type="text" name="trackList" class="form-control"/>';
+const newInput = `<input type="text" name="trackList" class="form-control id="${trackFieldCount}"/>`;
 const addInput = () => trackParent.append(newInput);
 $('#add-field').click(addInput);
 $('#track1').attr('required', 'true');
 
 // Add album, genre functionality:
-let fieldCount = 1;
+let genreFieldCount = 1;
+
 const genreParent = $('#genre-parent');
-const newGenreInput = '<input type="text" name="genre" class="form-control"/>';
+const newGenreInput = `<input type="text" name="genre" class="form-control" id="${genreFieldCount}"/>`;
+
+const addGenreButton = $('#add-genre');
+const removeGenreButton = $('#remove-genre');
+
+removeGenreButton.hide();
+removeGenreButton.width(removeGenreButton.height() * 0.45);
+
 const addGenreInput = () => {
-    if (fieldCount < 10) {
+    if (genreFieldCount < 10) {
         genreParent.append(newGenreInput);
-        fieldCount++;
+        genreFieldCount++;
     }
+    if (genreFieldCount > 1) removeGenreButton.show();
+    if (genreFieldCount === 10) addGenreButton.hide();
 }
-$('#add-genre').click(addGenreInput);
+
+const removeGenreInput = () => {
+    if (genreFieldCount > 1) {
+        genreParent.children().last().remove();
+        genreFieldCount--;
+    }
+    if (genreFieldCount === 1) removeGenreButton.hide();
+    if (genreFieldCount < 10) addGenreButton.show();
+}
+
+addGenreButton.click(addGenreInput);
+removeGenreButton.click(removeGenreInput);
+
 $('#genre1').attr('required', 'true');
 
 // Sets maximum year rather than relying on hardcoded value:
