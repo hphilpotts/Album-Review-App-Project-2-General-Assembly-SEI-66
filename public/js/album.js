@@ -1,9 +1,30 @@
 // Add album, track listing functionality:
 let trackFieldCount = 1;
+
 const trackParent = $('#track-parent');
-const newInput = `<input type="text" name="trackList" class="form-control id="${trackFieldCount}"/>`;
-const addInput = () => trackParent.append(newInput);
-$('#add-field').click(addInput);
+const newTrackInput = `<input type="text" name="trackList" class="form-control id="${trackFieldCount}"/>`;
+
+const addTrackButton = $('#add-track');
+const removeTrackButton = $('#remove-track');
+
+removeTrackButton.hide();
+removeTrackButton.width(removeTrackButton.height() * 0.45);
+
+const addTrackInput = () => {
+    trackParent.append(newTrackInput);
+    trackFieldCount++;
+    if (trackFieldCount > 1) removeTrackButton.show();
+}
+
+const removeTrackInput = () => {
+    trackParent.children().last().remove();
+    trackFieldCount--;
+    if (trackFieldCount === 1) removeTrackButton.hide();
+}
+
+addTrackButton.click(addTrackInput);
+removeTrackButton.click(removeTrackInput);
+
 $('#track1').attr('required', 'true');
 
 // Add album, genre functionality:
