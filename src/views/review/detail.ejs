@@ -45,7 +45,7 @@
     <p class="highlighted-text small-shadow larger-text">A review by <a href="/review/user_index?user=<%= review.createdBy[0]._id %>"><%= review.createdBy[0].username %></a></p>
     <p class="highlighted-text small-shadow larger-text">User rating:</p> <span class="review-rating"><%= review.rating %></span>
 </div>
-<% if(currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
+<% if (currentUser && currentUser._id.toString() == review.createdBy[0]._id.toString()){ %>
     <hr>
     <div class="text-center">
     <a class="user-edit" href="/review/edit?id=<%= review._id %>" role="button">Edit Review</a>

@@ -21,7 +21,7 @@ router.post("/review/add", reviewController.review_create_post);
 
 // Read Review(s)
 router.get("/review/index", reviewController.review_index_get);
-router.get("/review/detail", isLoggedIn, reviewController.review_show_get);
+router.get("/review/detail", reviewController.review_show_get);
 router.get("/review/user_index", reviewController.review_by_user_get);
 
 // Update Review
