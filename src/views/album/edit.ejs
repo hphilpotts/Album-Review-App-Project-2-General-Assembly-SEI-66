@@ -27,20 +27,6 @@
         <button type="button" id="add-field" class="btn btn-light add-btn" aria-label="add new track input field to form">+</button>
     </div class="form-group">
 
-
-    <div class="form-group">
-        <label for="image-input">Album Cover: </label>
-        <input 
-            id="image-input"
-            type="file" 
-            name="image" 
-            accept="image/png, image/gif, image/jpeg, image/jpg" 
-            required="true"
-            aria-invalid="true"
-            class="form-control"
-        >
-    </div>
-
     <div class="form-group">
         <div id="genre-parent">
         <label id="genre-label">Genre</label>
@@ -50,7 +36,6 @@
         </div>
         <button type="button" id="add-genre" class="btn btn-light add-btn" aria-label="add new genre input field to form">+</button>
     </div>
-
 
     <input type="hidden" name="id" value="<%= album._id%>"/>
 
