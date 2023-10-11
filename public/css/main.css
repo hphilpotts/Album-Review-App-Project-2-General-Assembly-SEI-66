@@ -214,6 +214,10 @@ nav :hover,
   padding: 1px;
 }
 
+#track-parent > input, #genre-parent > input {
+  margin: 3px 0;
+}
+
 .add-btn {
   border: 2px solid darkgray;
   margin: 2px;
@@ -264,8 +268,9 @@ nav :hover,
 }
 
 .user-edit {
-  padding: 0px 50px;
+  padding: 0px 3rem;
   font-style: italic;
+  white-space: nowrap;
 }
 
 .update-time {
